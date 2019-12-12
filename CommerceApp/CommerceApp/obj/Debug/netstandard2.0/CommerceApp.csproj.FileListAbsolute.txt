@@ -1,0 +1,13 @@
+E:\01_UIT\04_Fourth Year\Xamarin\Project\Sources\CommerceApp\CommerceApp\bin\Debug\netstandard2.0\CommerceApp.deps.json
+E:\01_UIT\04_Fourth Year\Xamarin\Project\Sources\CommerceApp\CommerceApp\bin\Debug\netstandard2.0\CommerceApp.dll
+E:\01_UIT\04_Fourth Year\Xamarin\Project\Sources\CommerceApp\CommerceApp\bin\Debug\netstandard2.0\ref\CommerceApp.dll
+E:\01_UIT\04_Fourth Year\Xamarin\Project\Sources\CommerceApp\CommerceApp\bin\Debug\netstandard2.0\CommerceApp.pdb
+E:\01_UIT\04_Fourth Year\Xamarin\Project\Sources\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\CommerceApp.csprojAssemblyReference.cache
+E:\01_UIT\04_Fourth Year\Xamarin\Project\Sources\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\App.xaml.g.cs
+E:\01_UIT\04_Fourth Year\Xamarin\Project\Sources\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\Views\TestItemView.xaml.g.cs
+E:\01_UIT\04_Fourth Year\Xamarin\Project\Sources\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\CommerceApp.AssemblyInfoInputs.cache
+E:\01_UIT\04_Fourth Year\Xamarin\Project\Sources\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\CommerceApp.AssemblyInfo.cs
+E:\01_UIT\04_Fourth Year\Xamarin\Project\Sources\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\XamlC.stamp
+E:\01_UIT\04_Fourth Year\Xamarin\Project\Sources\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\CommerceApp.dll
+E:\01_UIT\04_Fourth Year\Xamarin\Project\Sources\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\ref\CommerceApp.dll
+E:\01_UIT\04_Fourth Year\Xamarin\Project\Sources\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\CommerceApp.pdb
