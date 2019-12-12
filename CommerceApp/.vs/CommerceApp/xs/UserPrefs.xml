@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{7F1810C2-986C-4A37-9FD3-42264A6F36BF}|Default">
+  <MonoDevelop.Ide.ItemProperties.CommerceApp.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CommerceApp/App.xaml.cs">
+    <Files>
+      <File FileName="CommerceApp/Views/Product/DetailProduct.xaml" Line="43" Column="31" />
+      <File FileName="CommerceApp/Views/Product/DetailProduct.xaml.cs" Line="14" Column="6" />
+      <File FileName="CommerceApp/App.xaml.cs" Line="5" Column="32" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CommerceApp" expanded="True">
+            <Node name="CommerceApp" expanded="True">
+              <Node name="Views" expanded="True">
+                <Node name="Product" expanded="True">
+                  <Node name="DetailProduct.xaml" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="App.xaml" expanded="True">
+                <Node name="App.xaml.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
