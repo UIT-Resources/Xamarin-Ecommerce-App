@@ -26,11 +26,11 @@
                     <Label Text="Đăng nhập" TextColor="White" FontSize="36" HorizontalOptions="CenterAndExpand"/>
                 </StackLayout>
                 <StackLayout VerticalOptions="Center" Spacing="10" Padding="20">
-                    <Label Text="Username/Email/Số điện thoại" FontSize="16" Font="Gibson"  TextColor="#f7f5f5"/>
+                    <Label Text="Username/Email/Số điện thoại" FontSize="16" Font="Gibson"  TextColor="#FFFFFF4D"/>
                     <Entry Text="Aaron Smith, Smith@gmail.com, 0999123123" TextColor="White"/>
-                    <Label Text="Password" FontSize="16" Font="Gibson" TextColor="#f7f5f5"/>
+                    <Label Text="Password" FontSize="16" Font="Gibson" TextColor="#FFFFFF4D"/>
                     <Entry Placeholder="Password" TextColor="White" IsPassword="True"/>
-                    <Button Text="ĐĂNG NHẬP" Font="Gibson" HeightRequest="50" TextColor="#5887F9" BackgroundColor="White" />
+                    <Button Text="ĐĂNG NHẬP" Font="Gibson" HeightRequest="50" CornerRadius="6" TextColor="#5887F9" BackgroundColor="White" />
                     <Label Text="Quên mật khẩu?" TextColor="White"  FontSize="14"/>
                 </StackLayout>
                 <StackLayout VerticalOptions="Start" Padding="0,100,0,0">

@@ -37,7 +37,7 @@
                     <Entry Placeholder="Password" TextColor="White" IsPassword="True"/>
                     <Button Text="ĐĂNG NHẬP" Font="Gibson" HeightRequest="50"
                             TextColor="#5887F9" BackgroundColor="White"
-                            CornerRadius="10"/>
+                            CornerRadius="6"/>
                     <StackLayout Orientation="Horizontal">
                         <Label Text="Quên mật khẩu?" HorizontalOptions="Start"
                            TextColor="White"  FontSize="14"/>
