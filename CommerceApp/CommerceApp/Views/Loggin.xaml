@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CommerceApp.Views.Loggin"
+             xmlns:gradient ="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms">
+    <ContentPage.Content>
+        <Grid >
+            <gradient:SfGradientView>
+                <gradient:SfGradientView.BackgroundBrush>
+                    <gradient:SfLinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                        <gradient:SfLinearGradientBrush.GradientStops>
+                            <gradient:SfGradientStop Color="#60C3FF" Offset="0.0" />
+                            <gradient:SfGradientStop Color="#5574F7" Offset="1.0" />
+                        </gradient:SfLinearGradientBrush.GradientStops>
+                    </gradient:SfLinearGradientBrush>
+                </gradient:SfGradientView.BackgroundBrush>
+            </gradient:SfGradientView>
+
+
+
+            <StackLayout Margin="20" VerticalOptions="CenterAndExpand">
+                <StackLayout VerticalOptions="Start" Padding="0,0,0,100">
+                    <Label Text="Đăng nhập" TextColor="White" FontSize="36" HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+                <StackLayout VerticalOptions="Center" Spacing="10" Padding="20">
+                    <Label Text="Username/Email/Số điện thoại" FontSize="16" Font="Gibson"  TextColor="#f7f5f5"/>
+                    <Entry Text="Aaron Smith, Smith@gmail.com, 0999123123" TextColor="White"/>
+                    <Label Text="Password" FontSize="16" Font="Gibson" TextColor="#f7f5f5"/>
+                    <Entry Placeholder="Password" TextColor="White" IsPassword="True"/>
+                    <Button Text="ĐĂNG NHẬP" Font="Gibson" HeightRequest="50" TextColor="#5887F9" BackgroundColor="White" />
+                    <Label Text="Quên mật khẩu?" TextColor="White"  FontSize="14"/>
+                </StackLayout>
+                <StackLayout VerticalOptions="Start" Padding="0,100,0,0">
+                    <Label Text="ĐĂNG KÝ" FontSize="12"  TextColor="White" HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
