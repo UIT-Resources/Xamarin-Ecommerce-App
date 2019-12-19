@@ -30,7 +30,7 @@
                     <StackLayout >
                         <Button Text="GỬI EMAIL" Font="Gibson" HeightRequest="50" 
                             TextColor="#5887F9" BackgroundColor="White"
-                            Margin="0,35,0,0" VerticalOptions="Center" CornerRadius="6"/>
+                            Margin="0,35,0,0" VerticalOptions="Center" CornerRadius="6" Clicked="Button_Clicked"/>
                     </StackLayout>
                 </StackLayout>
             </StackLayout>

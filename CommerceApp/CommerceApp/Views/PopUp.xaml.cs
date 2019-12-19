@@ -10,17 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace CommerceApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ForgotPass : ContentPage
+    public partial class PopUp
     {
-        public ForgotPass()
+        public PopUp()
         {
             InitializeComponent();
-            
-        }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushModalAsync(new SignOut());
         }
     }
 }

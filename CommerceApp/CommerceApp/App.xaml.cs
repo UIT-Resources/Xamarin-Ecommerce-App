@@ -12,7 +12,7 @@ namespace CommerceApp
         {
             InitializeComponent();
 
-            MainPage = new ForgotPass();
+            MainPage = new ShowPopUp();
         }
 
         protected override void OnStart()
