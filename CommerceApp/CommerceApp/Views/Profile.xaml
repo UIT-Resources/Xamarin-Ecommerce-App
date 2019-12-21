@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CommerceApp.Views.Profile">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="#F5F6F8">
+                <StackLayout Orientation="Horizontal" Margin="39,17,0,0">
+                    <Image Source="Avatar.png" />
+                    <StackLayout>
+                        <Label Text="Jane Doe" FontFamily="Neusa Next Std" FontAttributes="Bold" FontSize="30"/>
+                        <Label Text="janedoe123@email.com" FontFamily="Neusa Next Std" FontSize="15"/>
+                        <Button Text="Sửa thông tin" CornerRadius="20" 
+                             HeightRequest="40" WidthRequest="1"
+                            TextColor="#727C8E" FontSize="10" FontFamily="Neusa Next Std" BackgroundColor="#F5F6F8" BorderWidth="0.5" BorderColor="Black" Margin="20,0"/>
+                    </StackLayout>
+                </StackLayout>
+                <Frame CornerRadius="10" Margin="12,24,12,0">
+                    <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Spacing="10">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="allorder.png" Margin="0,0,19,0" />
+                            <Label Text="Tất cả đơn hàng của tôi" TextColor="#515C6F" FontSize="15"/>
+                            <Image Source="arrow.png" HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="pendingshipments.png" Margin="0,0,19,0" />
+                            <Label Text="Đang vận chuyển" TextColor="#515C6F" FontSize="15"/>
+                            <Image Source="arrow.png" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="pendingpayment.png" Margin="0,0,19,0" />
+                            <Label Text="Đang chờ thanh toán" TextColor="#515C6F" FontSize="15"/>
+                            <Image Source="arrow.png" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="finished.png" Margin="0,0,21,0" />
+                            <Label Text="Đã thanh toán" TextColor="#515C6F" FontSize="15"/>
+                            <Image Source="arrow.png" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame CornerRadius="10" Margin="12,24,12,0">
+                    <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Spacing="10">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="shipping.png" Margin="0,0,19,0" />
+                            <Label Text="Danh sách địa chỉ" TextColor="#515C6F" FontSize="15"/>
+                            <Image Source="arrow.png" HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="payment.png" Margin="0,0,19,0" />
+                            <Label Text="Phương thức thanh toán" TextColor="#515C6F" FontSize="15"/>
+                            <Image Source="arrow.png" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="currency.png" Margin="0,0,19,0" />
+                            <Label Text="Đơn vị tiền tệ" TextColor="#515C6F" FontSize="15"/>
+                            <Image Source="arrow.png" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="language.png" Margin="0,0,21,0" />
+                            <Label Text="Ngôn ngữ" TextColor="#515C6F" FontSize="15"/>
+                            <Image Source="arrow.png" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame CornerRadius="10" Margin="12,24,12,0">
+                    <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Spacing="10">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="heart.png" Margin="0,0,19,0" />
+                            <Label Text="Sản phẩm yêu thích" TextColor="#515C6F" FontSize="15"/>
+                            <Image Source="arrow.png" HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="confirmicon.png" Margin="0,0,19,0" />
+                            <Label Text="Sản phẩm đã xem" TextColor="#515C6F" FontSize="15"/>
+                            <Image Source="arrow.png" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="clockicon.png" Margin="0,0,19,0" />
+                            <Label Text="Sản phẩm mua sau" TextColor="#515C6F" FontSize="15"/>
+                            <Image Source="arrow.png" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="checkform.png" Margin="0,0,21,0" />
+                            <Label Text="Sản phẩm gợi ý cho bạn" TextColor="#515C6F" FontSize="15"/>
+                            <Image Source="arrow.png" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame CornerRadius="10" Margin="12,24,12,0">
+                    <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Spacing="10">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="invite.png" Margin="0,0,19,0" />
+                            <Label Text="Mời bạn bè" TextColor="#515C6F" FontSize="15"/>
+                            <Image Source="arrow.png" HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="support.png" Margin="0,0,19,0" />
+                            <Label Text="Hỗ trợ" TextColor="#515C6F" FontSize="15"/>
+                            <Image Source="arrow.png" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="rate.png" Margin="0,0,19,0" />
+                            <Label Text="Đánh giá ứng dụng" TextColor="#515C6F" FontSize="15"/>
+                            <Image Source="arrow.png" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="suggest.png" Margin="0,0,21,0" />
+                            <Label Text="Phản hồi" TextColor="#515C6F" FontSize="15"/>
+                            <Image Source="arrow.png" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame CornerRadius="6" BackgroundColor="#F5F6F8">
+                    <Button BackgroundColor="White" ImageSource="IconSignOut.png" Text="ĐĂNG XUẤT" FontFamily="Gibson" FontSize="12"
+                            TextColor="Red" HorizontalOptions="Center" Padding="120,20"/>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

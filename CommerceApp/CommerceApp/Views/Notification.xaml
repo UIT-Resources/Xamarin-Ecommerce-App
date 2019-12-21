@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="CommerceApp.Views.Notification">
+             x:Class="CommerceApp.Views.Notification"
+             Title="Thông báo">
     <ContentPage.Content>
         <ListView x:Name="List" ItemsSource="{Binding .}" HasUnevenRows="True" SeparatorVisibility="None">
             <ListView.ItemTemplate>
@@ -30,22 +31,6 @@
                                 </Grid>
                             </StackLayout>
                         </Frame>
-                        
-                        <!--<Frame CornerRadius="6">--><!--
-                            <StackLayout Orientation="Horizontal" Margin="11">
-                                    <Image Source="path.png" HorizontalOptions="Start" Margin="12"/>
-                                <StackLayout Orientation="Vertical" >
-                                    <StackLayout HorizontalOptions="StartAndExpand">
-                                        <Label Text="{Binding title}" FontSize="14"/>
-                                    </StackLayout>
-                                    <StackLayout HorizontalOptions="StartAndExpand">
-                                        <Label Text="{Binding time}" FontSize="12"/>
-                                    </StackLayout>
-                                </StackLayout>
-                                    <Image Source="optionsicon.png" HorizontalOptions="CenterAndExpand" Margin="20"/>
-                            </StackLayout>
-                       
-                        --><!--</Frame>-->
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
