@@ -12,7 +12,7 @@ namespace CommerceApp
         {
             InitializeComponent();
 
-            MainPage = new ShowPopUp();
+            MainPage = new Notification();
         }
 
         protected override void OnStart()
