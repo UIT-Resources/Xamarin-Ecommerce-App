@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CommerceApp.Views.UserProfile">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout Spacing="0" >
+            <Image Source="Avatar.png" HeightRequest="150" WidthRequest="150" 
+                    Margin="0,12,0,0" HorizontalOptions="CenterAndExpand" />
+
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="Center" Spacing="15">
+                <Image Source="IconSetAvatarByCamera.png" />
+                <Image Source="IconSetAvatarByCollection.png" />
+                <Image Source="IconRemoveAvatar.png" />
+            </StackLayout>
+            <Frame CornerRadius="10" Margin="12,24,12,0">
+                <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Spacing="10">
+                    <StackLayout Orientation="Horizontal" HeightRequest="59">
+                        <Image Source="IconProfile.png" Margin="0,0,19,0" />
+                        <StackLayout Spacing="0">
+                            <Label Text="HỌ VÀ TÊN" TextColor="#515C6F" Opacity="0.5"/>
+                                <Entry HorizontalOptions="End" WidthRequest="250" Text="Nguyễn Văn A" TextColor="#515C6F" FontSize="15"/>
+                        </StackLayout>
+                    </StackLayout>
+                        <StackLayout Orientation="Horizontal" HeightRequest="59">
+                            <Image Source="IconMail.png" Margin="0,0,19,0" />
+                        <StackLayout Spacing="0">
+                            <Label Text="ĐỊA CHỈ EMAIL *" TextColor="#515C6F" Opacity="0.5"/>
+                                <Entry Text="Nguyễn Văn A" WidthRequest="250" TextColor="#515C6F" FontSize="15"/>
+                        </StackLayout>
+                    </StackLayout>
+                        <StackLayout Orientation="Horizontal" >
+                            <Image Source="Path5299.png" Margin="0,0,19,0"/>
+                        <StackLayout Spacing="0" Padding="0">
+                            <Label Text="SỐ ĐIỆN THOẠI" TextColor="#515C6F" Opacity="0.5"/>
+                                <Entry Keyboard="Numeric" WidthRequest="250" TextColor="#515C6F" FontSize="15"/>
+                        </StackLayout>
+                    </StackLayout>
+                        <StackLayout Orientation="Horizontal" HeightRequest="59">
+                            <Image Source="IconBirthdayCake.png" Margin="0,0,21,0" />
+                        <StackLayout Spacing="0">
+                            <Label Text="NGÀY SINH" TextColor="#515C6F" Opacity="0.5"/>
+                                <DatePicker TextColor="#515C6F" WidthRequest="250" FontSize="15"/>
+                        </StackLayout>
+                    </StackLayout>
+                        <StackLayout Orientation="Horizontal" HeightRequest="59">
+                            <Image Source="IconPassword.png" Margin="0,0,21,0" />
+                        <StackLayout Spacing="0">
+                            <Label Text="MẬT KHẨU" TextColor="#515C6F" Opacity="0.5"/>
+                            <Entry IsPassword="True" WidthRequest="250" TextColor="#515C6F" FontSize="15"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="Thaydoimatkhau" Color="Black" Margin="18,8,0,0" />
+                    <Label Text="Thay đổi mật khẩu" VerticalOptions="Center"/>
+                </StackLayout>
+            <Frame CornerRadius="10" Margin="12,8,12,0" BindingContext="{x:Reference Thaydoimatkhau}" IsVisible="{Binding IsChecked}">
+                <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" >
+                    <StackLayout Orientation="Horizontal" HeightRequest="59">
+                        <Image Source="IconPassword.png" Margin="0,0,19,0" />
+                        <StackLayout Spacing="0">
+                            <Label Text="MẬT KHẨU CŨ" TextColor="#515C6F" Opacity="0.5"/>
+                            <Entry HorizontalOptions="End" IsPassword="True" WidthRequest="250" Text="Nguyễn Văn A" TextColor="#515C6F" FontSize="15"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HeightRequest="59">
+                        <Image Source="IconPassword.png" Margin="0,0,19,0" />
+                        <StackLayout Spacing="0">
+                            <Label Text="MẬT KHẨU MỚI" TextColor="#515C6F" Opacity="0.5"/>
+                            <Entry HorizontalOptions="End" IsPassword="True" WidthRequest="250" Text="Nguyễn Văn A" TextColor="#515C6F" FontSize="15"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HeightRequest="59">
+                        <Image Source="IconPassword.png" Margin="0,0,19,0" />
+                        <StackLayout Spacing="0">
+                            <Label Text="XÁC NHẬN MẬT KHẨU MỚI" TextColor="#515C6F" Opacity="0.5"/>
+                            <Entry HorizontalOptions="End" IsPassword="True" WidthRequest="250" Text="Nguyễn Văn A" TextColor="#515C6F" FontSize="15"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+                <Button Text="LƯU THAY ĐỔI" Margin="0,17,0,16"
+                        BackgroundColor="#FF6969" 
+                        HorizontalOptions="CenterAndExpand"
+                        CornerRadius="23"
+                        TextColor="#FFFFFF" Padding="33,15"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
