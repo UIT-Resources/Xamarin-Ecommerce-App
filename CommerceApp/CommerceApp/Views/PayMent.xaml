@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CommerceApp.Views.PayMent">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="15,17,10,0">
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout WidthRequest="150">
+                        <Label Text="ĐỊA CHỈ GIAO HÀNG" TextColor="#515C6F"
+                       FontSize="12" Margin="0,0,0,8"/>
+                        <Label Text="John Doe" FontSize="15" FontAttributes="Bold"
+                       TextColor="#515C6F"/>
+                        <Label Text="No 123, Sub Street, Main Street, City Name, Province, Country" />
+                    </StackLayout>
+                    <Image Source="arrow.png" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <BoxView Margin="0,19,0,19"
+                        HeightRequest="0.4"
+                        BackgroundColor="#727C8E" 
+                        HorizontalOptions="FillAndExpand"/>
+
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout>
+                        <Label Text="PHƯƠNG THỨC THANH TOÁN" TextColor="#515C6F"
+                       FontSize="12" Margin="0,0,0,8"/>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="Group53.png" />
+                            <Label Text="Master Card ending **00" TextColor="#515C6F" 
+                               FontSize="15" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <Image Source="arrow.png" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <BoxView Margin="0,19,0,19"
+                        HeightRequest="0.4"
+                        BackgroundColor="#727C8E" 
+                        HorizontalOptions="FillAndExpand"/>
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout>
+                        <Label Text="DANH SÁCH SẢN PHẨM" TextColor="#515C6F"
+                       FontSize="12" Margin="0,0,0,8"/>
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="Center">
+                            <Image Source="Group13.png" WidthRequest="114" HeightRequest="114"/>
+                            <StackLayout VerticalOptions="Center">
+                                <Label Text="Faux Sued Ankle Boots" FontAttributes="Bold" FontSize="15" TextColor="#515C6F"/>
+                                <Label Text="7, Hot Pink" FontSize="15" TextColor="#515C6F" WidthRequest="254"/>
+                                <Label Text="1.000.000 VNĐ" TextColor="Red"/>
+
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" Spacing="5">
+                        <ImageButton Source="IconSubstract.png" />
+                        <Label Text="1" VerticalOptions="Center"/>
+                        <ImageButton Source="IconAdd.png" />
+                    </StackLayout>
+                </StackLayout>
+                <BoxView Margin="0,19,0,19"
+                        HeightRequest="0.4"
+                        BackgroundColor="#727C8E" 
+                        HorizontalOptions="FillAndExpand"/>
+                <Label Text="Ghi chú cho người giao hàng (optional)" 
+                   TextColor="#515C6F" FontSize="14" 
+                   HorizontalTextAlignment="End" />
+                <BoxView Margin="0,19,0,19"
+                        HeightRequest="0.4"
+                        BackgroundColor="#727C8E" 
+                        HorizontalOptions="FillAndExpand"/>
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="tag.png" />
+                    <Label Text="Thêm khuyến mãi" TextColor="#FF6969"
+                       FontSize="15" Margin="13,0,0,0"/>
+                    <Image Source="arrow.png" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <StackLayout BackgroundColor="White" Orientation="Horizontal">
+                    <StackLayout Margin="0,14,0,0">
+                        <Label Text="Thành tiền" FontSize="10" TextColor="#515C6F" />
+                        <Label Text="1.000.000 VNĐ" TextColor="#515C6F" FontAttributes="Bold" FontSize="20"/>
+                        <Label Text="Miễn phí vận chuyển nội thành" TextColor="#727C8E" FontSize="12" />
+                    </StackLayout>
+                    <ImageButton Source="button.png" BackgroundColor="transparent" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
