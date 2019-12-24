@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CommerceApp.Views.ForgotPass"
+             xmlns:gradient ="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms">
+    <ContentPage.Content>
+        <Grid >
+            <gradient:SfGradientView>
+                <gradient:SfGradientView.BackgroundBrush>
+                    <gradient:SfLinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                        <gradient:SfLinearGradientBrush.GradientStops>
+                            <gradient:SfGradientStop Color="#60C3FF" Offset="0.0" />
+                            <gradient:SfGradientStop Color="#5574F7" Offset="1.0" />
+                        </gradient:SfLinearGradientBrush.GradientStops>
+                    </gradient:SfLinearGradientBrush>
+                </gradient:SfGradientView.BackgroundBrush>
+            </gradient:SfGradientView>
+
+
+            <StackLayout Margin="20" VerticalOptions="CenterAndExpand">
+                <StackLayout VerticalOptions="Start" Padding="0,0,0,100">
+                    <Label Text="Quên mật khẩu" TextColor="White" FontSize="36" HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+                <StackLayout VerticalOptions="Center" Spacing="0" Padding="20">
+                    <Label Text="Email" FontSize="12" Font="Gibson"  TextColor="#FFFFFF4D"/>
+                    <Entry Text="Aaron Smith" TextColor="White"/>
+                    <StackLayout >
+                        <Button Text="GỬI EMAIL" Font="Gibson" HeightRequest="50" 
+                            TextColor="#5887F9" BackgroundColor="White"
+                            Margin="0,35,0,0" VerticalOptions="Center" CornerRadius="6" Clicked="Button_Clicked"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

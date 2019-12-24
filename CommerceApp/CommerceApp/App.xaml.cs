@@ -12,7 +12,7 @@ namespace CommerceApp
         {
             InitializeComponent();
 
-            MainPage = new TestItemView();
+            MainPage = new Camera();
         }
 
         protected override void OnStart()

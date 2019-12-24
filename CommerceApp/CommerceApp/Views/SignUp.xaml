@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CommerceApp.Views.SignUp"
+             xmlns:gradient ="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms">
+    <ContentPage.Content>
+        <Grid >
+            <gradient:SfGradientView>
+                <gradient:SfGradientView.BackgroundBrush>
+                    <gradient:SfLinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                        <gradient:SfLinearGradientBrush.GradientStops>
+                            <gradient:SfGradientStop Color="#60C3FF" Offset="0.0" />
+                            <gradient:SfGradientStop Color="#5574F7" Offset="1.0" />
+                        </gradient:SfLinearGradientBrush.GradientStops>
+                    </gradient:SfLinearGradientBrush>
+                </gradient:SfGradientView.BackgroundBrush>
+            </gradient:SfGradientView>
+
+
+
+            <StackLayout Margin="20" VerticalOptions="CenterAndExpand">
+                <StackLayout VerticalOptions="Start" Padding="0,0,0,20">
+                    <Label Text="Đăng ký" TextColor="White" FontSize="36" HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+                <StackLayout VerticalOptions="Center" Spacing="0" Padding="20">
+                    <Label Text="Username" FontSize="12" Font="Gibson"  TextColor="#FFFFFF4D"/>
+                    <Entry Text="Aaron Smith" TextColor="White"/>
+                    <Label Text="Số điện thoại" FontSize="12" Font="Gibson" TextColor="#FFFFFF4D"/>
+                    <Entry Text="Aaron Smith" TextColor="White" />
+                    <Label Text="Email" FontSize="12" Font="Gibson"  TextColor="#FFFFFF4D"/>
+                    <Entry Text="Aaron Smith" TextColor="White"/>
+                    <Label Text="Mật khẩu" FontSize="12" Font="Gibson" TextColor="#FFFFFF4D"/>
+                    <Entry Placeholder="Password" TextColor="White" IsPassword="True"/>
+                    <Label Text="Xác nhận mật khẩu" FontSize="12" Font="Gibson" TextColor="#FFFFFF4D"/>
+                    <Entry Placeholder="Password" TextColor="White" IsPassword="True"/>
+                    <StackLayout >
+                        <Button Text="ĐĂNG KÝ" ImageSource="./registericon.png"  Font="Gibson" HeightRequest="50" 
+                            TextColor="#5887F9" BackgroundColor="White"
+                            Margin="0,35,0,0" HorizontalOptions="CenterAndExpand" CornerRadius="6"/>
+                        <Label LineBreakMode="WordWrap">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Khi bạn đăng ký là bạn đã chấp nhận " TextColor="White" />
+                                    <Span Text="điều khoản sử dụng " TextColor="Red" FontAttributes="Bold"/>
+                                    <Span Text="và " TextColor="White" FontAttributes="Bold" />
+                                    <Span Text="chính sách của chúng tôi." TextColor="Red" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                    
+                    
+                </StackLayout>
+                
+            </StackLayout>
+
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

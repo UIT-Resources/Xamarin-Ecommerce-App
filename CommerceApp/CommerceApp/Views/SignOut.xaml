@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CommerceApp.Views.SignOut">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" BackgroundColor="White">
+            <Label Text="Đăng xuất" FontSize="24" Font="Gibson" FontAttributes="Bold"
+                   TextColor="#5887F9"
+                HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Bạn chắc chắn muốn đăng xuất ?" FontSize="16" Font="Gibson"
+                   TextColor="Black"
+                HorizontalOptions="CenterAndExpand" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button Text="Có" HorizontalOptions="Center" TextColor="#5887F9" FontSize="12"/>
+                <Button Text="Không" HorizontalOptions="Center" FontSize="12"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

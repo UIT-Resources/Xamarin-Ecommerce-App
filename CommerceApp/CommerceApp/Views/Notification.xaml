@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CommerceApp.Views.Notification"
+             Title="Thông báo">
+    <ContentPage.Content>
+        <ListView x:Name="List" ItemsSource="{Binding .}" HasUnevenRows="True" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell >
+                        
+                        <Frame CornerRadius="6" Margin="13">
+                            <StackLayout >
+                                <Grid RowSpacing="5" ColumnSpacing="10">
+                                    <Grid.RowDefinitions >
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="path.png" Grid.Column="0" Grid.RowSpan="2"/>
+                                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding title}" FontSize="14" VerticalOptions="Start"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding time}" FontSize="12" VerticalOptions="Start"/>
+                                    <ImageButton Clicked="showoptionnotify" Source="optionsicon.png" Grid.RowSpan="2" Grid.Column="2" VerticalOptions="CenterAndExpand"/>
+                                </Grid>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

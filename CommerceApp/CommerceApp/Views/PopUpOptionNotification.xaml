@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CommerceApp.Views.PopUpOptionNotification"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup">
+    <!--  You can set an animation in the xaml file or in the csharp code behind  -->
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation DurationIn="400"
+                                   DurationOut="300"
+                                   EasingIn="SinOut"
+                                   EasingOut="SinIn"
+                                   HasBackgroundAnimation="True"
+                                   PositionIn="Center"
+                                   PositionOut="Center"
+                                   ScaleIn="1.2"
+                                   ScaleOut="0.8" />
+    </pages:PopupPage.Animation>
+    <!--  You can use any elements here which are extended from Xamarin.Forms.View  -->
+    <Frame CornerRadius="6"  
+           HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <StackLayout BackgroundColor="White"
+                     Padding="5" >
+            <StackLayout Orientation="Vertical" Spacing="0">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="confirmicon.png" Margin="10"/>
+                    <StackLayout VerticalOptions="Center">
+                        <Label Text="Đánh dấu đã xem" VerticalOptions="Center"/>
+                        <BoxView 
+                                HeightRequest="0.4"
+                                BackgroundColor="#727C8E" 
+                                HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="clockicon.png" Margin="10"/>
+                    <StackLayout VerticalOptions="Center">
+                        <Label Text="Đánh dấu chưa xem" VerticalOptions="Center"/>
+                        <BoxView 
+                                HeightRequest="0.4"
+                                BackgroundColor="#727C8E" 
+                                HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+                    
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="trash.png"  Margin="10"/>
+                    <Label Text="Xóa thông báo" VerticalOptions="Center"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </Frame>
+</pages:PopupPage>

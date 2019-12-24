@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CommerceApp.Views.Camera">
+    <ScrollView>
+        <StackLayout>
+            <Label Text="Welcome to Camera Access In Xamarin forms"/>
+            <Button Text="Take a Photo"    
+                    x:Name="takePhoto"    
+                    BackgroundColor="Fuchsia"
+                    />
+            <Button Text="Pick a Photo"    
+                    x:Name="pickPhoto"    
+                    BackgroundColor="Blue"
+                    />
+            <Image x:Name="image"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
