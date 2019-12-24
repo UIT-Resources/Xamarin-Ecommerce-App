@@ -19,11 +19,13 @@ namespace CommerceApp.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
-            CrossCurrentActivity.Current.Init(this, savedInstanceState);
+            CrossCurrentActivity.Current.Init(this, savedInstanceState); // Init CrossCurentActivity for camera
 
             base.OnCreate(savedInstanceState);
 
-            await CrossMedia.Current.Initialize();
+            await CrossMedia.Current.Initialize(); // intend for camera
+
+            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);  // Init for PopUp
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
