@@ -971,7 +971,7 @@
       ]
     },
     "Syncfusion.Licensing/17.4.0.39": {
-      "sha512": "VcQTsf51gQSfFDrIGWAnrNxEs/hEguVa3K19oSoDgV+HVuPA72ONfZrSPW95zYKxwiexTijlJIX4SD74tjYrlA==",
+      "sha512": "Wnmsd2EBvBQd1g/ZBq9BujJdR74gdoQMbiw17mazxsTOclsV8KA7O9Wn3rc5O1bIje+B65RVtpefSC7ZzTpYbg==",
       "type": "package",
       "path": "syncfusion.licensing/17.4.0.39",
       "files": [
@@ -2150,24 +2150,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
+    "C:\\Users\\AdDoanNgocTai\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp.Android\\CommerceApp.Android.csproj",
+      "projectUniqueName": "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp.Android\\CommerceApp.Android.csproj",
       "projectName": "CommerceApp.Android",
-      "projectPath": "D:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp.Android\\CommerceApp.Android.csproj",
-      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "D:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp.Android\\obj\\",
+      "projectPath": "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp.Android\\CommerceApp.Android.csproj",
+      "packagesPath": "C:\\Users\\AdDoanNgocTai\\.nuget\\packages\\",
+      "outputPath": "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\AdDoanNgocTai\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2181,8 +2181,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "D:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp\\CommerceApp.csproj": {
-              "projectPath": "D:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp\\CommerceApp.csproj"
+            "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp\\CommerceApp.csproj": {
+              "projectPath": "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp\\CommerceApp.csproj"
             }
           }
         }

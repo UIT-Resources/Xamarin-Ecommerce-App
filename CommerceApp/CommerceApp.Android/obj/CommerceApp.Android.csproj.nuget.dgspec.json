@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp.Android\\CommerceApp.Android.csproj": {}
+    "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp.Android\\CommerceApp.Android.csproj": {}
   },
   "projects": {
-    "D:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp.Android\\CommerceApp.Android.csproj": {
+    "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp.Android\\CommerceApp.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp.Android\\CommerceApp.Android.csproj",
+        "projectUniqueName": "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp.Android\\CommerceApp.Android.csproj",
         "projectName": "CommerceApp.Android",
-        "projectPath": "D:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp.Android\\CommerceApp.Android.csproj",
-        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp.Android\\obj\\",
+        "projectPath": "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp.Android\\CommerceApp.Android.csproj",
+        "packagesPath": "C:\\Users\\AdDoanNgocTai\\.nuget\\packages\\",
+        "outputPath": "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AdDoanNgocTai\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "D:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp\\CommerceApp.csproj": {
-                "projectPath": "D:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp\\CommerceApp.csproj"
+              "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp\\CommerceApp.csproj": {
+                "projectPath": "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp\\CommerceApp.csproj"
               }
             }
           }
@@ -70,21 +70,21 @@
         }
       }
     },
-    "D:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp\\CommerceApp.csproj": {
+    "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp\\CommerceApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp\\CommerceApp.csproj",
+        "projectUniqueName": "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp\\CommerceApp.csproj",
         "projectName": "CommerceApp",
-        "projectPath": "D:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp\\CommerceApp.csproj",
-        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp\\obj\\",
+        "projectPath": "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp\\CommerceApp.csproj",
+        "packagesPath": "C:\\Users\\AdDoanNgocTai\\.nuget\\packages\\",
+        "outputPath": "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AdDoanNgocTai\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

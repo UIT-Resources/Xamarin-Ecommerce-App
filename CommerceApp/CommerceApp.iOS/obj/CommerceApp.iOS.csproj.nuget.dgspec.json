@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\01_UIT\\04_Fourth Year\\Xamarin\\Project\\Sources\\CommerceApp\\CommerceApp.iOS\\CommerceApp.iOS.csproj": {}
+    "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp.iOS\\CommerceApp.iOS.csproj": {}
   },
   "projects": {
-    "E:\\01_UIT\\04_Fourth Year\\Xamarin\\Project\\Sources\\CommerceApp\\CommerceApp.iOS\\CommerceApp.iOS.csproj": {
+    "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp.iOS\\CommerceApp.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\01_UIT\\04_Fourth Year\\Xamarin\\Project\\Sources\\CommerceApp\\CommerceApp.iOS\\CommerceApp.iOS.csproj",
+        "projectUniqueName": "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp.iOS\\CommerceApp.iOS.csproj",
         "projectName": "CommerceApp.iOS",
-        "projectPath": "E:\\01_UIT\\04_Fourth Year\\Xamarin\\Project\\Sources\\CommerceApp\\CommerceApp.iOS\\CommerceApp.iOS.csproj",
+        "projectPath": "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp.iOS\\CommerceApp.iOS.csproj",
         "packagesPath": "C:\\Users\\AdDoanNgocTai\\.nuget\\packages\\",
-        "outputPath": "E:\\01_UIT\\04_Fourth Year\\Xamarin\\Project\\Sources\\CommerceApp\\CommerceApp.iOS\\obj\\",
+        "outputPath": "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "E:\\01_UIT\\04_Fourth Year\\Xamarin\\Project\\Sources\\CommerceApp\\CommerceApp\\CommerceApp.csproj": {
-                "projectPath": "E:\\01_UIT\\04_Fourth Year\\Xamarin\\Project\\Sources\\CommerceApp\\CommerceApp\\CommerceApp.csproj"
+              "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp\\CommerceApp.csproj": {
+                "projectPath": "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp\\CommerceApp.csproj"
               }
             }
           }
@@ -65,14 +65,14 @@
         }
       }
     },
-    "E:\\01_UIT\\04_Fourth Year\\Xamarin\\Project\\Sources\\CommerceApp\\CommerceApp\\CommerceApp.csproj": {
+    "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp\\CommerceApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\01_UIT\\04_Fourth Year\\Xamarin\\Project\\Sources\\CommerceApp\\CommerceApp\\CommerceApp.csproj",
+        "projectUniqueName": "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp\\CommerceApp.csproj",
         "projectName": "CommerceApp",
-        "projectPath": "E:\\01_UIT\\04_Fourth Year\\Xamarin\\Project\\Sources\\CommerceApp\\CommerceApp\\CommerceApp.csproj",
+        "projectPath": "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp\\CommerceApp.csproj",
         "packagesPath": "C:\\Users\\AdDoanNgocTai\\.nuget\\packages\\",
-        "outputPath": "E:\\01_UIT\\04_Fourth Year\\Xamarin\\Project\\Sources\\CommerceApp\\CommerceApp\\obj\\",
+        "outputPath": "E:\\Xamarin-Ecommerce-App\\CommerceApp\\CommerceApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -110,6 +110,18 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
+            "Rg.Plugins.Popup": {
+              "target": "Package",
+              "version": "[1.2.0.223, )"
+            },
+            "Syncfusion.Xamarin.Core": {
+              "target": "Package",
+              "version": "[17.4.0.39, )"
+            },
+            "Xam.Plugin.Media": {
+              "target": "Package",
+              "version": "[4.0.1.5, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.2.0, )"
@@ -129,7 +141,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
