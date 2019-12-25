@@ -12,7 +12,7 @@ namespace CommerceApp
         {
             InitializeComponent();
 
-            MainPage = new ControlPage();
+            MainPage = new PayMent();
         }
 
         protected override void OnStart()

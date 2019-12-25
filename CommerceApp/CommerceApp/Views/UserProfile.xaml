@@ -28,7 +28,7 @@
                 <Frame CornerRadius="10" Margin="12,24,12,0">
                     <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Spacing="10">
                         <StackLayout Orientation="Horizontal" HeightRequest="59">
-                            <Image Source="IconProfile.png" Margin="0,0,19,0" />
+                            <Image Source="UserProfile.png" Margin="0,0,19,0" />
                             <StackLayout Spacing="0">
                                 <Label Text="HỌ VÀ TÊN" TextColor="#515C6F" Opacity="0.5"/>
                                 <Entry HorizontalOptions="End" WidthRequest="250" Text="Nguyễn Văn A" TextColor="#515C6F" FontSize="15"/>

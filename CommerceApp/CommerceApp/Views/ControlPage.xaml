@@ -28,12 +28,12 @@
         </NavigationPage>
         <NavigationPage Title="Thông báo" IconImageSource="Notification.png">
             <x:Arguments>
-                <views:HomePage/>
+                <views:Notification/>
             </x:Arguments>
         </NavigationPage>
         <NavigationPage Title="Profile" IconImageSource="Profile.png">
             <x:Arguments>
-                <views:HomePage/>
+                <views:Profile/>
             </x:Arguments>
         </NavigationPage>
     </TabbedPage.Children>
