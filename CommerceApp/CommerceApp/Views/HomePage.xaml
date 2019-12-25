@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:CommerceApp.Views"
+             x:Class="CommerceApp.Views.HomePage">
+    <ContentPage.Resources>
+        <ControlTemplate x:Key="CategoryCardView">
+            <StackLayout Margin="10,20">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{TemplateBinding CategoryTitle}" TextColor="#515C6F" FontAttributes="Bold" FontSize="20" FontFamily="Neusa Next Std" Margin="10,0,0,0" VerticalOptions="Center"/>
+                    <Label Text="Xen thêm" TextColor="#FF6969" FontSize="12" FontFamily="Neusa Next Std" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Margin="0,0,10,0"/>
+                </StackLayout>
+                <ContentPresenter HeightRequest="{TemplateBinding SectionHeight}"/>
+            </StackLayout>
+        
+        </ControlTemplate>
+    </ContentPage.Resources>
+
+    <NavigationPage.TitleView>
+        <local:HomeNavigationBar/>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <local:CategoryView CategoryTitle="Danh mục" ControlTemplate="{DynamicResource CategoryCardView}" SectionHeight="110">
+                <CollectionView  x:Name="categorySection" ItemsSource="{Binding .}" ItemSizingStrategy="MeasureFirstItem"
+                             EmptyView="Không có bất kỳ nội dung nào để hiển thị" >
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" ItemSpacing="0" IndicatorView.ItemsSourceBy="categorySection"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid RowSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="90" />
+                                    <RowDefinition Height="20" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                </Grid.ColumnDefinitions>
+                                <ImageButton  Grid.Row="0" Source="{Binding Icon}" BackgroundColor="Transparent" Clicked="ButtonClicked"/>
+                                <Label Grid.Row="1" Text="{Binding Name}" FontSize="15" FontFamily="Neusa Next Std" HorizontalOptions="Center"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </local:CategoryView>
+
+
+            <local:CategoryView CategoryTitle="Sự kiện" ControlTemplate="{DynamicResource CategoryCardView}" SectionHeight="200">
+                <StackLayout>
+                    <CarouselView x:Name="eventSection" EmptyView="Không có bất kỳ nội dung nào để hiện thị">
+                        <CarouselView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Horizontal" ItemSpacing="0"/>
+                        </CarouselView.ItemsLayout>
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <ImageButton Source="Banner.png" HorizontalOptions="CenterAndExpand" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                    <IndicatorView ItemsSourceBy="eventSection" IndicatorColor="LightGray" SelectedIndicatorColor="DarkGray" HorizontalOptions="Center" />
+                </StackLayout>
+            </local:CategoryView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

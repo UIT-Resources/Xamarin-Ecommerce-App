@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommerceApp.Android", "Comm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommerceApp.iOS", "CommerceApp.iOS\CommerceApp.iOS.csproj", "{4D6B8D86-7344-4406-B312-134E8F476BBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommerceApp", "CommerceApp\CommerceApp.csproj", "{9B5E1780-A082-412F-964E-1FE4FFE97BD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommerceApp", "CommerceApp\CommerceApp.csproj", "{9B5E1780-A082-412F-964E-1FE4FFE97BD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
