@@ -1,13 +1,24 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{7F1810C2-986C-4A37-9FD3-42264A6F36BF}|Default">
   <MonoDevelop.Ide.ItemProperties.CommerceApp.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" PreferredExecutionTarget="Android.192.168.56.101:5555" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="CommerceApp/Models/Ward.cs">
     <Files>
       <File FileName="CommerceApp/Models/Api.cs" Line="43" Column="103" />
       <File FileName="CommerceApp/Views/Product/DetailProduct.xaml" Line="31" Column="100" />
-      <File FileName="CommerceApp/ViewModels/ProductModel.cs" Line="29" Column="10" />
+      <File FileName="CommerceApp/ViewModels/ProductModel.cs" Line="28" Column="37" />
       <File FileName="CommerceApp/App.xaml.cs" Line="17" Column="1" />
       <File FileName="CommerceApp/Models/Product.cs" Line="40" Column="2" />
       <File FileName="CommerceApp/Models/Client.cs" Line="9" Column="6" />
+      <File FileName="CommerceApp/Models/Address.cs" Line="16" Column="46" />
+      <File FileName="CommerceApp/Models/Advertisement.cs" Line="11" Column="47" />
+      <File FileName="CommerceApp/Models/Bill.cs" Line="22" Column="1" />
+      <File FileName="CommerceApp/Models/Cart.cs" Line="14" Column="2" />
+      <File FileName="CommerceApp/Models/Description.cs" Line="17" Column="1" />
+      <File FileName="CommerceApp/Models/DetailBill.cs" Line="12" Column="48" />
+      <File FileName="CommerceApp/Models/District.cs" Line="12" Column="1" />
+      <File FileName="CommerceApp/Models/Favorite.cs" Line="12" Column="50" />
+      <File FileName="CommerceApp/Models/Province.cs" Line="11" Column="1" />
+      <File FileName="CommerceApp/Models/productType.cs" Line="12" Column="6" />
+      <File FileName="CommerceApp/Models/Ward.cs" Line="12" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,7 +29,7 @@
                 <Node name="PackageDependencies" expanded="True" />
               </Node>
               <Node name="Models" expanded="True">
-                <Node name="Client.cs" selected="True" />
+                <Node name="Api.cs" selected="True" />
               </Node>
               <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
