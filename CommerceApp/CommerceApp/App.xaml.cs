@@ -9,18 +9,20 @@ namespace CommerceApp
 {
     public partial class App : Application
     {
-        static SessionDatabase database;
-        public static SessionDatabase Database
+        // Begin Create Local Database (SQLite)
+        static ItemRepository database;
+        public static ItemRepository Database
         {
             get
             {
                 if (database == null)
                 {
-                    database = new SessionDatabase();
+                    database = new ItemRepository();
                 }
                 return database;
             }
         }
+        // End Create Local Database (SQLite)
 
         public App()
         {
