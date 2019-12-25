@@ -12,7 +12,7 @@ namespace CommerceApp
         {
             InitializeComponent();
 
-            MainPage = new UserProfile();
+            MainPage = new Loggin();
         }
 
         protected override void OnStart()

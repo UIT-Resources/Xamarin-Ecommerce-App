@@ -11,3 +11,31 @@ E:\01_UIT\04_Fourth Year\Xamarin\Project\Sources\CommerceApp\CommerceApp\obj\Deb
 E:\01_UIT\04_Fourth Year\Xamarin\Project\Sources\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\CommerceApp.dll
 E:\01_UIT\04_Fourth Year\Xamarin\Project\Sources\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\ref\CommerceApp.dll
 E:\01_UIT\04_Fourth Year\Xamarin\Project\Sources\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\CommerceApp.pdb
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\bin\Debug\netstandard2.0\CommerceApp.deps.json
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\bin\Debug\netstandard2.0\CommerceApp.dll
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\bin\Debug\netstandard2.0\ref\CommerceApp.dll
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\bin\Debug\netstandard2.0\CommerceApp.pdb
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\CommerceApp.csprojAssemblyReference.cache
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\Views\ForgotPass.xaml.g.cs
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\Views\Logged.xaml.g.cs
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\Views\Loggin.xaml.g.cs
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\Views\SignUp.xaml.g.cs
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\Views\TestItemView.xaml.g.cs
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\CommerceApp.AssemblyInfoInputs.cache
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\CommerceApp.AssemblyInfo.cs
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\CommerceApp.dll
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\ref\CommerceApp.dll
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\CommerceApp.pdb
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\Views\SignOut.xaml.g.cs
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\Views\Notification.xaml.g.cs
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\Views\PopUpOptionNotification.xaml.g.cs
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\Views\Profile.xaml.g.cs
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\Views\UserProfile.xaml.g.cs
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\Views\Cart.xaml.g.cs
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\Views\PayMent.xaml.g.cs
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\Views\Success.xaml.g.cs
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\Views\Camera.xaml.g.cs
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\XamlC.stamp
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\Views\PopUpSigOut.xaml.g.cs
+D:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp\obj\Debug\netstandard2.0\Views\ShowPopUpSigOutExample.xaml.g.cs
