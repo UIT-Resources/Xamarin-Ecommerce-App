@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CommerceApp.Views.Product.DetailProduct">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:viewmodel="clr-namespace:CommerceApp.ViewModels"
+             x:Class="CommerceApp.Views.Product.DetailProduct">
+        <ContentPage.BindingContext>
+        <viewmodel:ProductModel/>
+    </ContentPage.BindingContext>
         <ScrollView Padding="8,8,8,10">
         <StackLayout>
             <!-- Place new controls here -->
@@ -18,7 +24,7 @@
             </StackLayout>
 
  <StackLayout Padding="5,-5,5,0" Orientation="Horizontal" >
-                                <Label TextColor="Black"  FontSize="13" Text="Cong nghe IT"/>
+                                <Label TextColor="Black"  FontSize="13" Text="{Binding Name, Mode=TwoWay}"/>
                     <ContentView  >
                    <Label Text="Sale 50%" FontSize="12" TextColor="Red" />
                </ContentView>
@@ -55,7 +61,7 @@
 
          
             <StackLayout Padding="0,10,0,5" HorizontalOptions="Center" Orientation="Vertical">
-                <Button BackgroundColor="Red" CornerRadius="10" TextColor="White" WidthRequest="300"  x:Name="mua" Text="Mua Ngay"/>
+                <Button BackgroundColor="Red" Command="{Binding Get}" CornerRadius="10" TextColor="White" WidthRequest="300"  x:Name="mua" Text="Mua Ngay"/>
                 <Button BackgroundColor="#2897E6" CornerRadius="10" TextColor="White" WidthRequest="300"   Text="Them vao gio hang"/>
             </StackLayout>
 

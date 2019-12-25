@@ -25,3 +25,17 @@ E:/01_UIT/04_Fourth Year/Xamarin/Project/Sources/CommerceApp/CommerceApp/obj/Deb
 /Users/khoadang/Desktop/Ky1/App/Xamarin-Ecommerce-App-master/CommerceApp/CommerceApp/bin/Debug/netstandard2.0/ref/CommerceApp.dll
 /Users/khoadang/Desktop/Ky1/App/Xamarin-Ecommerce-App-master/CommerceApp/CommerceApp/bin/Debug/netstandard2.0/CommerceApp.pdb
 /Users/khoadang/Desktop/Ky1/App/Xamarin-Ecommerce-App-master/CommerceApp/CommerceApp/obj/Debug/netstandard2.0/XamlC.stamp
+/Users/khoadang/Desktop/Xamarin/Xamarin-Ecommerce-App/CommerceApp/CommerceApp/bin/Debug/netstandard2.0/CommerceApp.deps.json
+/Users/khoadang/Desktop/Xamarin/Xamarin-Ecommerce-App/CommerceApp/CommerceApp/bin/Debug/netstandard2.0/CommerceApp.dll
+/Users/khoadang/Desktop/Xamarin/Xamarin-Ecommerce-App/CommerceApp/CommerceApp/bin/Debug/netstandard2.0/ref/CommerceApp.dll
+/Users/khoadang/Desktop/Xamarin/Xamarin-Ecommerce-App/CommerceApp/CommerceApp/bin/Debug/netstandard2.0/CommerceApp.pdb
+/Users/khoadang/Desktop/Xamarin/Xamarin-Ecommerce-App/CommerceApp/CommerceApp/obj/Debug/netstandard2.0/CommerceApp.csprojAssemblyReference.cache
+/Users/khoadang/Desktop/Xamarin/Xamarin-Ecommerce-App/CommerceApp/CommerceApp/obj/Debug/netstandard2.0/App.xaml.g.cs
+/Users/khoadang/Desktop/Xamarin/Xamarin-Ecommerce-App/CommerceApp/CommerceApp/obj/Debug/netstandard2.0/Views/Product/DetailProduct.xaml.g.cs
+/Users/khoadang/Desktop/Xamarin/Xamarin-Ecommerce-App/CommerceApp/CommerceApp/obj/Debug/netstandard2.0/Views/TestItemView.xaml.g.cs
+/Users/khoadang/Desktop/Xamarin/Xamarin-Ecommerce-App/CommerceApp/CommerceApp/obj/Debug/netstandard2.0/CommerceApp.AssemblyInfoInputs.cache
+/Users/khoadang/Desktop/Xamarin/Xamarin-Ecommerce-App/CommerceApp/CommerceApp/obj/Debug/netstandard2.0/CommerceApp.AssemblyInfo.cs
+/Users/khoadang/Desktop/Xamarin/Xamarin-Ecommerce-App/CommerceApp/CommerceApp/obj/Debug/netstandard2.0/XamlC.stamp
+/Users/khoadang/Desktop/Xamarin/Xamarin-Ecommerce-App/CommerceApp/CommerceApp/obj/Debug/netstandard2.0/CommerceApp.dll
+/Users/khoadang/Desktop/Xamarin/Xamarin-Ecommerce-App/CommerceApp/CommerceApp/obj/Debug/netstandard2.0/ref/CommerceApp.dll
+/Users/khoadang/Desktop/Xamarin/Xamarin-Ecommerce-App/CommerceApp/CommerceApp/obj/Debug/netstandard2.0/CommerceApp.pdb

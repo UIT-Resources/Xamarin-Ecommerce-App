@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/khoadang/Desktop/Ky1/App/Xamarin-Ecommerce-App-master/CommerceApp/CommerceApp/CommerceApp.csproj": {}
+    "/Users/khoadang/Desktop/Xamarin/Xamarin-Ecommerce-App/CommerceApp/CommerceApp/CommerceApp.csproj": {}
   },
   "projects": {
-    "/Users/khoadang/Desktop/Ky1/App/Xamarin-Ecommerce-App-master/CommerceApp/CommerceApp/CommerceApp.csproj": {
+    "/Users/khoadang/Desktop/Xamarin/Xamarin-Ecommerce-App/CommerceApp/CommerceApp/CommerceApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/khoadang/Desktop/Ky1/App/Xamarin-Ecommerce-App-master/CommerceApp/CommerceApp/CommerceApp.csproj",
+        "projectUniqueName": "/Users/khoadang/Desktop/Xamarin/Xamarin-Ecommerce-App/CommerceApp/CommerceApp/CommerceApp.csproj",
         "projectName": "CommerceApp",
-        "projectPath": "/Users/khoadang/Desktop/Ky1/App/Xamarin-Ecommerce-App-master/CommerceApp/CommerceApp/CommerceApp.csproj",
+        "projectPath": "/Users/khoadang/Desktop/Xamarin/Xamarin-Ecommerce-App/CommerceApp/CommerceApp/CommerceApp.csproj",
         "packagesPath": "/Users/khoadang/.nuget/packages/",
-        "outputPath": "/Users/khoadang/Desktop/Ky1/App/Xamarin-Ecommerce-App-master/CommerceApp/CommerceApp/obj/",
+        "outputPath": "/Users/khoadang/Desktop/Xamarin/Xamarin-Ecommerce-App/CommerceApp/CommerceApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/khoadang/.config/NuGet/NuGet.Config"
@@ -41,6 +41,14 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[4.7.0, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",

@@ -1,2 +1,2 @@
-AdbTarget=-s 8UEDU17C06001017
+AdbTarget=-s 192.168.56.101:5555
 AdbOptions=
