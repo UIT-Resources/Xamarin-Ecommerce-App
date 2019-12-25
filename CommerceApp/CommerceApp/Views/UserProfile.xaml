@@ -7,84 +7,92 @@
              x:Class="CommerceApp.Views.UserProfile">
     <ContentPage.Content>
         <ScrollView>
-        <StackLayout Spacing="0" >
-            <Image Source="Avatar.png" HeightRequest="150" WidthRequest="150" 
-                    Margin="0,12,0,0" HorizontalOptions="CenterAndExpand" />
+            <StackLayout Spacing="0" >
+                <Frame CornerRadius="100" 
+                        HeightRequest="130"
+                        WidthRequest="130"
+                        HorizontalOptions="Center"
+                        Padding="0"
+                        IsClippedToBounds="True" Margin="0,12,0,2">
+                    <Image Source="userdefault.png" x:Name="image" 
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" Aspect="Fill" />
+                </Frame>
 
-            <StackLayout Orientation="Horizontal"
+                <StackLayout Orientation="Horizontal"
                          HorizontalOptions="Center" Spacing="15">
-                <ImageButton Source="IconSetAvatarByCamera.png" />
-                <ImageButton Source="IconSetAvatarByCollection.png" />
-                <ImageButton Source="IconRemoveAvatar.png" />
-            </StackLayout>
-            <Frame CornerRadius="10" Margin="12,24,12,0">
-                <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Spacing="10">
-                    <StackLayout Orientation="Horizontal" HeightRequest="59">
-                        <Image Source="IconProfile.png" Margin="0,0,19,0" />
-                        <StackLayout Spacing="0">
-                            <Label Text="HỌ VÀ TÊN" TextColor="#515C6F" Opacity="0.5"/>
+                    <ImageButton Source="IconSetAvatarByCamera.png" x:Name="takePhoto"/>
+                    <ImageButton Source="IconSetAvatarByCollection.png" x:Name="pickPhoto" />
+                    <ImageButton Source="IconRemoveAvatar.png" x:Name="deletePhoto"/>
+                </StackLayout>
+                <Frame CornerRadius="10" Margin="12,24,12,0">
+                    <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Spacing="10">
+                        <StackLayout Orientation="Horizontal" HeightRequest="59">
+                            <Image Source="IconProfile.png" Margin="0,0,19,0" />
+                            <StackLayout Spacing="0">
+                                <Label Text="HỌ VÀ TÊN" TextColor="#515C6F" Opacity="0.5"/>
                                 <Entry HorizontalOptions="End" WidthRequest="250" Text="Nguyễn Văn A" TextColor="#515C6F" FontSize="15"/>
+                            </StackLayout>
                         </StackLayout>
-                    </StackLayout>
                         <StackLayout Orientation="Horizontal" HeightRequest="59">
                             <Image Source="IconMail.png" Margin="0,0,19,0" />
-                        <StackLayout Spacing="0">
-                            <Label Text="ĐỊA CHỈ EMAIL *" TextColor="#515C6F" Opacity="0.5"/>
+                            <StackLayout Spacing="0">
+                                <Label Text="ĐỊA CHỈ EMAIL *" TextColor="#515C6F" Opacity="0.5"/>
                                 <Entry Text="Nguyễn Văn A" WidthRequest="250" TextColor="#515C6F" FontSize="15"/>
+                            </StackLayout>
                         </StackLayout>
-                    </StackLayout>
                         <StackLayout Orientation="Horizontal" >
                             <Image Source="Path5299.png" Margin="0,0,19,0"/>
-                        <StackLayout Spacing="0" Padding="0">
-                            <Label Text="SỐ ĐIỆN THOẠI" TextColor="#515C6F" Opacity="0.5"/>
+                            <StackLayout Spacing="0" Padding="0">
+                                <Label Text="SỐ ĐIỆN THOẠI" TextColor="#515C6F" Opacity="0.5"/>
                                 <Entry Keyboard="Numeric" WidthRequest="250" TextColor="#515C6F" FontSize="15"/>
+                            </StackLayout>
                         </StackLayout>
-                    </StackLayout>
                         <StackLayout Orientation="Horizontal" HeightRequest="59">
                             <Image Source="IconBirthdayCake.png" Margin="0,0,21,0" />
-                        <StackLayout Spacing="0">
-                            <Label Text="NGÀY SINH" TextColor="#515C6F" Opacity="0.5"/>
+                            <StackLayout Spacing="0">
+                                <Label Text="NGÀY SINH" TextColor="#515C6F" Opacity="0.5"/>
                                 <DatePicker TextColor="#515C6F" WidthRequest="250" FontSize="15"/>
+                            </StackLayout>
                         </StackLayout>
-                    </StackLayout>
                         <StackLayout Orientation="Horizontal" HeightRequest="59">
                             <Image Source="IconPassword.png" Margin="0,0,21,0" />
-                        <StackLayout Spacing="0">
-                            <Label Text="MẬT KHẨU" TextColor="#515C6F" Opacity="0.5"/>
-                            <Entry IsPassword="True" WidthRequest="250" TextColor="#515C6F" FontSize="15"/>
+                            <StackLayout Spacing="0">
+                                <Label Text="MẬT KHẨU" TextColor="#515C6F" Opacity="0.5"/>
+                                <Entry IsPassword="True" WidthRequest="250" TextColor="#515C6F" FontSize="15"/>
+                            </StackLayout>
                         </StackLayout>
                     </StackLayout>
-                </StackLayout>
-            </Frame>
+                </Frame>
                 <StackLayout Orientation="Horizontal">
                     <CheckBox x:Name="Thaydoimatkhau" Color="Black" Margin="18,8,0,0" />
                     <Label Text="Thay đổi mật khẩu" VerticalOptions="Center"/>
                 </StackLayout>
-            <Frame CornerRadius="10" Margin="12,8,12,0" BindingContext="{x:Reference Thaydoimatkhau}" IsVisible="{Binding IsChecked}">
-                <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" >
-                    <StackLayout Orientation="Horizontal" HeightRequest="59">
-                        <Image Source="IconPassword.png" Margin="0,0,19,0" />
-                        <StackLayout Spacing="0">
-                            <Label Text="MẬT KHẨU CŨ" TextColor="#515C6F" Opacity="0.5"/>
-                            <Entry HorizontalOptions="End" IsPassword="True" WidthRequest="250" Text="Nguyễn Văn A" TextColor="#515C6F" FontSize="15"/>
+                <Frame CornerRadius="10" Margin="12,8,12,0" BindingContext="{x:Reference Thaydoimatkhau}" IsVisible="{Binding IsChecked}">
+                    <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" >
+                        <StackLayout Orientation="Horizontal" HeightRequest="59">
+                            <Image Source="IconPassword.png" Margin="0,0,19,0" />
+                            <StackLayout Spacing="0">
+                                <Label Text="MẬT KHẨU CŨ" TextColor="#515C6F" Opacity="0.5"/>
+                                <Entry HorizontalOptions="End" IsPassword="True" WidthRequest="250" Text="Nguyễn Văn A" TextColor="#515C6F" FontSize="15"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HeightRequest="59">
+                            <Image Source="IconPassword.png" Margin="0,0,19,0" />
+                            <StackLayout Spacing="0">
+                                <Label Text="MẬT KHẨU MỚI" TextColor="#515C6F" Opacity="0.5"/>
+                                <Entry HorizontalOptions="End" IsPassword="True" WidthRequest="250" Text="Nguyễn Văn A" TextColor="#515C6F" FontSize="15"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HeightRequest="59">
+                            <Image Source="IconPassword.png" Margin="0,0,19,0" />
+                            <StackLayout Spacing="0">
+                                <Label Text="XÁC NHẬN MẬT KHẨU MỚI" TextColor="#515C6F" Opacity="0.5"/>
+                                <Entry HorizontalOptions="End" IsPassword="True" WidthRequest="250" Text="Nguyễn Văn A" TextColor="#515C6F" FontSize="15"/>
+                            </StackLayout>
                         </StackLayout>
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" HeightRequest="59">
-                        <Image Source="IconPassword.png" Margin="0,0,19,0" />
-                        <StackLayout Spacing="0">
-                            <Label Text="MẬT KHẨU MỚI" TextColor="#515C6F" Opacity="0.5"/>
-                            <Entry HorizontalOptions="End" IsPassword="True" WidthRequest="250" Text="Nguyễn Văn A" TextColor="#515C6F" FontSize="15"/>
-                        </StackLayout>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" HeightRequest="59">
-                        <Image Source="IconPassword.png" Margin="0,0,19,0" />
-                        <StackLayout Spacing="0">
-                            <Label Text="XÁC NHẬN MẬT KHẨU MỚI" TextColor="#515C6F" Opacity="0.5"/>
-                            <Entry HorizontalOptions="End" IsPassword="True" WidthRequest="250" Text="Nguyễn Văn A" TextColor="#515C6F" FontSize="15"/>
-                        </StackLayout>
-                    </StackLayout>
-                </StackLayout>
-            </Frame>
+                </Frame>
                 <Button Text="LƯU THAY ĐỔI" Margin="0,17,0,16"
                         BackgroundColor="#FF6969" 
                         HorizontalOptions="CenterAndExpand"

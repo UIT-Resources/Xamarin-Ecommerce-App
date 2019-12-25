@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="CommerceApp.Views.ShowPopUp">
+             x:Class="CommerceApp.Views.ShowPopUpSigOutExample">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center">
             <Button Clicked="Button_Clicked" Text="Đăng Xuất"/>
