@@ -42,33 +42,29 @@
       "frameworks": {
         "monoandroid90": {
           "dependencies": {
-            "Xamarin.Android.Support.Annotations": {
+            "Rg.Plugins.Popup": {
               "target": "Package",
-              "version": "[28.0.0.3, )"
+              "version": "[1.2.0.223, )"
             },
-            "Xamarin.Android.Support.Collections": {
+            "Syncfusion.Xamarin.Core": {
               "target": "Package",
-              "version": "[28.0.0.3, )"
+              "version": "[17.4.0.39, )"
+            },
+            "Xam.Plugin.Media": {
+              "target": "Package",
+              "version": "[4.0.1.5, )"
             },
             "Xamarin.Android.Support.Core.Utils": {
               "target": "Package",
-              "version": "[28.0.0.3, )"
-            },
-            "Xamarin.Android.Support.VersionedParcelable": {
-              "target": "Package",
-              "version": "[28.0.0.3, )"
-            },
-            "Xamarin.Android.Support.v7.RecyclerView": {
-              "target": "Package",
-              "version": "[28.0.0.3, )"
+              "version": "[28.0.0.1, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.3.1, )"
+              "version": "[1.2.0, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.4.0.991265, )"
+              "version": "[4.2.0.709249, )"
             }
           }
         }
@@ -119,13 +115,25 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
+            "Rg.Plugins.Popup": {
+              "target": "Package",
+              "version": "[1.2.0.223, )"
+            },
+            "Syncfusion.Xamarin.Core": {
+              "target": "Package",
+              "version": "[17.4.0.39, )"
+            },
+            "Xam.Plugin.Media": {
+              "target": "Package",
+              "version": "[4.0.1.5, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.3.1, )"
+              "version": "[1.2.0, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.4.0.991265, )"
+              "version": "[4.2.0.709249, )"
             }
           },
           "imports": [
