@@ -3,11 +3,27 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using CommerceApp.Views;
+using CommerceApp.ViewModels;
 
 namespace CommerceApp
 {
     public partial class App : Application
     {
+        // Begin Create Local Database (SQLite)
+        static ItemRepository database;
+        public static ItemRepository Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new ItemRepository();
+                }
+                return database;
+            }
+        }
+        // End Create Local Database (SQLite)
+
         public App()
         {
             InitializeComponent();

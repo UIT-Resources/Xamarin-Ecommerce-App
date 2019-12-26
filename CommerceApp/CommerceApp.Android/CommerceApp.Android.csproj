@@ -58,6 +58,9 @@
     <PackageReference Include="Rg.Plugins.Popup">
       <Version>1.2.0.223</Version>
     </PackageReference>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.6.292</Version>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.Core">
       <Version>17.4.0.39</Version>
     </PackageReference>
@@ -71,6 +74,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database_ Android.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
