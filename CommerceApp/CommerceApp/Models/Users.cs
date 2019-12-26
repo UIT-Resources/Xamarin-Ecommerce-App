@@ -5,7 +5,7 @@ using SQLite;
 
 namespace CommerceApp.Models
 {
-    public class User : BindableBase, IObject
+    public class Users : BindableBase, IObject
     {
         [Ignore]
         int id { get; set; }
