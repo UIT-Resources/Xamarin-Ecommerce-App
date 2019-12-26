@@ -56,3 +56,12 @@ E:\01_UIT\04_Fourth Year\Xamarin\Project\Sources\CommerceApp\CommerceApp.iOS\obj
 E:\01_UIT\04_Fourth Year\Xamarin\Project\Sources\CommerceApp\CommerceApp.iOS\obj\iPhoneSimulator\Debug\CommerceApp.iOS.csproj.CopyComplete
 E:\01_UIT\04_Fourth Year\Xamarin\Project\Sources\CommerceApp\CommerceApp.iOS\obj\iPhoneSimulator\Debug\CommerceApp.iOS.exe
 E:\01_UIT\04_Fourth Year\Xamarin\Project\Sources\CommerceApp\CommerceApp.iOS\obj\iPhoneSimulator\Debug\CommerceApp.iOS.pdb
+E:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp.iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
+E:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp.iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
+E:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp.iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
+E:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp.iOS\obj\iPhoneSimulator\Debug\coremlc\_PartialAppManifest.items
+E:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp.iOS\obj\iPhoneSimulator\Debug\coremlc\_BundleResourceWithLogicalName.items
+E:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp.iOS\obj\iPhoneSimulator\Debug\optimized\
+E:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp.iOS\obj\iPhoneSimulator\Debug\CommerceApp.iOS.csprojAssemblyReference.cache
+E:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp.iOS\obj\iPhoneSimulator\Debug\CommerceApp.iOS.exe
+E:\Xamarin-Ecommerce-App\CommerceApp\CommerceApp.iOS\obj\iPhoneSimulator\Debug\CommerceApp.iOS.pdb

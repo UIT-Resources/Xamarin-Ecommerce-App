@@ -11,27 +11,27 @@
              android:TabbedPage.BarItemColor="Black"
              android:TabbedPage.BarSelectedItemColor="Red">
     <TabbedPage.Children>
-        <NavigationPage Title="Home" IconImageSource="Home.png">
+        <NavigationPage IconImageSource="Home.png">
             <x:Arguments>
                 <views:HomePage/>
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Categories" IconImageSource="Menu.png">
+        <NavigationPage IconImageSource="Menu.png">
             <x:Arguments>
                 <views:HomePage/>
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Search" IconImageSource="Search.png">
+        <NavigationPage IconImageSource="Search.png">
             <x:Arguments>
                 <views:HomePage/>
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Thông báo" IconImageSource="Notification.png">
+        <NavigationPage IconImageSource="Notification.png">
             <x:Arguments>
                 <views:Notification/>
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Profile" IconImageSource="Profile.png">
+        <NavigationPage IconImageSource="Profile.png">
             <x:Arguments>
                 <views:Profile/>
             </x:Arguments>
