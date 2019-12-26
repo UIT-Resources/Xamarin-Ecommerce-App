@@ -18,7 +18,7 @@ namespace CommerceApp.ViewModels
             // Create Session Table
             database.CreateTable<Session>();
             // Create User Table
-            database.CreateTable<Users>();
+            database.CreateTable<User>();
         }
         public IEnumerable<T> GetObjects<T>() where T : IObject, new()
         {
