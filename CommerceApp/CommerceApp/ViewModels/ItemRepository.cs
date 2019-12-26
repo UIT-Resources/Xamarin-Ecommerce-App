@@ -38,25 +38,25 @@ namespace CommerceApp.ViewModels
         //--------------------------- End Session API -------------------------
 
         //--------------------------- Begin User API --------------------------
-        public IEnumerable<User> GetUsers()
+        public IEnumerable<Users> GetUsers()
         {
-            return this.itemDatabase.GetObjects<User>();
+            return this.itemDatabase.GetObjects<Users>();
         }
-        public User GetUser(int id)
+        public Users GetUser(int id)
         {
-            return this.itemDatabase.GetObject<User>(id);
+            return this.itemDatabase.GetObject<Users>(id);
         }
-        public int SaveUser(User user)
+        public int SaveUser(Users user)
         {
-            return this.itemDatabase.SaveObject<User>(user);
+            return this.itemDatabase.SaveObject<Users>(user);
         }
         public int DeleteUser(int id)
         {
-            return itemDatabase.DeleteObject<User>(id);
+            return itemDatabase.DeleteObject<Users>(id);
         }
         public void DeleteAllUsers()
         {
-            itemDatabase.DeleteAllObjects<User>();
+            itemDatabase.DeleteAllObjects<Users>();
         }
         //--------------------------- End User API -------------------------
     }
