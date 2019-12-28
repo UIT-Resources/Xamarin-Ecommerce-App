@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CommerceApp.Models
 {
-    class Category : BindableBase
+    public class Category : BindableBase
     {
         int categoryid { get; set; }
         string name { get; set; }

@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="CommerceApp.Views.UserProfile">
+             x:Class="CommerceApp.Views.UserProfile"
+             Title="Thông tin cá nhân">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Spacing="0" >

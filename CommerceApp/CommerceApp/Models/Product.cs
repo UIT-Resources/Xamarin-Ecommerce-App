@@ -6,17 +6,17 @@ namespace CommerceApp.Models
 {
     public class Product : BindableBase
     {
-        int productid;
-        string productname;
-        float price;
-        int categoryid;
-        string trademark;
-        string madein;
-        DateTime warrantytime;
-        DateTime manufacturetime;
-        float rank;
-        string description;
-        string iconurl;
+        int productid { get; set; }
+        string productname { get; set; }
+        float price { get; set; }
+        int categoryid { get; set; }
+        string trademark { get; set; }
+        string madein { get; set; }
+        DateTime warrantytime { get; set; }
+        DateTime manufacturetime { get; set; }
+        float rank { get; set; }
+        string description { get; set; }
+        string iconurl { get; set; }
 
         public int ProductID { get { return productid; } set { productid = value; OnPropertyChanged("ProductID"); } }
         public string ProductName { get { return productname; } set { productname = value; OnPropertyChanged("ProductName"); } }

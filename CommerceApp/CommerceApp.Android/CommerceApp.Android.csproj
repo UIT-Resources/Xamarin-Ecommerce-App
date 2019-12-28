@@ -80,6 +80,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\NeusaNextStd-Bold.otf" />
+    <AndroidAsset Include="Assets\NeusaNextStd-Bold.ttf" />
+    <AndroidAsset Include="Assets\NeusaNextStd-Italic.otf" />
+    <AndroidAsset Include="Assets\NeusaNextStd-Italic.ttf" />
+    <AndroidAsset Include="Assets\NeusaNextStd-Light.otf" />
+    <AndroidAsset Include="Assets\NeusaNextStd-Light.ttf" />
+    <AndroidAsset Include="Assets\NeusaNextStd-Regular.otf" />
+    <AndroidAsset Include="Assets\NeusaNextStd-Regular.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -298,6 +306,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\shoes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\jacket.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

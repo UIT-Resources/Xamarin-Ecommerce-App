@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using CommerceApp.ViewModels;
 
 namespace CommerceApp.Views
 {
@@ -15,7 +16,7 @@ namespace CommerceApp.Views
         public HomePage()
         {
             InitializeComponent();
-            
+            this.BindingContext = new HomeViewModel();
         }
         
         
