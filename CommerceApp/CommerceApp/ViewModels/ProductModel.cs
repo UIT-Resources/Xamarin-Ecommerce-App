@@ -15,6 +15,10 @@ using Xamarin.Forms;
 namespace CommerceApp.ViewModels
 
 {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8edf842f9c627bacc0d8ea4e97bb4e9157ef1d3b
     public class ProductModel : INotifyPropertyChanged
 
     {
