@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+
+              xmlns:viewmodel="clr-namespace:CommerceApp.ViewModels"
+
+             x:Class="CommerceApp.Views.Product.DetailProduct">
+
+    <ContentPage.BindingContext>
+
+        <viewmodel:ProductModel/>
+
+    </ContentPage.BindingContext>
+
+    <ScrollView Padding="8,8,8,10">
+
+        <StackLayout>
+
+            <!-- Place new controls here -->
+
+            <ContentView Padding="5">
+
+                <Image WidthRequest="250" Source="/cong_nghe.jpg"/>
+
+            </ContentView>
+
+            <StackLayout Padding="5" Orientation="Horizontal">
+
+                <Image WidthRequest="50"  Source="/cong_nghe.jpg"/>
+
+                <Image WidthRequest="50"  Source="/cong_nghe.jpg"/>
+
+                <Image WidthRequest="50"  Source="/cong_nghe.jpg"/>
+
+                <Image WidthRequest="50"  Source="/cong_nghe.jpg"/>
+
+            </StackLayout>
+
+            <StackLayout Padding="10,5,5,0" Orientation="Horizontal">
+
+                <Label FontSize="9" Text="Ma SP: 001" />
+
+                <Label FontSize="9" Text="Loai SP: Nhap khau" />
+
+            </StackLayout>
+
+
+
+            <StackLayout Padding="5,-5,5,0" Orientation="Horizontal" >
+
+                <Label TextColor="Black"  FontSize="13" Text="{Binding Name, Mode=TwoWay}"/>
+
+                <ContentView  >
+
+                    <Label Text="Sale 50%" FontSize="12" TextColor="Red" />
+
+                </ContentView>
+
+                <Label Margin="5,0,0,0" TextColor="Black"  FontSize="10" Text="("/>
+
+                <Image WidthRequest="11" Source="/star.png"/>
+
+                <Image WidthRequest="11" Source="/star.png"/>
+
+                <Image WidthRequest="11" Source="/star.png"/>
+
+                <Image WidthRequest="11" Source="/star.png"/>
+
+                <Image WidthRequest="11" Source="/star.png"/>
+
+                <Label TextColor="Black"  FontSize="11" Text=")"/>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Padding="5,0,0,0">
+
+                <Label TextColor="Red"  FontSize="16" Text="250,000 VND"/>
+
+                <StackLayout Padding="5,0,5,0" Orientation="Horizontal" BackgroundColor="#DCDBDB">
+
+                    <ContentView Padding="2,2,2,2">
+
+                        <Label FontSize="12" Text="-">
+
+                            <Label.GestureRecognizers>
+
+                                <TapGestureRecognizer Tapped="Click"/>
+
+                            </Label.GestureRecognizers>
+
+                        </Label>
+
+                    </ContentView>
+
+                    <ContentView Padding="5,2,5,2">
+
+                        <Label TextColor="Black" Text="2"  />
+
+                    </ContentView>
+
+                    <ContentView Padding="2,2,2,2">
+
+                        <Label FontSize="12" Text="+">
+
+                            <Label.GestureRecognizers>
+
+                                <TapGestureRecognizer Tapped="Click"/>
+
+                            </Label.GestureRecognizers>
+
+                        </Label>
+
+                    </ContentView>
+
+                </StackLayout>
+
+            </StackLayout>
+
+
+
+
+
+            <StackLayout Padding="0,10,0,5" HorizontalOptions="Center" Orientation="Vertical">
+
+                <Button BackgroundColor="Red" Command="{Binding Get}" CornerRadius="10" TextColor="White" WidthRequest="300"  x:Name="mua" Text="Mua Ngay"/>
+
+                <Button BackgroundColor="#2897E6" CornerRadius="10" TextColor="White" WidthRequest="300"   Text="Them vao gio hang"/>
+
+            </StackLayout>
+
+
+
+            <StackLayout Padding="3" Margin="3" BackgroundColor="#DEE6EB">
+
+                <Label Text="Product detail" FontSize="15" />
+
+                <ContentView Margin="10,-3,10,5">
+
+                    <Label HorizontalOptions="FillAndExpand" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
+
+                </ContentView>
+
+                <ContentView Margin="10,-3,10,5">
+
+                    <Grid>
+
+
+
+                        <Label Text="Thong so" Grid.Row="0" Grid.Column="0" />
+
+                        <Label Text="Chi tiet" Grid.Row="0" Grid.Column="1" />
+
+                        <Label Text="Cong nghe" Grid.Row="1" Grid.Column="0" />
+
+                        <Label Text="4.0" Grid.Row="1" Grid.Column="1" />
+
+
+
+                    </Grid>
+
+                </ContentView>
+
+
+
+            </StackLayout>
+
+
+
+            <StackLayout Padding="3" Margin="3" BackgroundColor="#DEE6EB">
+
+                <Label Text="Product detail" FontSize="15" />
+
+                <ContentView Margin="10,-3,10,5">
+
+                    <Label HorizontalOptions="FillAndExpand" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
+
+                </ContentView>
+
+                <ContentView Margin="10,-3,10,5">
+
+                    <Grid>
+
+                        <Label Text="Thong so" Grid.Row="0" Grid.Column="0" />
+
+                        <Label Text="Chi tiet" Grid.Row="0" Grid.Column="1" />
+
+                        <Label Text="Cong nghe" Grid.Row="1" Grid.Column="0" />
+
+                        <Label Text="4.0" Grid.Row="1" Grid.Column="1" />
+
+                    </Grid>
+
+                </ContentView>
+
+
+
+            </StackLayout>
+
+            <StackLayout Padding="3" Margin="3" BackgroundColor="#DEE6EB">
+
+                <Label FontSize="16" TextColor="Black" Text="Nhan xet"/>
+
+                <StackLayout Margin="5,0,0,0" >
+
+                    <StackLayout Orientation="Horizontal" Padding="1,0,0,0" >
+
+                        <Label Text="Khach hang 1"  FontSize="14" TextColor="Black"/>
+
+                        <Label Margin="5,2,0,0" TextColor="Black"  FontSize="10" Text="("/>
+
+                        <Image WidthRequest="11" Source="/star.png"/>
+
+                        <Image WidthRequest="11" Source="/star.png"/>
+
+                        <Image WidthRequest="11" Source="/star.png"/>
+
+                        <Image WidthRequest="11" Source="/star.png"/>
+
+                        <Image WidthRequest="11" Source="/star.png"/>
+
+                        <Label Margin="1,1,0,0" TextColor="Black"  FontSize="11" Text=")"/>
+
+                    </StackLayout>
+
+
+
+                    <BoxView Margin="0,-5,0,0"  BackgroundColor="Black" WidthRequest="400" HeightRequest="1" VerticalOptions="FillAndExpand" HorizontalOptions="End"/>
+
+                    <ContentView Margin="5,-3,5,2">
+
+                        <Label  Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."  FontSize="12" TextColor="Black"/>
+
+                    </ContentView>
+
+                    <Label HorizontalOptions="End" Margin="0,-5,0,0" Text="12/9/2019" FontSize="12" />
+
+                </StackLayout>
+
+            </StackLayout>
+
+        </StackLayout>
+
+
+
+    </ScrollView>
+
+</ContentPage>
