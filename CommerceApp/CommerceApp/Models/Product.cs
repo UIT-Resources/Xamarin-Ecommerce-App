@@ -6,29 +6,33 @@ namespace CommerceApp.Models
 {
     public class Product : BindableBase
     {
-        int productid { get; set; }
-        string productname { get; set; }
-        float price { get; set; }
-        int categoryid { get; set; }
-        string trademark { get; set; }
-        string madein { get; set; }
-        DateTime warrantytime { get; set; }
-        DateTime manufacturetime { get; set; }
-        float rank { get; set; }
-        string description { get; set; }
-        string iconurl { get; set; }
-
-        public int ProductID { get { return productid; } set { productid = value; OnPropertyChanged("ProductID"); } }
-        public string ProductName { get { return productname; } set { productname = value; OnPropertyChanged("ProductName"); } }
-        public float Price { get { return price; } set { price = value; OnPropertyChanged("Price"); } } 
-        public int CategoryID { get { return categoryid; } set { categoryid = value; OnPropertyChanged("CategoryID"); } } 
+         int id { get; set; }
+         string full_name { get; set; }
+         DateTime? create_date { get; set; }
+         DateTime? update_date { get; set; }
+         string note { get; set; }
+         int root_id { get; set; }
+         double cost { get; set; }
+         string unit { get; set; }
+         string url_images { get; set; }
+         int status { get; set; }
+         double rank { get; set; }
+         string origin { get; set; }
+         string trademark { get; set; }
+         DateTime? dateofmanufacture { get; set; }
+         DateTime? expirationdate { get; set; }
+         string description { get; set; }
+        public int ID { get { return id; } set { id = value; OnPropertyChanged("ProductID"); } }
+        public string Name { get { return full_name; } set { full_name = value; OnPropertyChanged("ProductName"); } }
+        public double Cost { get { return cost; } set { cost = value; OnPropertyChanged("Price"); } } 
+        public int RootID { get { return root_id; } set { root_id = value; OnPropertyChanged("CategoryID"); } } 
         public string TradeMark { get { return trademark; } set { trademark = value; OnPropertyChanged("TradeMark"); } } 
-        public string MadeIn { get { return madein; } set { madein = value; OnPropertyChanged("MadeIn"); } } 
-        public DateTime WarrantyTime { get { return warrantytime; } set { warrantytime = value; OnPropertyChanged("WarrantyTime"); } } 
-        public DateTime ManufactureTime { get { return manufacturetime; } set { manufacturetime = value; OnPropertyChanged("ManufactureTime"); } } 
-        public float Rank { get { return rank; } set { rank = value; OnPropertyChanged("Rank"); } } 
+        public string Origin { get { return origin; } set { origin = value; OnPropertyChanged("MadeIn"); } } 
+        public DateTime? Expirationdate { get { return expirationdate; } set { expirationdate = value; OnPropertyChanged("WarrantyTime"); } } 
+        public DateTime? Dateofmanufacture { get { return dateofmanufacture; } set { dateofmanufacture = value; OnPropertyChanged("ManufactureTime"); } } 
+        public double Rank { get { return rank; } set { rank = value; OnPropertyChanged("Rank"); } } 
         public string Description { get { return description; } set { description = value; OnPropertyChanged("Description"); } } 
-        public string IconUrl { get { return iconurl; } set { iconurl = value; OnPropertyChanged("IconUrl"); } } 
+        public string Url_images { get { return url_images; } set { url_images = value; OnPropertyChanged("IconUrl"); } } 
 
     }
 }

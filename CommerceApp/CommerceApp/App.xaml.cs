@@ -4,6 +4,8 @@ using Xamarin.Forms.Xaml;
 
 using CommerceApp.Views;
 using CommerceApp.ViewModels;
+using CommerceApp.Models;
+using CommerceApp.Views.Product;
 
 namespace CommerceApp
 {
@@ -11,6 +13,15 @@ namespace CommerceApp
     {
         // Begin Create Local Database (SQLite)
         static ItemRepository database;
+        static RestApi resApi;
+        public static RestApi Api { get
+            {
+                if(resApi==null)
+                {
+                    resApi = new RestApi();
+                }
+                return resApi;
+            } }
         public static ItemRepository Database
         {
             get
@@ -28,7 +39,7 @@ namespace CommerceApp
         {
             InitializeComponent();
 
-            MainPage = new ControlPage();
+            MainPage = new DetailProduct();
         }
 
         protected override void OnStart()
