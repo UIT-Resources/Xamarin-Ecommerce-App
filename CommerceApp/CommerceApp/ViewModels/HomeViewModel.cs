@@ -13,30 +13,58 @@ namespace CommerceApp.ViewModels
     {
         //--------------------- Attributes Section ----------------------------
         public ObservableCollection<Category> Categories { get; set; }
-        //EventSection[] Events;
+        public ObservableCollection<Event> Events { get; set; }
         public ObservableCollection<ProductSection> ProductSections { get; set; }
 
         //---------------------- Process Section -------------------------------
-        public Command LoadNewCategory { get; }
-        public Command LoadNewProduct { get; }
+        public Command LoadMoreCategoryCommand { get; }
+        public Command LoadMoreProductCommand { get; }
+        public Command LoadMoreEventCommand { get; }
+        public Command AutoSliderCommand { get; }
 
 
         //Constructor
         public HomeViewModel()
         {
-            LoadNewCategory = new Command(() =>
+            LoadMoreCategoryCommand = new Command(() =>
             {
-                Categories.Add(new Category { Name = "New Items 01", IconUrl = "/apparel.png" });
-                Categories.Add(new Category { Name = "New Items 02", IconUrl = "/apparel.png" });
+                Categories.Add(new Category { Name = "New Items", IconUrl = "/apparel.png" });
+                Categories.Add(new Category { Name = "New Items", IconUrl = "/apparel.png" });
             });
 
-            LoadNewProduct = new Command<ObservableCollection<Product>>(Products =>
+            LoadMoreProductCommand = new Command<ObservableCollection<Product>>(Products =>
             {
                 var categoryid = Products[0].CategoryID;
                 Products.Add(new Product { CategoryID = categoryid, IconUrl = "jacket.png", ProductName = "New ID" + categoryid.ToString(), Price = 1500 });
             });
 
+            LoadMoreEventCommand = new Command<ObservableCollection<Event>>(Events =>
+            {
+                var event_id = Events[Events.Count - 1].ID;
+                for (int i = event_id+1; i <= event_id + 5; i++)
+                {
+                    Events.Add(new Event { ID = i, Url = "Banner.png" });
+                }
+            });
+
+            AutoSliderCommand = new Command<int>(Position =>
+            {
+                Device.StartTimer(TimeSpan.FromSeconds(5), (Func<bool>)(() =>
+                {
+                    Position = (Position + 1) % Events.Count;
+                    return true;
+                }));
+            });
             // Create Data For Testing
+            Events = new ObservableCollection<Event>
+            {
+                new Event { ID = 1, Url = "Banner.png" },
+                new Event { ID = 2, Url = "Banner.png" },
+                new Event { ID = 3, Url = "Banner.png" },
+                new Event { ID = 4, Url = "Banner.png" },
+                new Event { ID = 5, Url = "Banner.png" }
+            };
+
             Categories = new ObservableCollection<Category>
             {
                 new Category {CategoryID=1,Name="Quần áo", IconUrl="/apparel.png"},

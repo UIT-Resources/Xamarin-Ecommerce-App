@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CommerceApp.Models
 {
-    class Event:BindableBase
+    public class Event:BindableBase
     {
         int id                  { get; set; }
         string full_name        { get; set; }

@@ -14,6 +14,17 @@
                     <Label Text="{TemplateBinding CategoryTitle}" TextColor="#515C6F" FontAttributes="Bold" FontSize="15" FontFamily="NeusaNextStd-Bold.ttf#NeusaNextStd-Bold" Margin="10,0,0,0" VerticalOptions="Center"/>
                     <Label Text="Xen thêm" TextColor="#FF6969" FontSize="12" FontFamily="NeusaNextStd-Regular.ttf#NeusaNextStd-Regular" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Margin="0,0,10,0"/>
                 </StackLayout>
+                <Frame BackgroundColor="White" CornerRadius="15">
+                    <ContentPresenter HeightRequest="{TemplateBinding SectionHeight}"/>
+                </Frame>
+            </StackLayout>
+        </ControlTemplate>
+        <ControlTemplate x:Key="SectionCardView">
+            <StackLayout Margin="10,10">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{TemplateBinding CategoryTitle}" TextColor="#515C6F" FontAttributes="Bold" FontSize="15" FontFamily="NeusaNextStd-Bold.ttf#NeusaNextStd-Bold" Margin="10,0,0,0" VerticalOptions="Center"/>
+                    <Label Text="Xen thêm" TextColor="#FF6969" FontSize="12" FontFamily="NeusaNextStd-Regular.ttf#NeusaNextStd-Regular" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Margin="0,0,10,0"/>
+                </StackLayout>
                 <ContentPresenter HeightRequest="{TemplateBinding SectionHeight}"/>
             </StackLayout>
         </ControlTemplate>
@@ -28,31 +39,37 @@
         <ScrollView>
             <StackLayout>
                 <!--Events Section-->
-                <views:CategoryView CategoryTitle="Sự kiện" ControlTemplate="{StaticResource CategoryCardView}" SectionHeight="150">
-                    <CarouselView ItemsSource="{Binding Events}" RemainingItemsThreshold="5" RemainingItemsThresholdReachedCommand="LoadNewEvent">
-                        <CarouselView.ItemsLayout>
-                            <LinearItemsLayout Orientation="Horizontal" ItemSpacing="0"/>
-                        </CarouselView.ItemsLayout>
-                        <CarouselView.ItemTemplate>
-                            <DataTemplate>
-                                <Image Source="{Binding EventName}" Aspect="AspectFill" HorizontalOptions="CenterAndExpand"/>
-                            </DataTemplate>
-                        </CarouselView.ItemTemplate>
-                    </CarouselView>
-
+                <views:CategoryView CategoryTitle="Sự kiện" ControlTemplate="{StaticResource SectionCardView}" SectionHeight="200">
+                    <StackLayout>
+                        <CarouselView  x:Name="eventSection" ItemsSource="{Binding Events}" RemainingItemsThreshold="5" RemainingItemsThresholdReachedCommand="{Binding LoadMoreEventCommand}" 
+                                  EmptyView="Không có bất kỳ nội dung nào để hiển thị" RemainingItemsThresholdReachedCommandParameter="{Binding Events}" PositionChangedCommand="{Binding AutoSliderCommand}" PositionChangedCommandParameter="{Binding Source={RelativeSource Mode=Self}, Path=Position}">
+                            <CarouselView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="0" SnapPointsType="MandatorySingle" SnapPointsAlignment="End"/>
+                            </CarouselView.ItemsLayout>
+                            <CarouselView.ItemTemplate>
+                                <DataTemplate>
+                                    <Image Source="{Binding Url}" BackgroundColor="Transparent" Aspect="AspectFill" HorizontalOptions="CenterAndExpand"/>
+                                </DataTemplate>
+                            </CarouselView.ItemTemplate>
+                        </CarouselView>
+                        <IndicatorView ItemsSourceBy="eventSection" IndicatorColor="LightGray" SelectedIndicatorColor="DarkGray" HorizontalOptions="Center" />
+                    </StackLayout>
                 </views:CategoryView>
 
 
                 <!--Category Section-->
-                <views:CategoryView CategoryTitle="Danh mục" ControlTemplate="{StaticResource CategoryCardView}" SectionHeight="90">
-                    <CollectionView   ItemsSource="{Binding Categories}" ItemSizingStrategy="MeasureAllItems" 
-                             RemainingItemsThreshold="5" RemainingItemsThresholdReachedCommand="{Binding LoadNewCategory}" EmptyView="Không có bất kỳ nội dung nào để hiển thị" >
-                        <CollectionView.ItemsLayout>
-                            <GridItemsLayout Orientation="Horizontal" HorizontalItemSpacing="0"/>
-                        </CollectionView.ItemsLayout>
-                        <CollectionView.ItemTemplate>
+               
+                    <views:CategoryView CategoryTitle="Danh mục" ControlTemplate="{StaticResource CategoryCardView}" SectionHeight="90">
+                    
+                        <CollectionView   ItemsSource="{Binding Categories}" ItemSizingStrategy="MeasureAllItems" 
+                                 RemainingItemsThreshold="5" RemainingItemsThresholdReachedCommand="{Binding LoadMoreCategoryCommand}" EmptyView="Không có bất kỳ nội dung nào để hiển thị" >
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Horizontal" HorizontalItemSpacing="0" SnapPointsType="Mandatory" SnapPointsAlignment="Start"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <Grid RowSpacing="0">
+                                
+                                <Grid RowSpacing="0" >
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="60" />
                                         <RowDefinition Height="30" />
@@ -63,21 +80,23 @@
                                     <ImageButton  Grid.Row="0" Source="{Binding IconUrl}" BackgroundColor="Transparent"/>
                                     <Label Grid.Row="1" Text="{Binding Name}" FontSize="12" FontFamily="Neusa Next Std" HorizontalOptions="Center"/>
                                 </Grid>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                </views:CategoryView>
-                
+               
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </views:CategoryView>
+               
+
                 <!--Products Section-->
                 <StackLayout Orientation="Vertical" BindableLayout.ItemsSource="{Binding ProductSections}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
-                            <views:CategoryView CategoryTitle="{Binding SectionTitle}" ControlTemplate="{StaticResource CategoryCardView}" SectionHeight="150">
+                            <views:CategoryView CategoryTitle="{Binding SectionTitle}" ControlTemplate="{StaticResource SectionCardView}" SectionHeight="150">
                                 <CollectionView ItemsSource="{Binding Products}" ItemSizingStrategy="MeasureAllItems" EmptyView="Không có bất kỳ nội dung nào để hiển thị" 
-                                                RemainingItemsThreshold="5" RemainingItemsThresholdReachedCommand="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:HomeViewModel}},Path=LoadNewProduct}"  
+                                                RemainingItemsThreshold="5" RemainingItemsThresholdReachedCommand="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:HomeViewModel}},Path=LoadMoreProductCommand}"  
                                                 RemainingItemsThresholdReachedCommandParameter="{Binding Products}" >
                                     <CollectionView.ItemsLayout>
-                                        <GridItemsLayout Orientation="Horizontal" Span="1" HorizontalItemSpacing="15"  />
+                                        <GridItemsLayout Orientation="Horizontal" Span="1" HorizontalItemSpacing="15" SnapPointsType="Mandatory" SnapPointsAlignment="Start" />
                                     </CollectionView.ItemsLayout>
                                     <CollectionView.ItemTemplate>
                                         <DataTemplate>
