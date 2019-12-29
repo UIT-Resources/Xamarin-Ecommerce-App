@@ -10,7 +10,7 @@ namespace CommerceApp.Models
     public class RestApi
     {
         private readonly HttpClient client;
-        private readonly string domain = "http://192.168.56.1:300";
+        private readonly string domain = "http://uit-api-xamarin.azurewebsites.net";
         public RestApi()
         {
             client = new HttpClient();

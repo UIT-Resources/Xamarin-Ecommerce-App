@@ -41,8 +41,14 @@
                 <!--Events Section-->
                 <views:CategoryView CategoryTitle="Sự kiện" ControlTemplate="{StaticResource SectionCardView}" SectionHeight="200">
                     <StackLayout>
-                        <CarouselView  x:Name="eventSection" ItemsSource="{Binding Events}" RemainingItemsThreshold="5" RemainingItemsThresholdReachedCommand="{Binding LoadMoreEventCommand}" 
-                                  EmptyView="Không có bất kỳ nội dung nào để hiển thị" RemainingItemsThresholdReachedCommandParameter="{Binding Events}" PositionChangedCommand="{Binding AutoSliderCommand}" PositionChangedCommandParameter="{Binding Source={RelativeSource Mode=Self}, Path=Position}">
+                        <CarouselView  x:Name="eventSection"
+                                       ItemsSource="{Binding Events}"
+                                       RemainingItemsThreshold="5"
+                                       RemainingItemsThresholdReachedCommand="{Binding LoadMoreEventCommand}" 
+                                       EmptyView="Không có bất kỳ nội dung nào để hiển thị"
+                                       RemainingItemsThresholdReachedCommandParameter="{Binding Events}"
+                                       PositionChangedCommand="{Binding AutoSliderCommand}"
+                                       PositionChangedCommandParameter="{Binding Source={RelativeSource Mode=Self}, Path=Position}">
                             <CarouselView.ItemsLayout>
                                 <LinearItemsLayout Orientation="Horizontal" ItemSpacing="0" SnapPointsType="MandatorySingle" SnapPointsAlignment="End"/>
                             </CarouselView.ItemsLayout>

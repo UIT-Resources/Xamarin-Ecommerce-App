@@ -34,8 +34,8 @@ namespace CommerceApp.ViewModels
 
             LoadMoreProductCommand = new Command<ObservableCollection<Product>>(Products =>
             {
-                var categoryid = Products[0].CategoryID;
-                Products.Add(new Product { CategoryID = categoryid, IconUrl = "jacket.png", ProductName = "New ID" + categoryid.ToString(), Price = 1500 });
+                var categoryid = Products[0].root_id;
+                Products.Add(new Product { root_id = categoryid, url_images = "jacket.png", full_name = "New ID" + categoryid.ToString(), cost = 1500 });
             });
 
             LoadMoreEventCommand = new Command<ObservableCollection<Event>>(Events =>
@@ -82,11 +82,10 @@ namespace CommerceApp.ViewModels
                     SectionTitle="Quần áo",
                     Products=new ObservableCollection<Product>
                     {
-                        new Product {CategoryID=1,IconUrl="jacket.png",ProductName="Áo thun 1",Price=100},
-                        new Product {CategoryID=1,IconUrl="jacket.png",ProductName="Áo thun 2",Price=100},
-                        new Product {CategoryID=1,IconUrl="jacket.png",ProductName="Áo thun 3",Price=100},
-                        new Product {CategoryID=1,IconUrl="jacket.png",ProductName="Áo thun 4",Price=100},
-                        new Product {CategoryID=1,IconUrl="jacket.png",ProductName="Áo thun 5",Price=100}
+                        new Product {root_id=1,url_images="jacket.png",full_name="Áo thun 1",cost=100},
+                         new Product {root_id=1,url_images="jacket.png",full_name="Áo thun 1",cost=100},
+                           new Product {root_id=1,url_images="jacket.png",full_name="Áo thun 1",cost=100},
+                           new Product {root_id=1,url_images="jacket.png",full_name="Áo thun 1",cost=100},
                     }
                 },
                 new ProductSection
@@ -94,11 +93,12 @@ namespace CommerceApp.ViewModels
                     SectionTitle="Mỹ phẩm",
                     Products=new ObservableCollection<Product>
                     {
-                        new Product {CategoryID=2,IconUrl="jacket.png",ProductName="Mỹ phẩm 1",Price=100},
-                        new Product {CategoryID=2,IconUrl="jacket.png",ProductName="Mỹ phẩm 2",Price=100},
-                        new Product {CategoryID=2,IconUrl="jacket.png",ProductName="Mỹ phẩm 3",Price=100},
-                        new Product {CategoryID=2,IconUrl="jacket.png",ProductName="Mỹ phẩm 4",Price=100},
-                        new Product {CategoryID=2,IconUrl="jacket.png",ProductName="Mỹ phẩm 5",Price=100}
+                          new Product {root_id=1,url_images="jacket.png",full_name="Áo thun 1",cost=100},
+
+                            new Product {root_id=1,url_images="jacket.png",full_name="Áo thun 1",cost=100},
+                            new Product {root_id=1,url_images="jacket.png",full_name="Áo thun 1",cost=100},
+                            new Product {root_id=1,url_images="jacket.png",full_name="Áo thun 1",cost=100},
+                            new Product {root_id=1,url_images="jacket.png",full_name="Áo thun 1",cost=100},
                     }
                 },
                 new ProductSection
@@ -106,11 +106,11 @@ namespace CommerceApp.ViewModels
                     SectionTitle="Giày dép",
                     Products=new ObservableCollection<Product>
                     {
-                        new Product {CategoryID=3,IconUrl="jacket.png",ProductName="Giày dép 1",Price=100},
-                        new Product {CategoryID=3,IconUrl="jacket.png",ProductName="Giày dép 2",Price=100},
-                        new Product {CategoryID=3,IconUrl="jacket.png",ProductName="Giày dép 3",Price=100},
-                        new Product {CategoryID=3,IconUrl="jacket.png",ProductName="Giày dép 4",Price=100},
-                        new Product {CategoryID=3,IconUrl="jacket.png",ProductName="Giày dép 5",Price=100}
+                          new Product {root_id=1,url_images="jacket.png",full_name="Áo thun 1",cost=100},
+
+                            new Product {root_id=1,url_images="jacket.png",full_name="Áo thun 1",cost=100},
+                            new Product {root_id=1,url_images="jacket.png",full_name="Áo thun 1",cost=100},
+                            new Product {root_id=1,url_images="jacket.png",full_name="Áo thun 1",cost=100},
                     }
                 }
             };

@@ -22,27 +22,45 @@
 
             <ContentView Padding="5">
 
-                <Image WidthRequest="250" Source="/cong_nghe.jpg"/>
 
+                <StackLayout WidthRequest="10">
+                    <CarouselView  
+                                       ItemsSource="{Binding Events}"
+                                       RemainingItemsThreshold="5"
+                                       RemainingItemsThresholdReachedCommand="{Binding LoadMoreEventCommand}" 
+                                       EmptyView="Không có bất kỳ nội dung nào để hiển thị"
+                                       RemainingItemsThresholdReachedCommandParameter="{Binding Events}"
+                                       PositionChangedCommand="{Binding AutoSliderCommand}"
+                                       PositionChangedCommandParameter="{Binding Source={RelativeSource Mode=Self}, Path=Position}">
+
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Image WidthRequest="200" Source="{Binding Url}" BackgroundColor="Transparent"/>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                       </StackLayout>
             </ContentView>
 
             <StackLayout Padding="5" Orientation="Horizontal">
 
-                <Image WidthRequest="50"  Source="/cong_nghe.jpg"/>
+                <ImageButton WidthRequest="50"  Source="{Binding Product.url_images, Mode=TwoWay}"/>
 
-                <Image WidthRequest="50"  Source="/cong_nghe.jpg"/>
+                <ImageButton WidthRequest="50"  Source="{Binding Product.url_images, Mode=TwoWay}"/>
 
-                <Image WidthRequest="50"  Source="/cong_nghe.jpg"/>
+                <ImageButton WidthRequest="50"  Source="{Binding Product.url_images, Mode=TwoWay}"/>
 
-                <Image WidthRequest="50"  Source="/cong_nghe.jpg"/>
+                <ImageButton WidthRequest="50"  Source="{Binding Product.url_images, Mode=TwoWay}"/>
 
             </StackLayout>
 
             <StackLayout Padding="10,5,5,0" Orientation="Horizontal">
-
-                <Label FontSize="9" Text="Ma SP: 001" />
-
-                <Label FontSize="9" Text="Loai SP: Nhap khau" />
+                <Label FontSize="9" Text="Ma SP" />
+                <Label FontSize="9" Text="{Binding Product.id, Mode=TwoWay}" />
+                <Label FontSize="9" Text="Loai SP" />
+                <Label FontSize="9" Text="{Binding Product.root_id, Mode=TwoWay}" />
+                <Label FontSize="9" Text="Xuat xu" />
+                <Label FontSize="9" Text="{Binding Product.origin, Mode=TwoWay}" />
 
             </StackLayout>
 
@@ -50,7 +68,7 @@
 
             <StackLayout Padding="5,-5,5,0" Orientation="Horizontal" >
 
-                <Label TextColor="Black"  FontSize="13" Text="{Binding Name, Mode=TwoWay}"/>
+                <Label TextColor="Black"  FontSize="13" Text="{Binding Product.full_name, Mode=TwoWay}"/>
 
                 <ContentView  >
 
@@ -76,7 +94,7 @@
 
             <StackLayout Orientation="Horizontal" Padding="5,0,0,0">
 
-                <Label TextColor="Red"  FontSize="16" Text="250,000 VND"/>
+                <Label TextColor="Red"  FontSize="16" Text="{Binding Product.cost, Mode=TwoWay}"/>
 
                 <StackLayout Padding="5,0,5,0" Orientation="Horizontal" BackgroundColor="#DCDBDB">
 

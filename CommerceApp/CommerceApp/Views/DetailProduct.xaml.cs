@@ -8,7 +8,7 @@ namespace CommerceApp.Views.Product
     public partial class DetailProduct : ContentPage
 
     {
-
+        private int id;
         public DetailProduct()
         {
             InitializeComponent();
