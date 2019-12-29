@@ -4,27 +4,39 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="CommerceApp.Views.Cart">
+             x:Class="CommerceApp.Views.Cart"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout >
-                <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="Center">
-                    <Image Source="itemboot.png" />
-                    <StackLayout VerticalOptions="Center">
-                        <Label Text="Faux Sued Ankle Boots" FontSize="15" TextColor="#515C6F"/>
-                        <BoxView 
-                        HeightRequest="0.4"
-                        BackgroundColor="#727C8E" 
-                        HorizontalOptions="FillAndExpand"/>
-                        <Label Text="7, Hot Pink" FontSize="15" TextColor="#515C6F" WidthRequest="254"/>
-                        <Label Text="$49.99" TextColor="Red"/>
-                        <StackLayout Orientation="Horizontal" Spacing="12">
-                            <ImageButton Source="IconSubstract.png"/>
-                            <Label Text="1" />
-                            <ImageButton Source="IconAdd.png"/>
-                        </StackLayout>
-                    </StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="Center" BindableLayout.ItemsSource="">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Image Source="itemboot.png" />
+                                <StackLayout VerticalOptions="Center">
+                                    <Label Text="Faux Sued Ankle Boots" FontSize="15" TextColor="#515C6F"/>
+                                    <BoxView 
+                                            HeightRequest="0.4"
+                                            BackgroundColor="#727C8E" 
+                                            HorizontalOptions="FillAndExpand"/>
+                                    <Label Text="7, Hot Pink" FontSize="15" TextColor="#515C6F" WidthRequest="254"/>
+                                    <Label Text="$49.99" TextColor="Red"/>
+                                    <StackLayout Orientation="Horizontal" Spacing="12">
+                                        <ImageButton Source="IconSubstract.png"/>
+                                        <Label Text="1" />
+                                        <ImageButton Source="IconAdd.png"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
                 </StackLayout>
+
+
+
+
+
                 <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="Center">
                     <Image Source="itemsuitcase.png" />
                     <StackLayout VerticalOptions="Center">

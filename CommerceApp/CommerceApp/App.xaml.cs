@@ -28,7 +28,7 @@ namespace CommerceApp
         {
             InitializeComponent();
 
-            MainPage =new NavigationPage( new Profile());
+            MainPage =new NavigationPage( new Cart());
         }
 
         protected override void OnStart()

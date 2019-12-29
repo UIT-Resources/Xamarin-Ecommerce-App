@@ -15,6 +15,7 @@ namespace CommerceApp.Views
         public Cart()
         {
             InitializeComponent();
+            BindingContext = new ViewModels.CartViewModel();
         }
     }
 }
