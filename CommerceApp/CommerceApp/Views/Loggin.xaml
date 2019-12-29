@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="CommerceApp.Views.Loggin"
-             xmlns:gradient ="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms">
+             xmlns:gradient ="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <Grid >
             <gradient:SfGradientView>
@@ -22,19 +23,31 @@
 
 
             <StackLayout Margin="20" VerticalOptions="CenterAndExpand">
-                <StackLayout VerticalOptions="Start" Padding="0,0,0,100">
-                    <Label Text="Đăng nhập" TextColor="White" FontSize="36" HorizontalOptions="CenterAndExpand"/>
+                <StackLayout VerticalOptions="Start" Padding="0,0,0,30">
+                    <Label Text="Đăng nhập"  TextColor="White" FontSize="36" HorizontalOptions="CenterAndExpand"/>
                 </StackLayout>
                 <StackLayout VerticalOptions="Center" Spacing="10" Padding="20">
-                    <Label Text="Username/Email/Số điện thoại" FontSize="16" Font="Gibson"  TextColor="#FFFFFF4D"/>
-                    <Entry x:Name="tendangnhap" Placeholder="Username/Email/Số điện thoại" TextColor="White"/>
+                    <Label Text="Username" FontSize="16" Font="Gibson"  TextColor="#FFFFFF4D"/>
+                    <Entry Text="{Binding user.UserName}" Placeholder="Username/Email/Số điện thoại" TextColor="White"/>
+
+                    
+                    
                     <Label Text="Password" FontSize="16" Font="Gibson" TextColor="#FFFFFF4D"/>
-                    <Entry x:Name="matkhau" Placeholder="Password" TextColor="White" IsPassword="True"/>
-                    <Button Text="ĐĂNG NHẬP" x:Name="dangnhap" Font="Gibson" HeightRequest="50" CornerRadius="6" TextColor="#5887F9" BackgroundColor="White" />
-                    <Button x:Name="quenmatkhau" Text="Quên mật khẩu?" TextColor="#faf9f7" BackgroundColor="Transparent" HorizontalOptions="StartAndExpand" FontSize="12"/>
+                    <Entry Text="{Binding  user.PassWord}" Placeholder="Password" TextColor="White" IsPassword="True"/>
+
+
+                    <Button Text="ĐĂNG NHẬP" Command="{Binding checkloggin}" Font="Gibson" 
+                            HeightRequest="50" CornerRadius="6" TextColor="#5887F9" BackgroundColor="White" />
+                    <Label Text="{Binding InvalidInput}" VerticalOptions="StartAndExpand" TextColor="Red"  FontSize="12"/>
+                    
+                    <Button Text="Quên mật khẩu?" TextColor="#faf9f7" BackgroundColor="Transparent" 
+                            HorizontalOptions="StartAndExpand" FontSize="12"
+                            Command="{Binding quenmatkhau}"/>
                 </StackLayout>
-                <StackLayout VerticalOptions="Start" Padding="0,100,0,0">
-                    <Label Text="ĐĂNG KÝ" FontSize="12"  TextColor="White" HorizontalOptions="CenterAndExpand"/>
+                <StackLayout VerticalOptions="Start" Padding="0,30,0,0">
+                    <Button Text="ĐĂNG KÝ" BackgroundColor="Transparent" 
+                            FontSize="12"  TextColor="White" HorizontalOptions="CenterAndExpand"
+                            Command="{Binding dangky}"/>
                 </StackLayout>
             </StackLayout>
 

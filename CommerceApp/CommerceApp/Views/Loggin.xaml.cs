@@ -15,28 +15,7 @@ namespace CommerceApp.Views
         public Loggin()
         {
             InitializeComponent();
-            
-            quenmatkhau.Clicked += (sender, args) =>
-            {
-                Navigation.PushModalAsync(new ForgotPass());
-            };
-            dangnhap.Clicked += (sender, args) =>
-            {
-                string username = tendangnhap.Text;
-                string password = matkhau.Text;
-                if (tendangnhap.Text.Length > 0)
-                {
-                    DisplayAlert("Notification", "Username required", "Close");
-                    tendangnhap.Focus();
-                }
-                if (matkhau.Text.Length > 0)
-                {
-                    DisplayAlert("Notification", "PassWord required", "Close");
-                    matkhau.Focus();
-                }
-
-                Console.WriteLine(username, password);
-            };
+            BindingContext = new ViewModels.LogginViewModel(Navigation);
         }
     }
 }
