@@ -10,7 +10,7 @@ using CommerceApp.Models.Interfaces;
 
 namespace CommerceApp.Models
 {
-    class RestServiceGeneric : IRestServiceGeneric
+    public class RestServiceGeneric : IRestServiceGeneric
     {
         HttpClient _client;
 
