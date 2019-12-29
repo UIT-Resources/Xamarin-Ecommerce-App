@@ -3,6 +3,6 @@
   <PropertyGroup>
     <SelectedDevice>Asus _X013DA</SelectedDevice>
     <DefaultDevice>my_device</DefaultDevice>
-    <AndroidDesignerPreferredTheme>Theme.DeviceDefault</AndroidDesignerPreferredTheme>
+    <AndroidDesignerPreferredTheme>Theme.AppCompat.Light.NoActionBar</AndroidDesignerPreferredTheme>
   </PropertyGroup>
 </Project>
