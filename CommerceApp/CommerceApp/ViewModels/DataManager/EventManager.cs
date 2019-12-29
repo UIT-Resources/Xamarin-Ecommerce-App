@@ -22,19 +22,19 @@ namespace CommerceApp.ViewModels.DataManager
             return restService.DeleteObjectAsync(Constants.EventsUrl, id);
         }
 
-        public Task<Event> GetEventAsync(string id)
+        public Task<EventServer> GetEventAsync(string id)
         {
-            return restService.GetObjectAsync<Event>(Constants.EventsUrl, id);
+            return restService.GetObjectAsync<EventServer>(Constants.EventsUrl, id);
         }
 
-        public Task<List<Event>> RefreshEventAsync(string ItemsUrl)
+        public Task<List<EventServer>> RefreshEventAsync(string ItemsUrl)
         {
-            return restService.RefreshObjectAsync<Event>(Constants.EventsUrl);
+            return restService.RefreshObjectAsync<EventServer>(Constants.EventsUrl);
         }
 
-        public Task SaveEventAsync(Event item, bool isNewItem)
+        public Task SaveEventAsync(EventServer item, bool isNewItem)
         {
-            return restService.SaveObjectAsync<Event>(Constants.EventsUrl, item, isNewItem);
+            return restService.SaveObjectAsync<EventServer>(Constants.EventsUrl, item, isNewItem);
         }
     }
 }

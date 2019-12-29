@@ -7,9 +7,9 @@ namespace CommerceApp.Models.Interfaces
 {
     public interface IEventRestService
     {
-		Task<List<Event>> RefreshEventAsync(string ItemsUrl);
-		Task<Event> GetEventAsync(string id);
-		Task SaveEventAsync(Event item, bool isNewItem);
+		Task<List<EventServer>> RefreshEventAsync(string ItemsUrl);
+		Task<EventServer> GetEventAsync(string id);
+		Task SaveEventAsync(EventServer item, bool isNewItem);
 		Task DeleteEventAsync(string id);
 	}
 }

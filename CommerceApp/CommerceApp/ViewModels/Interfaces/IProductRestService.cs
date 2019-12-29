@@ -8,11 +8,11 @@ namespace CommerceApp.Models.Interfaces
     public interface IProductRestService
     {
 		//Get List Products
-		Task<List<Product>> RefreshProductAsync();
+		Task<List<ProductServer>> RefreshProductAsync();
 		//Get Product Which has ID = id
-		Task<Product> GetProductAsync(string id);
+		Task<ProductServer> GetProductAsync(string id);
 		//Save Product. If It's already exist then Update else Create
-		Task SaveProductAsync(Product item, bool isNewItem);
+		Task SaveProductAsync(ProductServer item, bool isNewItem);
 		//Delete Product.
 		Task DeleteProductAsync(string id);
 	}

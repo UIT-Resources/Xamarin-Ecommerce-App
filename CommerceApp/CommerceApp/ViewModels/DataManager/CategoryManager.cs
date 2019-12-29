@@ -23,19 +23,19 @@ namespace CommerceApp.ViewModels.DataManager
             return restService.DeleteObjectAsync(Constants.CategoriesUrl,id);
         }
 
-        public Task<Category> GetCategoryAsync(string id)
+        public Task<CategoryServer> GetCategoryAsync(string id)
         {
-            return restService.GetObjectAsync<Category>(Constants.CategoriesUrl, id);
+            return restService.GetObjectAsync<CategoryServer>(Constants.CategoriesUrl, id);
         }
 
-        public Task<List<Category>> RefreshCategoryAsync(string ItemsUrl)
+        public Task<List<CategoryServer>> RefreshCategoryAsync(string ItemsUrl)
         {
-            return restService.RefreshObjectAsync<Category>(Constants.CategoriesUrl);
+            return restService.RefreshObjectAsync<CategoryServer>(Constants.CategoriesUrl);
         }
 
-        public Task SaveCategoryAsync(Category item, bool isNewItem)
+        public Task SaveCategoryAsync(CategoryServer item, bool isNewItem)
         {
-            return restService.SaveObjectAsync<Category>(Constants.CategoriesUrl, item, isNewItem);
+            return restService.SaveObjectAsync<CategoryServer>(Constants.CategoriesUrl, item, isNewItem);
         }
     }
 }
