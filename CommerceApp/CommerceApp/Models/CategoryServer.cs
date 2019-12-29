@@ -12,5 +12,6 @@ namespace CommerceApp.Models
         public DateTime? update_date { get; set; }
         public string note { get; set; }
         public int status { get; set; }
+        public string url_images;
     }
 }
