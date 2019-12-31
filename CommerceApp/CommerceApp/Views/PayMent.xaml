@@ -16,7 +16,7 @@
                        TextColor="#515C6F"/>
                         <Label Text="No 123, Sub Street, Main Street, City Name, Province, Country" />
                     </StackLayout>
-                    <ImageButton Source="arrow.png" HorizontalOptions="EndAndExpand" />
+                    <Image Source="arrow.png" HorizontalOptions="EndAndExpand" />
                 </StackLayout>
                 <BoxView Margin="0,19,0,19"
                         HeightRequest="0.4"
@@ -33,7 +33,7 @@
                                FontSize="15" FontAttributes="Bold"/>
                         </StackLayout>
                     </StackLayout>
-                    <ImageButton Source="arrow.png" HorizontalOptions="EndAndExpand" />
+                    <Image Source="arrow.png" HorizontalOptions="EndAndExpand" />
                 </StackLayout>
                 <BoxView Margin="0,19,0,19"
                         HeightRequest="0.4"
@@ -74,7 +74,7 @@
                     <Image Source="tag.png" />
                     <Label Text="Thêm khuyến mãi" TextColor="#FF6969"
                        FontSize="15" Margin="13,0,0,0"/>
-                    <ImageButton Source="arrow.png" HorizontalOptions="EndAndExpand" />
+                    <Image Source="arrow.png" HorizontalOptions="EndAndExpand" />
                 </StackLayout>
                 <StackLayout BackgroundColor="White" Orientation="Horizontal">
                     <StackLayout Margin="0,14,0,0">

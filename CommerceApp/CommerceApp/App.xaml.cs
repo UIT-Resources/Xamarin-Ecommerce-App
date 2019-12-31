@@ -39,7 +39,7 @@ namespace CommerceApp
         {
             InitializeComponent();
 
-            MainPage = new DetailProduct();
+            MainPage = new DetailProduct(2);
         }
 
         protected override void OnStart()

@@ -9,34 +9,31 @@
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              android:TabbedPage.ToolbarPlacement="Bottom"
              android:TabbedPage.BarItemColor="Black"
-             android:TabbedPage.BarSelectedItemColor="Red"
-             android:TabbedPage.IsSwipePagingEnabled="false"
-             HeightRequest="200"
-             BarBackgroundColor="#FFFFFF">
+             android:TabbedPage.BarSelectedItemColor="Red">
     <TabbedPage.Children>
         <NavigationPage Title="Home" IconImageSource="Home.png">
             <x:Arguments>
                 <views:HomePage/>
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Category"  IconImageSource="Menu.png">
+        <NavigationPage Title="Categories" IconImageSource="Menu.png">
             <x:Arguments>
                 <views:HomePage/>
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Search" IconImageSource="Search.png" >
+        <NavigationPage Title="Search" IconImageSource="Search.png">
             <x:Arguments>
                 <views:HomePage/>
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Notify" IconImageSource="Notification.png">
+        <NavigationPage Title="Thông báo" IconImageSource="Notification.png">
             <x:Arguments>
-                <views:Notification/>
+                <views:HomePage/>
             </x:Arguments>
         </NavigationPage>
         <NavigationPage Title="Profile" IconImageSource="Profile.png">
             <x:Arguments>
-                <views:Profile/>
+                <views:HomePage/>
             </x:Arguments>
         </NavigationPage>
     </TabbedPage.Children>

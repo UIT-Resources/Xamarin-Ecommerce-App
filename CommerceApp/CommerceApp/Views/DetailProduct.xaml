@@ -4,55 +4,45 @@
 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 
-              xmlns:viewmodel="clr-namespace:CommerceApp.ViewModels"
 
              x:Class="CommerceApp.Views.Product.DetailProduct">
 
-    <ContentPage.BindingContext>
-
-        <viewmodel:ProductModel/>
-
-    </ContentPage.BindingContext>
 
     <ScrollView Padding="8,8,8,10">
 
         <StackLayout>
 
             <!-- Place new controls here -->
-
-            <ContentView Padding="5">
-
-
-                <StackLayout WidthRequest="10">
-                    <CarouselView  
-                                       ItemsSource="{Binding Events}"
-                                       RemainingItemsThreshold="5"
-                                       RemainingItemsThresholdReachedCommand="{Binding LoadMoreEventCommand}" 
-                                       EmptyView="Không có bất kỳ nội dung nào để hiển thị"
-                                       RemainingItemsThresholdReachedCommandParameter="{Binding Events}"
-                                       PositionChangedCommand="{Binding AutoSliderCommand}"
-                                       PositionChangedCommandParameter="{Binding Source={RelativeSource Mode=Self}, Path=Position}">
-
+                    <CarouselView  HeightRequest="250"
+                                       ItemsSource="{Binding Sourceimges}">
                         <CarouselView.ItemTemplate>
                             <DataTemplate>
-                                <Image WidthRequest="200" Source="{Binding Url}" BackgroundColor="Transparent"/>
+                                <Image WidthRequest="200" Source="{Binding url}"/>
                             </DataTemplate>
                         </CarouselView.ItemTemplate>
                     </CarouselView>
-                       </StackLayout>
-            </ContentView>
 
-            <StackLayout Padding="5" Orientation="Horizontal">
+            <CollectionView    RemainingItemsThreshold="5" HeightRequest="70" BackgroundColor="#fff" ItemSizingStrategy="MeasureAllItems"  ItemsSource="{Binding Sourceimges}">
+                 <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Horizontal" HorizontalItemSpacing="0" SnapPointsType="Mandatory" SnapPointsAlignment="Start"/>
+                            </CollectionView.ItemsLayout>
+                   <CollectionView.ItemTemplate>
+                       <DataTemplate>
+                              <Grid RowSpacing="0" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="70" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70" />
+                                    </Grid.ColumnDefinitions>
+                                    <ImageButton Margin="1
+                                                 " Grid.Row="0" Source="{Binding url}" BackgroundColor="Transparent"/>
+                                    
+                                </Grid>
+                        </DataTemplate>
+                   </CollectionView.ItemTemplate>
 
-                <ImageButton WidthRequest="50"  Source="{Binding Product.url_images, Mode=TwoWay}"/>
-
-                <ImageButton WidthRequest="50"  Source="{Binding Product.url_images, Mode=TwoWay}"/>
-
-                <ImageButton WidthRequest="50"  Source="{Binding Product.url_images, Mode=TwoWay}"/>
-
-                <ImageButton WidthRequest="50"  Source="{Binding Product.url_images, Mode=TwoWay}"/>
-
-            </StackLayout>
+            </CollectionView>
 
             <StackLayout Padding="10,5,5,0" Orientation="Horizontal">
                 <Label FontSize="9" Text="Ma SP" />
@@ -61,11 +51,7 @@
                 <Label FontSize="9" Text="{Binding Product.root_id, Mode=TwoWay}" />
                 <Label FontSize="9" Text="Xuat xu" />
                 <Label FontSize="9" Text="{Binding Product.origin, Mode=TwoWay}" />
-
             </StackLayout>
-
-
-
             <StackLayout Padding="5,-5,5,0" Orientation="Horizontal" >
 
                 <Label TextColor="Black"  FontSize="13" Text="{Binding Product.full_name, Mode=TwoWay}"/>
@@ -78,144 +64,66 @@
 
                 <Label Margin="5,0,0,0" TextColor="Black"  FontSize="10" Text="("/>
 
-                <Image WidthRequest="11" Source="/star.png"/>
+                <Image WidthRequest="11" Source="https://cdn2.iconfinder.com/data/icons/modifiers-add-on-1-flat/48/Mod_Add-On_1-35-512.png"/>
 
-                <Image WidthRequest="11" Source="/star.png"/>
+                <Image WidthRequest="11" Source="https://cdn2.iconfinder.com/data/icons/modifiers-add-on-1-flat/48/Mod_Add-On_1-35-512.png"/>
 
-                <Image WidthRequest="11" Source="/star.png"/>
+                <Image WidthRequest="11" Source="https://cdn2.iconfinder.com/data/icons/modifiers-add-on-1-flat/48/Mod_Add-On_1-35-512.png"/>
 
-                <Image WidthRequest="11" Source="/star.png"/>
+                <Image WidthRequest="11" Source="https://cdn2.iconfinder.com/data/icons/modifiers-add-on-1-flat/48/Mod_Add-On_1-35-512.png"/>
 
-                <Image WidthRequest="11" Source="/star.png"/>
+                <Image WidthRequest="11" Source="https://cdn2.iconfinder.com/data/icons/modifiers-add-on-1-flat/48/Mod_Add-On_1-35-512.png"/>
 
                 <Label TextColor="Black"  FontSize="11" Text=")"/>
 
             </StackLayout>
-
-            <StackLayout Orientation="Horizontal" Padding="5,0,0,0">
-
-                <Label TextColor="Red"  FontSize="16" Text="{Binding Product.cost, Mode=TwoWay}"/>
-
-                <StackLayout Padding="5,0,5,0" Orientation="Horizontal" BackgroundColor="#DCDBDB">
-
-                    <ContentView Padding="2,2,2,2">
-
-                        <Label FontSize="12" Text="-">
-
-                            <Label.GestureRecognizers>
-
-                                <TapGestureRecognizer Tapped="Click"/>
-
-                            </Label.GestureRecognizers>
-
-                        </Label>
-
-                    </ContentView>
-
-                    <ContentView Padding="5,2,5,2">
-
-                        <Label TextColor="Black" Text="2"  />
-
-                    </ContentView>
-
-                    <ContentView Padding="2,2,2,2">
-
-                        <Label FontSize="12" Text="+">
-
-                            <Label.GestureRecognizers>
-
-                                <TapGestureRecognizer Tapped="Click"/>
-
-                            </Label.GestureRecognizers>
-
-                        </Label>
-
-                    </ContentView>
-
-                </StackLayout>
-
+            <StackLayout Orientation="Horizontal" Padding="20,0,0,0">
+                <Label TextColor="Red"  FontSize="18" Text="{Binding Product.cost, Mode=TwoWay}"/>
+                <Label TextColor="Black" Padding="0,5,0,0" FontSize="13" Text="VND /"/>
+                <Label TextColor="Black" Padding="0,5,0,0"  FontSize="13" Text="{Binding Product.unit, Mode=TwoWay}"/>
             </StackLayout>
-
-
-
-
-
             <StackLayout Padding="0,10,0,5" HorizontalOptions="Center" Orientation="Vertical">
 
-                <Button BackgroundColor="Red" Command="{Binding Get}" CornerRadius="10" TextColor="White" WidthRequest="300"  x:Name="mua" Text="Mua Ngay"/>
+                <Button BackgroundColor="Red" Command="{Binding PushCart}" CornerRadius="10" TextColor="White" WidthRequest="300"  x:Name="mua" Text="Mua Ngay"/>
 
-                <Button BackgroundColor="#2897E6" CornerRadius="10" TextColor="White" WidthRequest="300"   Text="Them vao gio hang"/>
-
-            </StackLayout>
-
-
-
-            <StackLayout Padding="3" Margin="3" BackgroundColor="#DEE6EB">
-
-                <Label Text="Product detail" FontSize="15" />
-
-                <ContentView Margin="10,-3,10,5">
-
-                    <Label HorizontalOptions="FillAndExpand" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
-
-                </ContentView>
-
-                <ContentView Margin="10,-3,10,5">
-
-                    <Grid>
-
-
-
-                        <Label Text="Thong so" Grid.Row="0" Grid.Column="0" />
-
-                        <Label Text="Chi tiet" Grid.Row="0" Grid.Column="1" />
-
-                        <Label Text="Cong nghe" Grid.Row="1" Grid.Column="0" />
-
-                        <Label Text="4.0" Grid.Row="1" Grid.Column="1" />
-
-
-
-                    </Grid>
-
-                </ContentView>
-
-
+                <!--<Button BackgroundColor="#2897E6" CornerRadius="10" TextColor="White" WidthRequest="300"   Text="Them vao gio hang"/>-->
 
             </StackLayout>
+            <ContentView>
+                 <StackLayout 
+                      VerticalOptions="FillAndExpand"
+                      BindableLayout.ItemsSource="{Binding Descriptions}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="3" Margin="3" BackgroundColor="#DEE6EB">
 
+                            <Label Text="Product detail" FontSize="15" />
 
+                            <ContentView Margin="10,-3,10,5">
 
-            <StackLayout Padding="3" Margin="3" BackgroundColor="#DEE6EB">
+                                <Label  Text="{Binding context}"/>
 
-                <Label Text="Product detail" FontSize="15" />
+                            </ContentView>
 
-                <ContentView Margin="10,-3,10,5">
+                            <!--<ContentView Margin="10,-3,10,5">
 
-                    <Label HorizontalOptions="FillAndExpand" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
+                                <Grid>
 
-                </ContentView>
+                                    <Label Text="Thong so" Grid.Row="0" Grid.Column="0" />
 
-                <ContentView Margin="10,-3,10,5">
+                                    <Label Text="Chi tiet" Grid.Row="0" Grid.Column="1" />
 
-                    <Grid>
+                                    <Label Text="Cong nghe" Grid.Row="1" Grid.Column="0" />
 
-                        <Label Text="Thong so" Grid.Row="0" Grid.Column="0" />
-
-                        <Label Text="Chi tiet" Grid.Row="0" Grid.Column="1" />
-
-                        <Label Text="Cong nghe" Grid.Row="1" Grid.Column="0" />
-
-                        <Label Text="4.0" Grid.Row="1" Grid.Column="1" />
-
-                    </Grid>
-
-                </ContentView>
-
-
-
-            </StackLayout>
-
+                                    <Label Text="4.0" Grid.Row="1" Grid.Column="1" />
+                                </Grid>
+                            </ContentView>-->
+                         </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ContentView>
+           
             <StackLayout Padding="3" Margin="3" BackgroundColor="#DEE6EB">
 
                 <Label FontSize="16" TextColor="Black" Text="Nhan xet"/>
@@ -228,15 +136,15 @@
 
                         <Label Margin="5,2,0,0" TextColor="Black"  FontSize="10" Text="("/>
 
-                        <Image WidthRequest="11" Source="/star.png"/>
+                        <Image WidthRequest="11" Source="https://cdn2.iconfinder.com/data/icons/modifiers-add-on-1-flat/48/Mod_Add-On_1-35-512.png"/>
 
-                        <Image WidthRequest="11" Source="/star.png"/>
+                        <Image WidthRequest="11" Source="https://cdn2.iconfinder.com/data/icons/modifiers-add-on-1-flat/48/Mod_Add-On_1-35-512.png"/>
 
-                        <Image WidthRequest="11" Source="/star.png"/>
+                        <Image WidthRequest="11" Source="https://cdn2.iconfinder.com/data/icons/modifiers-add-on-1-flat/48/Mod_Add-On_1-35-512.png"/>
 
-                        <Image WidthRequest="11" Source="/star.png"/>
+                        <Image WidthRequest="11" Source="https://cdn2.iconfinder.com/data/icons/modifiers-add-on-1-flat/48/Mod_Add-On_1-35-512.png"/>
 
-                        <Image WidthRequest="11" Source="/star.png"/>
+                        <Image WidthRequest="11" Source="https://cdn2.iconfinder.com/data/icons/modifiers-add-on-1-flat/48/Mod_Add-On_1-35-512.png"/>
 
                         <Label Margin="1,1,0,0" TextColor="Black"  FontSize="11" Text=")"/>
 

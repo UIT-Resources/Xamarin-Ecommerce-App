@@ -76,18 +76,29 @@ namespace CommerceApp.Models
                 //string jsonData = @"{""username"" : ""myusername"", ""password"" : ""mypassword""}";
 
 
+                if(data==null)
+                {
+                     HttpResponseMessage response = await client.PostAsync(link,null);
+                    string result = await response.Content.ReadAsStringAsync();
 
-                var content = new StringContent(data, Encoding.UTF8, "application/json");
+                    return result;
+                }
+                else
+                {
+                    var content = new StringContent(data, Encoding.UTF8, "application/json");
 
-                HttpResponseMessage response = await client.PostAsync(link, content);
+                    HttpResponseMessage response = await client.PostAsync(link, content);
+                    string result = await response.Content.ReadAsStringAsync();
+
+                return result;
+                }
+                
 
 
 
                 // this result string should be something like: "{"token":"rgh2ghgdsfds"}"
 
-                string result = await response.Content.ReadAsStringAsync();
-
-                return result;
+               
 
             }
 

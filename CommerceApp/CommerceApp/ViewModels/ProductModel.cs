@@ -4,86 +4,72 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 using System.Runtime.CompilerServices;
-
+using System.Threading.Tasks;
 using System.Windows.Input;
 using CommerceApp.Models;
 using Newtonsoft.Json;
 using Xamarin.Forms;
-using static CommerceApp.ViewModels.HomeViewModel;
-
 namespace CommerceApp.ViewModels
-
 {
     public class ProductModel : INotifyPropertyChanged
 
     {
+        Page page;
         private Product product;
-        public ICommand Get { get; set; }
+        public ICommand PushCart { get; set; }
         private ObservableCollection<Images> images;
-        public ObservableCollection<Category> Categories { get; set; }
-        public ObservableCollection<Event> Events { get; set; }
-        public ObservableCollection<ProductSection> ProductSections { get; set; }
-
-        //---------------------- Process Section -------------------------------
-        public Command LoadMoreCategoryCommand { get; }
-        public Command LoadMoreProductCommand { get; }
-        public Command LoadMoreEventCommand { get; }
-        public Command AutoSliderCommand { get; }
+        private ObservableCollection<Description> descriptions;
+        private Description description;
         private int id;
-        public ProductModel()
+        public ProductModel(Page page,int idp)
         {
-            id = 2;
+            id = idp;
+            this.page =page;
             images = new ObservableCollection<Images>();
-            Get = new Command(GetData);
+            PushCart = new Command(PushCar);
             GetData();
-            LoadMoreCategoryCommand = new Command(() =>
-            {
-                Categories.Add(new Category { Name = "New Items", IconUrl = "/apparel.png" });
-                Categories.Add(new Category { Name = "New Items", IconUrl = "/apparel.png" });
-            });
-
-            LoadMoreProductCommand = new Command<ObservableCollection<Product>>(Products =>
-            {
-                var categoryid = Products[0].root_id;
-                Products.Add(new Product { root_id = categoryid, url_images = "jacket.png", full_name = "New ID" + categoryid.ToString(), cost = 1500 });
-            });
-
-            LoadMoreEventCommand = new Command<ObservableCollection<Event>>(Events =>
-            {
-                var event_id = Events[Events.Count - 1].ID;
-                for (int i = event_id + 1; i <= event_id + 5; i++)
-                {
-                    Events.Add(new Event { ID = i, Url = "Banner.png" });
-                }
-            });
-
-            AutoSliderCommand = new Command<int>(Position =>
-            {
-                Device.StartTimer(TimeSpan.FromSeconds(5), (Func<bool>)(() =>
-                {
-                    Position = (Position + 1) % Events.Count;
-                    return true;
-                }));
-            });
             // Create Data For Testing
-            Events = new ObservableCollection<Event>
+            //descriptions = new ObservableCollection<Description>();
+            description = new Description();
+            //{
+            //    new Images { id = 1, url = "Banner.png" },
+            //    new Images { id = 2, url = "Banner.png" },
+            //    new Images { id = 3, url = "Banner.png" },
+            //    new Images { id = 4, url = "Banner.png" },
+            //    new Images { id = 5, url = "Banner.png" }
+            //};
+        }
+        private async void PushCar()
+        {
+            string result = await App.Api.Post("/user/31/new-cart/" + id,null);
+            Console.WriteLine(result);
+            if(result=="true")
             {
-                new Event { ID = 1, Url = "Banner.png" },
-                new Event { ID = 2, Url = "Banner.png" },
-                new Event { ID = 3, Url = "Banner.png" },
-                new Event { ID = 4, Url = "Banner.png" },
-                new Event { ID = 5, Url = "Banner.png" }
-            };
+                await page.DisplayAlert("Thong bao", "Ban da them vao gi hang thanh cong", "OK");
+            }
+            else
+            {
+                await page.DisplayAlert("Thong bao", "Co loi xay ra! Ma loi:"+result, "OK");
+            }
+        }
 
-            Categories = new ObservableCollection<Category>
+        public ObservableCollection<Description> Descriptions
+        {
+            get { return descriptions; }
+            set
             {
-                new Category {CategoryID=1,Name="Quần áo", IconUrl="/apparel.png"},
-                new Category {CategoryID=2,Name="Mỹ phẩm", IconUrl="/beauty.png"},
-                new Category {CategoryID=3,Name="Giày dép", IconUrl="/shoes.png"},
-                new Category {CategoryID=4,Name="Quần áo 2", IconUrl="/apparel.png"},
-                new Category {CategoryID=5,Name="Mỹ phẩm 2", IconUrl="/beauty.png"},
-                new Category {CategoryID=6,Name="Giày dép 2", IconUrl="/shoes.png"},
-            };
+                descriptions = value;
+                OnPropertyChanged("Descriptions");
+            }
+        }
+        public Description Description
+        {
+            get { return description; }
+            set
+            {
+                description = value;
+                OnPropertyChanged("Description");
+            }
         }
         public Product Product
         {
@@ -105,11 +91,12 @@ namespace CommerceApp.ViewModels
             }
         }
         private async void GetData()
-
         {
             Console.WriteLine("ok 1");
             string result = await App.Api.Get("/product/select/" + id);
             string resultimages = await App.Api.Get("/product/item-images/" + id);
+            string resultdes = await App.Api.Get("/product/item-description/" + id);
+            Descriptions = JsonConvert.DeserializeObject<ObservableCollection<Description>>(resultdes);
             Product = JsonConvert.DeserializeObject<Product>(result);
             Sourceimges = JsonConvert.DeserializeObject<ObservableCollection<Images>>(resultimages);
         }

@@ -4,131 +4,67 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             xmlns:views="clr-namespace:CommerceApp.Views"
-             xmlns:viewmodels="clr-namespace:CommerceApp.ViewModels"
+             xmlns:local="clr-namespace:CommerceApp.Views"
              x:Class="CommerceApp.Views.HomePage">
     <ContentPage.Resources>
         <ControlTemplate x:Key="CategoryCardView">
-            <StackLayout Margin="10,10">
+            <StackLayout Margin="10,20">
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="{TemplateBinding CategoryTitle}" TextColor="#515C6F" FontAttributes="Bold" FontSize="15" FontFamily="NeusaNextStd-Bold.ttf#NeusaNextStd-Bold" Margin="10,0,0,0" VerticalOptions="Center"/>
-                    <Label Text="Xen thêm" TextColor="#FF6969" FontSize="12" FontFamily="NeusaNextStd-Regular.ttf#NeusaNextStd-Regular" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Margin="0,0,10,0"/>
-                </StackLayout>
-                <Frame BackgroundColor="White" CornerRadius="15">
-                    <ContentPresenter HeightRequest="{TemplateBinding SectionHeight}"/>
-                </Frame>
-            </StackLayout>
-        </ControlTemplate>
-        <ControlTemplate x:Key="SectionCardView">
-            <StackLayout Margin="10,10">
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="{TemplateBinding CategoryTitle}" TextColor="#515C6F" FontAttributes="Bold" FontSize="15" FontFamily="NeusaNextStd-Bold.ttf#NeusaNextStd-Bold" Margin="10,0,0,0" VerticalOptions="Center"/>
-                    <Label Text="Xen thêm" TextColor="#FF6969" FontSize="12" FontFamily="NeusaNextStd-Regular.ttf#NeusaNextStd-Regular" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Margin="0,0,10,0"/>
+                    <Label Text="{TemplateBinding CategoryTitle}" TextColor="#515C6F" FontAttributes="Bold" FontSize="20" FontFamily="Neusa Next Std" Margin="10,0,0,0" VerticalOptions="Center"/>
+                    <Label Text="Xen thêm" TextColor="#FF6969" FontSize="12" FontFamily="Neusa Next Std" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Margin="0,0,10,0"/>
                 </StackLayout>
                 <ContentPresenter HeightRequest="{TemplateBinding SectionHeight}"/>
             </StackLayout>
+        
         </ControlTemplate>
-
     </ContentPage.Resources>
 
     <NavigationPage.TitleView>
-        <views:HomeNavigationBar/>
+        <local:HomeNavigationBar/>
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout>
-                <!--Events Section-->
-                <views:CategoryView CategoryTitle="Sự kiện" ControlTemplate="{StaticResource SectionCardView}" SectionHeight="200">
-                    <StackLayout>
-                        <CarouselView  x:Name="eventSection"
-                                       ItemsSource="{Binding Events}"
-                                       RemainingItemsThreshold="5"
-                                       RemainingItemsThresholdReachedCommand="{Binding LoadMoreEventCommand}" 
-                                       EmptyView="Không có bất kỳ nội dung nào để hiển thị"
-                                       RemainingItemsThresholdReachedCommandParameter="{Binding Events}"
-                                       PositionChangedCommand="{Binding AutoSliderCommand}"
-                                       PositionChangedCommandParameter="{Binding Source={RelativeSource Mode=Self}, Path=Position}">
-                            <CarouselView.ItemsLayout>
-                                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="0" SnapPointsType="MandatorySingle" SnapPointsAlignment="End"/>
-                            </CarouselView.ItemsLayout>
-                            <CarouselView.ItemTemplate>
-                                <DataTemplate>
-                                    <Image Source="{Binding Url}" BackgroundColor="Transparent" Aspect="AspectFill" HorizontalOptions="CenterAndExpand"/>
-                                </DataTemplate>
-                            </CarouselView.ItemTemplate>
-                        </CarouselView>
-                        <IndicatorView ItemsSourceBy="eventSection" IndicatorColor="LightGray" SelectedIndicatorColor="DarkGray" HorizontalOptions="Center" />
-                    </StackLayout>
-                </views:CategoryView>
-
-
-                <!--Category Section-->
-               
-                    <views:CategoryView CategoryTitle="Danh mục" ControlTemplate="{StaticResource CategoryCardView}" SectionHeight="90">
-                    
-                        <CollectionView   ItemsSource="{Binding Categories}" ItemSizingStrategy="MeasureAllItems" 
-                                 RemainingItemsThreshold="5" RemainingItemsThresholdReachedCommand="{Binding LoadMoreCategoryCommand}" EmptyView="Không có bất kỳ nội dung nào để hiển thị" >
-                            <CollectionView.ItemsLayout>
-                                <GridItemsLayout Orientation="Horizontal" HorizontalItemSpacing="0" SnapPointsType="Mandatory" SnapPointsAlignment="Start"/>
-                            </CollectionView.ItemsLayout>
-                            <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                
-                                <Grid RowSpacing="0" >
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="60" />
-                                        <RowDefinition Height="30" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="70" />
-                                    </Grid.ColumnDefinitions>
-                                    <ImageButton  Grid.Row="0" Source="{Binding IconUrl}" BackgroundColor="Transparent"/>
-                                    <Label Grid.Row="1" Text="{Binding Name}" FontSize="12" FontFamily="Neusa Next Std" HorizontalOptions="Center"/>
-                                </Grid>
-               
-                                </DataTemplate>
-                            </CollectionView.ItemTemplate>
-                        </CollectionView>
-                    </views:CategoryView>
-               
-
-                <!--Products Section-->
-                <StackLayout Orientation="Vertical" BindableLayout.ItemsSource="{Binding ProductSections}">
-                    <BindableLayout.ItemTemplate>
+        <StackLayout>
+            <local:CategoryView CategoryTitle="Danh mục" ControlTemplate="{DynamicResource CategoryCardView}" SectionHeight="110">
+                <CollectionView  x:Name="categorySection" ItemsSource="{Binding .}" ItemSizingStrategy="MeasureFirstItem"
+                             EmptyView="Không có bất kỳ nội dung nào để hiển thị" >
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" ItemSpacing="0" IndicatorView.ItemsSourceBy="categorySection"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <views:CategoryView CategoryTitle="{Binding SectionTitle}" ControlTemplate="{StaticResource SectionCardView}" SectionHeight="150">
-                                <CollectionView ItemsSource="{Binding Products}" ItemSizingStrategy="MeasureAllItems" EmptyView="Không có bất kỳ nội dung nào để hiển thị" 
-                                                RemainingItemsThreshold="5" RemainingItemsThresholdReachedCommand="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:HomeViewModel}},Path=LoadMoreProductCommand}"  
-                                                RemainingItemsThresholdReachedCommandParameter="{Binding Products}" >
-                                    <CollectionView.ItemsLayout>
-                                        <GridItemsLayout Orientation="Horizontal" Span="1" HorizontalItemSpacing="15" SnapPointsType="Mandatory" SnapPointsAlignment="Start" />
-                                    </CollectionView.ItemsLayout>
-                                    <CollectionView.ItemTemplate>
-                                        <DataTemplate>
-                                            <Frame  CornerRadius="15"  HeightRequest="150" WidthRequest="60">
-                                                <Grid RowSpacing="2" BackgroundColor="#FFFFFF">
-                                                    <Grid.RowDefinitions>
-                                                        <RowDefinition Height="60" />
-                                                        <RowDefinition Height="20" />
-                                                        <RowDefinition Height="20" />
-                                                    </Grid.RowDefinitions>
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="60" />
-                                                    </Grid.ColumnDefinitions>
-                                                    <ImageButton Grid.Row="0" Source="{Binding IconUrl}" BackgroundColor="Transparent" HeightRequest="80" WidthRequest="76"/>
-                                                    <Label Grid.Row="1" FontFamily="NeusaNextStd-Light.ttf#NeusaNextStd-Light" Text="{Binding ProductName}" FontSize="12"  TextColor="#515C6F" HorizontalOptions="Center"/>
-                                                    <Label Grid.Row="2" FontFamily="NeusaNextStd-Bold.ttf#NeusaNextStd-Bold" Text="{Binding Price, StringFormat='{0:f} VNĐ'}" FontSize="10" TextColor="#515C6F" FontAttributes="Bold" HorizontalOptions="Center"/>
-                                                </Grid>
-                                            </Frame>
-                                        </DataTemplate>
-                                    </CollectionView.ItemTemplate>
-                                </CollectionView>
-                            </views:CategoryView>
+                            <Grid RowSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="90" />
+                                    <RowDefinition Height="20" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                </Grid.ColumnDefinitions>
+                                <ImageButton  Grid.Row="0" Source="{Binding Icon}" BackgroundColor="Transparent" Clicked="ButtonClicked"/>
+                                <Label Grid.Row="1" Text="{Binding Name}" FontSize="15" FontFamily="Neusa Next Std" HorizontalOptions="Center"/>
+                            </Grid>
                         </DataTemplate>
-                    </BindableLayout.ItemTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </local:CategoryView>
+
+
+            <local:CategoryView CategoryTitle="Sự kiện" ControlTemplate="{DynamicResource CategoryCardView}" SectionHeight="200">
+                <StackLayout>
+                    <CarouselView x:Name="eventSection" EmptyView="Không có bất kỳ nội dung nào để hiện thị">
+                        <CarouselView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Horizontal" ItemSpacing="0"/>
+                        </CarouselView.ItemsLayout>
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <ImageButton Source="Banner.png" HorizontalOptions="CenterAndExpand" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                    <IndicatorView ItemsSourceBy="eventSection" IndicatorColor="LightGray" SelectedIndicatorColor="DarkGray" HorizontalOptions="Center" />
                 </StackLayout>
-            </StackLayout>
-        </ScrollView>
+            </local:CategoryView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

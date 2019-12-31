@@ -7,7 +7,7 @@
              x:Class="CommerceApp.Views.Success">
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" >
-            <Image x:Name="successicon" Source="icon.png" Margin="0,0,0,28"   />
+            <Image Source="icon.png" Margin="0,0,0,28"/>
             <Label Text="Đặt hàng thành công!" 
                    TextColor="#515C6F" FontSize="30" 
                    FontAttributes="Bold" FontFamily="Neusa Next Std" HorizontalOptions="Center"/>
