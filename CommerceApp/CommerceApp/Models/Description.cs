@@ -11,5 +11,6 @@ namespace CommerceApp.Models
         public int id_item { get; set; }
         public int index { get; set; }
         public int status { get; set; }
+        //khoa
     }
 }

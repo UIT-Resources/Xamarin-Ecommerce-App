@@ -56,5 +56,6 @@ namespace CommerceApp
         {
             // Handle when your app resumes
         }
+        //khoa
     }
 }

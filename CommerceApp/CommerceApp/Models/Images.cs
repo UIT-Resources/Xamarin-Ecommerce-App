@@ -17,5 +17,6 @@ namespace CommerceApp.Models
         private string source; 
         public string url { get { return source; } set { source = "http://uit-api-xamarin.azurewebsites.net/product/images/"+id_item+"/"+ value; } }
         //{ get; set; }{
+        //khoa
     }
 }

@@ -21,6 +21,7 @@ namespace CommerceApp.ViewModels
         private ObservableCollection<Description> descriptions;
         private Description description;
         private int id;
+        //khoa
         public ProductModel(Page page,int idp)
         {
             id = idp;

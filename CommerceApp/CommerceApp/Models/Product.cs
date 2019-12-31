@@ -6,6 +6,7 @@ namespace CommerceApp.Models
 {
     public class Product : BindableBase
     {
+        //khoa
         public int id { get; set; }
         public string full_name { get; set; }
         public DateTime? create_date { get; set; }
