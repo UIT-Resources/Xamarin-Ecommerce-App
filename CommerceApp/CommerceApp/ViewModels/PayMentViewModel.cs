@@ -107,6 +107,10 @@ namespace CommerceApp.ViewModels
                 string url = $"/product/select/{productOfUsers[i].Item_id}";
                 data = await api.Get(url);
                 ProductServer temp = JsonConvert.DeserializeObject<ProductServer>(data);
+                if (temp == null)
+                {
+                    break;
+                }
                 temp.Amount = productOfUsers[i].Amount;
                 ob.Add(temp);
             }

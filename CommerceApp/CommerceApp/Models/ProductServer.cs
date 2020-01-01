@@ -24,7 +24,6 @@ namespace CommerceApp.Models
         public string description { get; set; }
         public int amount { get; set; }
 
-
         public int Id { get { return id; } set { id = value; OnPropertyChanged("Id"); } }
         public string Full_name { get { return full_name; } set { full_name = value; OnPropertyChanged("Full_name"); } }
         public string Create_date { get { return create_date; } set { create_date = value; OnPropertyChanged("Create_date"); } }

@@ -14,7 +14,7 @@
             <Label LineBreakMode="WordWrap" Text="Đơn hàng của bạn đã được đặt thành công. Để biết thông tin chi tiết, vui lòng vào mục Đơn hàng của tôi trong trang thông tin tài khoản của bạn." 
                    TextColor="#515C6F" FontSize="15" 
                     FontFamily="Neusa Next Std" LineHeight="1.2" Margin="80,0,80,0"/>
-            <ImageButton Source="button1.png" BackgroundColor="Transparent" Margin="0,12,0,0"/>
+            <ImageButton Source="button1.png" Command="{Binding donhangcuatoi}" BackgroundColor="Transparent" Margin="0,12,0,0"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
