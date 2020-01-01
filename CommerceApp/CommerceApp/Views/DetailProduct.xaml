@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+
+
+             x:Class="CommerceApp.Views.DetailProduct">
+
+
+    <ScrollView Padding="8,8,8,10">
+
+        <StackLayout>
+
+            <!-- Place new controls here -->
+            <CarouselView  HeightRequest="250"
+                                       ItemsSource="{Binding Sourceimges}">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Image WidthRequest="200" Source="{Binding url}"/>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <CollectionView    RemainingItemsThreshold="5" HeightRequest="70" BackgroundColor="#fff" ItemSizingStrategy="MeasureAllItems"  ItemsSource="{Binding Sourceimges}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Horizontal" HorizontalItemSpacing="0" SnapPointsType="Mandatory" SnapPointsAlignment="Start"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid RowSpacing="0" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="70" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70" />
+                            </Grid.ColumnDefinitions>
+                            <ImageButton Margin="1" Grid.Row="0" Source="{Binding url}" BackgroundColor="Transparent"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+            <StackLayout Padding="10,5,5,0" Orientation="Horizontal">
+                <Label FontSize="9" Text="Ma SP" />
+                <Label FontSize="9" Text="{Binding Product.id, Mode=TwoWay}" />
+                <Label FontSize="9" Text="Loai SP" />
+                <Label FontSize="9" Text="{Binding Product.root_id, Mode=TwoWay}" />
+                <Label FontSize="9" Text="Xuat xu" />
+                <Label FontSize="9" Text="{Binding Product.origin, Mode=TwoWay}" />
+            </StackLayout>
+            <StackLayout Padding="5,-5,5,0" Orientation="Horizontal" >
+
+                <Label TextColor="Black"  FontSize="13" Text="{Binding Product.full_name, Mode=TwoWay}"/>
+
+                <ContentView  >
+
+                    <Label Text="Sale 50%" FontSize="12" TextColor="Red" />
+
+                </ContentView>
+
+                <Label Margin="5,0,0,0" TextColor="Black"  FontSize="10" Text="("/>
+
+                <Image WidthRequest="11" Source="https://cdn2.iconfinder.com/data/icons/modifiers-add-on-1-flat/48/Mod_Add-On_1-35-512.png"/>
+
+                <Image WidthRequest="11" Source="https://cdn2.iconfinder.com/data/icons/modifiers-add-on-1-flat/48/Mod_Add-On_1-35-512.png"/>
+
+                <Image WidthRequest="11" Source="https://cdn2.iconfinder.com/data/icons/modifiers-add-on-1-flat/48/Mod_Add-On_1-35-512.png"/>
+
+                <Image WidthRequest="11" Source="https://cdn2.iconfinder.com/data/icons/modifiers-add-on-1-flat/48/Mod_Add-On_1-35-512.png"/>
+
+                <Image WidthRequest="11" Source="https://cdn2.iconfinder.com/data/icons/modifiers-add-on-1-flat/48/Mod_Add-On_1-35-512.png"/>
+
+                <Label TextColor="Black"  FontSize="11" Text=")"/>
+
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="20,0,0,0">
+                <Label TextColor="Red"  FontSize="18" Text="{Binding Product.cost, Mode=TwoWay}"/>
+                <Label TextColor="Black" Padding="0,5,0,0" FontSize="13" Text="VND /"/>
+                <Label TextColor="Black" Padding="0,5,0,0"  FontSize="13" Text="{Binding Product.unit, Mode=TwoWay}"/>
+            </StackLayout>
+            <StackLayout Padding="0,10,0,5" HorizontalOptions="Center" Orientation="Vertical">
+
+                <Button BackgroundColor="Red" Command="{Binding PushCart}" CornerRadius="10" TextColor="White" WidthRequest="300"  x:Name="mua" Text="Mua Ngay"/>
+
+                <!--<Button BackgroundColor="#2897E6" CornerRadius="10" TextColor="White" WidthRequest="300"   Text="Them vao gio hang"/>-->
+
+            </StackLayout>
+            <ContentView>
+                <StackLayout 
+                      VerticalOptions="FillAndExpand"
+                      BindableLayout.ItemsSource="{Binding Descriptions}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="3" Margin="3" BackgroundColor="#DEE6EB">
+
+                                <Label Text="Product detail" FontSize="15" />
+
+                                <ContentView Margin="10,-3,10,5">
+
+                                    <Label  Text="{Binding context}"/>
+
+                                </ContentView>
+
+                                <!--<ContentView Margin="10,-3,10,5">
+
+                                <Grid>
+
+                                    <Label Text="Thong so" Grid.Row="0" Grid.Column="0" />
+
+                                    <Label Text="Chi tiet" Grid.Row="0" Grid.Column="1" />
+
+                                    <Label Text="Cong nghe" Grid.Row="1" Grid.Column="0" />
+
+                                    <Label Text="4.0" Grid.Row="1" Grid.Column="1" />
+                                </Grid>
+                            </ContentView>-->
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ContentView>
+
+            <StackLayout Padding="3" Margin="3" BackgroundColor="#DEE6EB">
+
+                <Label FontSize="16" TextColor="Black" Text="Nhan xet"/>
+
+                <StackLayout Margin="5,0,0,0" >
+
+                    <StackLayout Orientation="Horizontal" Padding="1,0,0,0" >
+
+                        <Label Text="Khach hang 1"  FontSize="14" TextColor="Black"/>
+
+                        <Label Margin="5,2,0,0" TextColor="Black"  FontSize="10" Text="("/>
+
+                        <Image WidthRequest="11" Source="https://cdn2.iconfinder.com/data/icons/modifiers-add-on-1-flat/48/Mod_Add-On_1-35-512.png"/>
+
+                        <Image WidthRequest="11" Source="https://cdn2.iconfinder.com/data/icons/modifiers-add-on-1-flat/48/Mod_Add-On_1-35-512.png"/>
+
+                        <Image WidthRequest="11" Source="https://cdn2.iconfinder.com/data/icons/modifiers-add-on-1-flat/48/Mod_Add-On_1-35-512.png"/>
+
+                        <Image WidthRequest="11" Source="https://cdn2.iconfinder.com/data/icons/modifiers-add-on-1-flat/48/Mod_Add-On_1-35-512.png"/>
+
+                        <Image WidthRequest="11" Source="https://cdn2.iconfinder.com/data/icons/modifiers-add-on-1-flat/48/Mod_Add-On_1-35-512.png"/>
+
+                        <Label Margin="1,1,0,0" TextColor="Black"  FontSize="11" Text=")"/>
+
+                    </StackLayout>
+
+
+
+                    <BoxView Margin="0,-5,0,0"  BackgroundColor="Black" WidthRequest="400" HeightRequest="1" VerticalOptions="FillAndExpand" HorizontalOptions="End"/>
+
+                    <ContentView Margin="5,-3,5,2">
+
+                        <Label  Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."  FontSize="12" TextColor="Black"/>
+
+                    </ContentView>
+
+                    <Label HorizontalOptions="End" Margin="0,-5,0,0" Text="12/9/2019" FontSize="12" />
+
+                </StackLayout>
+
+            </StackLayout>
+
+        </StackLayout>
+
+
+
+    </ScrollView>
+
+</ContentPage>

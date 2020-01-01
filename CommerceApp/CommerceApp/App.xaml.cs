@@ -12,6 +12,18 @@ namespace CommerceApp
     public partial class App : Application
     {
         // Begin Create Local Database (SQLite)
+        static RestApi resApi;
+        public static RestApi Api
+        {
+            get
+            {
+                if (resApi == null)
+                {
+                    resApi = new RestApi();
+                }
+                return resApi;
+            }
+        }
         static ItemRepository database;
         public static ItemRepository Database
         {
@@ -81,7 +93,7 @@ namespace CommerceApp
         public App()
         {
             InitializeComponent();
-            MainPage = new ControlPage();
+            MainPage = new DetailProduct(2);
         }
 
         protected override void OnStart()
