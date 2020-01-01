@@ -10,29 +10,32 @@
              NavigationPage.HasNavigationBar="False"
              android:TabbedPage.ToolbarPlacement="Bottom"
              android:TabbedPage.BarItemColor="Black"
-             android:TabbedPage.BarSelectedItemColor="Red">
+             android:TabbedPage.BarSelectedItemColor="Red"
+             android:TabbedPage.IsSwipePagingEnabled="false"
+             HeightRequest="200"
+             BarBackgroundColor="#FFFFFF">
     <TabbedPage.Children>
-        <NavigationPage IconImageSource="Home.png">
+        <NavigationPage Title="Home" IconImageSource="Home.png">
             <x:Arguments>
                 <views:HomePage/>
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage IconImageSource="Menu.png">
+        <NavigationPage Title="Category"  IconImageSource="Menu.png">
             <x:Arguments>
                 <views:HomePage/>
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage IconImageSource="Search.png">
+        <NavigationPage Title="Search" IconImageSource="Search.png" >
             <x:Arguments>
                 <views:HomePage/>
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage IconImageSource="Notification.png">
+        <NavigationPage Title="Notify" IconImageSource="Notification.png">
             <x:Arguments>
                 <views:Notification/>
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage IconImageSource="Profile.png">
+        <NavigationPage Title="Profile" IconImageSource="Profile.png">
             <x:Arguments>
                 <views:Profile/>
             </x:Arguments>

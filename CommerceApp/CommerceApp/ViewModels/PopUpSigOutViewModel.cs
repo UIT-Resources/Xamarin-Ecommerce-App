@@ -16,6 +16,7 @@ namespace CommerceApp.ViewModels
         {
             co = new Command( async () =>
             {
+                App.Database.DeleteAllSessions();
                 Application.Current.MainPage.Navigation.InsertPageBefore(new Loggin(), Application.Current.MainPage.Navigation.NavigationStack.Last());
                 await Application.Current.MainPage.Navigation.PopAsync();
                 await PopupNavigation.PopAsync(true);
