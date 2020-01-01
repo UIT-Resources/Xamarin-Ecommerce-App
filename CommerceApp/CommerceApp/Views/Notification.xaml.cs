@@ -16,7 +16,7 @@ namespace CommerceApp.Views
         public Notification()
         {
             InitializeComponent();
-            t[] test = new t[] { new t { title = "Đơn hàng #123 củaffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff bạn đã được giao thành công.", time= "Tue 6 Nov, 09:30 - 10:00 GMT" }, new t { title = "Đơn hàng #123 của bạn đã được giao thành công.", time = "Tue 6 Nov, 09:30 - 10:00 GMT" } };
+            t[] test = new t[] { new t { title = "Đơn hàng #123 của bạn đã được giao thành công.", time= "Tue 6 Nov, 09:30 - 10:00 GMT" }, new t { title = "Đơn hàng #123 của bạn đã được giao thành công.", time = "Tue 6 Nov, 09:30 - 10:00 GMT" } };
             List.ItemsSource = test;
 
 

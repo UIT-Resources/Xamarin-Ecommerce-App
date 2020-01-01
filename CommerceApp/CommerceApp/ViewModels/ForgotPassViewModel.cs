@@ -35,8 +35,8 @@ namespace CommerceApp.ViewModels
                 Console.WriteLine(QuenMatKhau);
 
 
-                //string result = await api.Post("/user/forgotpassword", "{'email':'ntdmonter@gmail.com'}");
-                //api.Post("/user/forgotpassword", "{'email':'ntdmonter@gmail.com'}");
+                //string result = await api.Post("/user/forgotpassword", QuenMatKhau);
+                await api.Post("/user/forgotpassword", QuenMatKhau);
                 await Application.Current.MainPage.DisplayAlert("Thông báo", "Xin hãy kiểm tra thông tin Email", "Ok");
                 QuenMatKhau = "";
             });
