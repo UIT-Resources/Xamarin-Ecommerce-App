@@ -15,7 +15,7 @@ namespace CommerceApp.Views
     {
         AddressOfUser addressOfUser;
 
-        public Success(addressOfUser)
+        public Success()
         {
             InitializeComponent();
         }

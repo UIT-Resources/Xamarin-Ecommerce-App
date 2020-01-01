@@ -82,7 +82,7 @@ namespace CommerceApp.ViewModels
             thanhtoan = new Command(() =>
             {
                 OrderItem();
-                App.Current.MainPage.Navigation.PushModalAsync(new Success(AddressOfUser));
+                App.Current.MainPage.Navigation.PushModalAsync(new Success());
             });
         }
         public async void GetAddressUser()
