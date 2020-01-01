@@ -111,13 +111,13 @@ namespace CommerceApp.ViewModels
         {
             get
             {
-                return _selectSubstractCommand ?? (_selectSubstractCommand = new Command<int>(async (id) =>
+                return _selectAddCommand ?? (_selectAddCommand = new Command<int>(async (id) =>
                 {
                     for (int j = 0; j < productOfUsers.Count; j++)
                     {
                         if (id == productOfUsers[j].Item_id)
                         {
-                            int i = productOfUsers[j].Amount - 1;
+                            int i = productOfUsers[j].Amount + 1;
                             string data = @"{""amount"":" + i + "}";
                             string product = await api.Post($"/user/cart/{productOfUsers[j].Id}", data);
                             ProductOfUser temp = JsonConvert.DeserializeObject<ProductOfUser>(product);
