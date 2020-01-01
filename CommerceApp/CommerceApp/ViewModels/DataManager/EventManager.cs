@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 using CommerceApp.Config;
@@ -19,22 +20,22 @@ namespace CommerceApp.ViewModels.DataManager
 
         public Task DeleteEventAsync(string id)
         {
-            return restService.DeleteObjectAsync(Constants.EventsUrl, id);
+            return restService.DeleteObjectAsync(Constants.EventsUrl,id);
         }
 
-        public Task<EventServer> GetEventAsync(string id)
+        public Task<Event> GetEventAsync(string id)
         {
-            return restService.GetObjectAsync<EventServer>(Constants.EventsUrl, id);
+            return restService.GetObjectAsync<Event>(Constants.EventsUrl, id);
         }
 
-        public Task<List<EventServer>> RefreshEventAsync(string ItemsUrl)
+        public Task<ObservableCollection<Event>> RefreshEventAsync()
         {
-            return restService.RefreshObjectAsync<EventServer>(Constants.EventsUrl);
+            return restService.RefreshObjectAsync<Event>(Constants.EventsUrl);
         }
 
-        public Task SaveEventAsync(EventServer item, bool isNewItem)
+        public Task SaveEventAsync(Event item, bool isNewItem)
         {
-            return restService.SaveObjectAsync<EventServer>(Constants.EventsUrl, item, isNewItem);
+            return restService.SaveObjectAsync<Event>(Constants.EventsUrl, item, isNewItem);
         }
     }
 }

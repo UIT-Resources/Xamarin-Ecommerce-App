@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 using CommerceApp.Models.Interfaces;
+using System.Collections.ObjectModel;
 
 namespace CommerceApp.Models
 {
@@ -14,14 +15,14 @@ namespace CommerceApp.Models
     {
         HttpClient _client;
 
-        public RestServiceGeneric(HttpClient client)
+        public RestServiceGeneric()
         {
-            _client = client;
+            _client = new HttpClient();
         }
 
-        public async Task<List<T>> RefreshObjectAsync<T>(string ItemsUrl)
+        public async Task<ObservableCollection<T>> RefreshObjectAsync<T>(string ItemsUrl)
         {
-            List<T> Items = new List<T>();
+            ObservableCollection<T> Items = new ObservableCollection<T>();
 
             var uri = new Uri(string.Format(ItemsUrl, string.Empty));
             try
@@ -30,13 +31,14 @@ namespace CommerceApp.Models
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    Items = JsonConvert.DeserializeObject<List<T>>(content);
+                    Items = JsonConvert.DeserializeObject<ObservableCollection<T>>(content);
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(@"\tERROR {0}", ex.Message);
             }
+
 
             return Items;
         }

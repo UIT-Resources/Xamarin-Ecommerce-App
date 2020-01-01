@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 using CommerceApp.Config;
@@ -23,19 +24,19 @@ namespace CommerceApp.ViewModels.DataManager
             return restService.DeleteObjectAsync(Constants.CategoriesUrl,id);
         }
 
-        public Task<CategoryServer> GetCategoryAsync(string id)
+        public Task<Category> GetCategoryAsync(string id)
         {
-            return restService.GetObjectAsync<CategoryServer>(Constants.CategoriesUrl, id);
+            return restService.GetObjectAsync<Category>(Constants.CategoriesUrl, id);
         }
 
-        public Task<List<CategoryServer>> RefreshCategoryAsync(string ItemsUrl)
+        public Task<ObservableCollection<Category>> RefreshCategoryAsync()
         {
-            return restService.RefreshObjectAsync<CategoryServer>(Constants.CategoriesUrl);
+            return restService.RefreshObjectAsync<Category>(Constants.CategoriesUrl);
         }
 
-        public Task SaveCategoryAsync(CategoryServer item, bool isNewItem)
+        public Task SaveCategoryAsync(Category item, bool isNewItem)
         {
-            return restService.SaveObjectAsync<CategoryServer>(Constants.CategoriesUrl, item, isNewItem);
+            return restService.SaveObjectAsync<Category>(Constants.CategoriesUrl, item, isNewItem);
         }
     }
 }

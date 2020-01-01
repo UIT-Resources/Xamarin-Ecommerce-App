@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CommerceApp.Models;
 using CommerceApp.Models.Interfaces;
 using CommerceApp.Config;
+using System.Collections.ObjectModel;
 
 namespace CommerceApp.ViewModels.DataManager
 {
@@ -22,19 +23,19 @@ namespace CommerceApp.ViewModels.DataManager
             return restService.DeleteObjectAsync(Constants.ProductsUrl, id);
         }
 
-        public Task<ProductServer> GetProductAsync(string id)
+        public Task<Product> GetProductAsync(string id)
         {
-            return restService.GetObjectAsync<ProductServer>(Constants.ProductsUrl, id);
+            return restService.GetObjectAsync<Product>(Constants.ProductsUrl, id);
         }
 
-        public Task<List<ProductServer>> RefreshProductAsync()
+        public Task<ObservableCollection<Product>> RefreshProductAsync()
         {
-            return restService.RefreshObjectAsync<ProductServer>(Constants.ProductsUrl);
+            return restService.RefreshObjectAsync<Product>(Constants.ProductsUrl);
         }
 
-        public Task SaveProductAsync(ProductServer item, bool isNewItem)
+        public Task SaveProductAsync(Product item, bool isNewItem)
         {
-            return restService.SaveObjectAsync<ProductServer>(Constants.ProductsUrl, item, isNewItem);
+            return restService.SaveObjectAsync<Product>(Constants.ProductsUrl, item, isNewItem);
         }
     }
 }

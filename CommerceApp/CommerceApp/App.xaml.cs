@@ -28,6 +28,17 @@ namespace CommerceApp
 
         // Begin Create WebAPI
         static RestServiceGeneric service;
+        public static RestServiceGeneric Service
+        {
+            get
+            {
+                if (service == null)
+                {
+                    service = new RestServiceGeneric();
+                }
+                return service;
+            }
+        }
 
         static ProductManager product_manager; 
         public static ProductManager ProductManager
@@ -36,7 +47,7 @@ namespace CommerceApp
             {
                 if (product_manager == null)
                 {
-                    product_manager = new ProductManager(service);
+                    product_manager = new ProductManager(Service);
                 }
                 return product_manager;
             }
@@ -48,7 +59,7 @@ namespace CommerceApp
             {
                 if (event_manager == null)
                 {
-                    event_manager = new EventManager(service);
+                    event_manager = new EventManager(Service);
                 }
                 return event_manager;
             }
@@ -61,7 +72,7 @@ namespace CommerceApp
             {
                 if (category_manager == null)
                 {
-                    category_manager = new CategoryManager(service);
+                    category_manager = new CategoryManager(Service);
                 }
                 return category_manager;
             }
@@ -70,7 +81,6 @@ namespace CommerceApp
         public App()
         {
             InitializeComponent();
-
             MainPage = new ControlPage();
         }
 
