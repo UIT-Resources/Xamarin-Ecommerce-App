@@ -25,6 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\BillOfUser.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Camera.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
