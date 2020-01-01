@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="CommerceApp.Views.ForgotPass"
-             xmlns:gradient ="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms">
+             xmlns:gradient ="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <Grid >
             <gradient:SfGradientView>
@@ -26,11 +27,12 @@
                 </StackLayout>
                 <StackLayout VerticalOptions="Center" Spacing="0" Padding="20">
                     <Label Text="Email" FontSize="12" Font="Gibson"  TextColor="#FFFFFF4D"/>
-                    <Entry Text="Aaron Smith" TextColor="White"/>
+                    <Entry Text="{Binding QuenMatKhau}" TextColor="White"/>
                     <StackLayout >
-                        <Button Text="GỬI EMAIL" Font="Gibson" HeightRequest="50" 
+                        <Button Command="{Binding email}"
+                            Text="GỬI EMAIL" Font="Gibson" HeightRequest="50" 
                             TextColor="#5887F9" BackgroundColor="White"
-                            Margin="0,35,0,0" VerticalOptions="Center" CornerRadius="6" Clicked="Button_Clicked"/>
+                            Margin="0,35,0,0" VerticalOptions="Center" CornerRadius="6"/>
                     </StackLayout>
                 </StackLayout>
             </StackLayout>

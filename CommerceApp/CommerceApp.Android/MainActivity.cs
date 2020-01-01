@@ -18,7 +18,6 @@ namespace CommerceApp.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-
             CrossCurrentActivity.Current.Init(this, savedInstanceState); // Init CrossCurentActivity for camera
 
             base.OnCreate(savedInstanceState);

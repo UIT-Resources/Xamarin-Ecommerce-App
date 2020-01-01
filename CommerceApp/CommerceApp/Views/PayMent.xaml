@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="CommerceApp.Views.PayMent">
+             x:Class="CommerceApp.Views.PayMent"
+             NavigationPage.HasNavigationBar="True">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Margin="15,17,10,0">
@@ -12,11 +13,11 @@
                     <StackLayout WidthRequest="150">
                         <Label Text="ĐỊA CHỈ GIAO HÀNG" TextColor="#515C6F"
                        FontSize="12" Margin="0,0,0,8"/>
-                        <Label Text="John Doe" FontSize="15" FontAttributes="Bold"
+                        <Label Text="{Binding AddressOfUser.Full_name}" FontSize="15" FontAttributes="Bold"
                        TextColor="#515C6F"/>
-                        <Label Text="No 123, Sub Street, Main Street, City Name, Province, Country" />
+                        <Label Text="{Binding AddressOfUser.Address}" />
                     </StackLayout>
-                    <ImageButton Source="arrow.png" HorizontalOptions="EndAndExpand" />
+                    <ImageButton Source="arrow.png" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"/>
                 </StackLayout>
                 <BoxView Margin="0,19,0,19"
                         HeightRequest="0.4"
@@ -33,37 +34,53 @@
                                FontSize="15" FontAttributes="Bold"/>
                         </StackLayout>
                     </StackLayout>
-                    <ImageButton Source="arrow.png" HorizontalOptions="EndAndExpand" />
+                    <ImageButton Source="arrow.png" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"/>
                 </StackLayout>
                 <BoxView Margin="0,19,0,19"
                         HeightRequest="0.4"
                         BackgroundColor="#727C8E" 
                         HorizontalOptions="FillAndExpand"/>
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical">
                     <StackLayout>
                         <Label Text="DANH SÁCH SẢN PHẨM" TextColor="#515C6F"
                        FontSize="12" Margin="0,0,0,8"/>
-                        <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="Center">
-                            <Image Source="Group13.png" WidthRequest="114" HeightRequest="114"/>
-                            <StackLayout VerticalOptions="Center">
-                                <Label Text="Faux Sued Ankle Boots" FontAttributes="Bold" FontSize="15" TextColor="#515C6F"/>
-                                <Label Text="7, Hot Pink" FontSize="15" TextColor="#515C6F" WidthRequest="254"/>
-                                <Label Text="1.000.000 VNĐ" TextColor="Red"/>
+                        <StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Center" BindableLayout.ItemsSource="{Binding ProductServers}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Orientation="Horizontal" Margin="0,0,0,10" >
+                                        <Frame CornerRadius="100" 
+                                       HeightRequest="85"
+                                       WidthRequest="85"
+                                       HorizontalOptions="Center"
+                                       Padding="0" Margin="0,0,10,0"
+                                       IsClippedToBounds="True">
+                                            <Image Aspect="AspectFill" Source="{Binding Url_images}" WidthRequest="114" HeightRequest="114"/>
+                                        </Frame>
+                                        
+                                        <StackLayout VerticalOptions="Center">
+                                            <Label Text="{Binding Full_name}" FontAttributes="Bold" FontSize="15" TextColor="#515C6F"/>
+                                            <Label Text="{Binding Unit}" FontSize="15" TextColor="#515C6F" WidthRequest="254"/>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding Cost, StringFormat='{}{0:c}'}" TextColor="Red"/>
+                                                <Label Text="x"/>
+                                                <Label Text="{Binding Amount}" TextColor="Black"/>
+                                            </StackLayout>
+                                            
+                                        </StackLayout>
+                                        
+                                    </StackLayout>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
 
-                            </StackLayout>
                         </StackLayout>
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" Spacing="5">
-                        <ImageButton Source="IconSubstract.png" />
-                        <Label Text="1" VerticalOptions="Center"/>
-                        <ImageButton Source="IconAdd.png" />
-                    </StackLayout>
+
                 </StackLayout>
                 <BoxView Margin="0,19,0,19"
                         HeightRequest="0.4"
                         BackgroundColor="#727C8E" 
                         HorizontalOptions="FillAndExpand"/>
-                <Label Text="Ghi chú cho người giao hàng (optional)" 
+                <Entry Placeholder="Ghi chú cho người giao hàng (optional)" Text="{Binding note}" 
                    TextColor="#515C6F" FontSize="14" 
                    HorizontalTextAlignment="End" />
                 <BoxView Margin="0,19,0,19"
@@ -77,12 +94,12 @@
                     <ImageButton Source="arrow.png" HorizontalOptions="EndAndExpand" />
                 </StackLayout>
                 <StackLayout BackgroundColor="White" Orientation="Horizontal">
-                    <StackLayout Margin="0,14,0,0">
+                    <StackLayout Margin="0,14,0,20">
                         <Label Text="Thành tiền" FontSize="10" TextColor="#515C6F" />
-                        <Label Text="1.000.000 VNĐ" TextColor="#515C6F" FontAttributes="Bold" FontSize="20"/>
+                        <Label Text="{Binding Total ,StringFormat='{}{0:c}'}" TextColor="#515C6F" FontAttributes="Bold" FontSize="20"/>
                         <Label Text="Miễn phí vận chuyển nội thành" TextColor="#727C8E" FontSize="12" />
                     </StackLayout>
-                    <ImageButton Source="button.png" BackgroundColor="transparent" HorizontalOptions="EndAndExpand" />
+                    <ImageButton Command="{Binding thanhtoan}" Source="button.png" BackgroundColor="transparent" HorizontalOptions="EndAndExpand" />
                 </StackLayout>
             </StackLayout>
         </ScrollView>

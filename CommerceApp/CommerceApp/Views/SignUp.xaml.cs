@@ -15,6 +15,7 @@ namespace CommerceApp.Views
         public SignUp()
         {
             InitializeComponent();
+            BindingContext = new ViewModels.SignUpViewModel();
         }
     }
 }

@@ -15,12 +15,7 @@ namespace CommerceApp.Views
         public ForgotPass()
         {
             InitializeComponent();
-            
-        }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushModalAsync(new SignOut());
+            BindingContext = new ViewModels.ForgotPassViewModel();
         }
     }
 }

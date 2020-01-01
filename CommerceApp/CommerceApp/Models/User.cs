@@ -16,7 +16,7 @@ namespace CommerceApp.Models
         [Ignore]
         DateTime birthday { get; set; }
         [Ignore]
-        int phonenumber { get; set; }
+        string phonenumber { get; set; }
         [Ignore]
         string email { get; set; }
         [Ignore]
@@ -31,7 +31,7 @@ namespace CommerceApp.Models
         [MaxLength(50)]
         public string PassWord { get { return password; } set { password = value; OnPropertyChanged("PassWord"); } }
         public DateTime BirthDay { get { return birthday; } set { birthday = value; OnPropertyChanged("BirthDay"); } }
-        public int PhoneNumber { get { return phonenumber; } set { phonenumber = value; OnPropertyChanged("PhoneNumber"); } }
+        public string PhoneNumber { get { return phonenumber; } set { phonenumber = value; OnPropertyChanged("PhoneNumber"); } }
         [MaxLength(50)]
         public string Email { get { return email; } set { email = value; OnPropertyChanged("Email"); } }
         [MaxLength(5)]

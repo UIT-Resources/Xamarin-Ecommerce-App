@@ -29,8 +29,8 @@
                    TextColor="Black"
                 HorizontalOptions="CenterAndExpand" />
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                <Button Text="Có" HorizontalOptions="Center" TextColor="#5887F9"/>
-                <Button Text="Không" HorizontalOptions="Center" />
+                <Button Text="Có" Command="{Binding co}" HorizontalOptions="Center" TextColor="#5887F9"/>
+                <Button Text="Không" Command="{Binding khong}" HorizontalOptions="Center" />
             </StackLayout>
         </StackLayout>
     </Frame>

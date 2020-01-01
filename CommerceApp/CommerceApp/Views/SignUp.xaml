@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="CommerceApp.Views.SignUp"
-             xmlns:gradient ="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms">
+             xmlns:gradient ="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <Grid >
             <gradient:SfGradientView>
@@ -26,20 +27,20 @@
                     <Label Text="Đăng ký" TextColor="White" FontSize="36" HorizontalOptions="CenterAndExpand"/>
                 </StackLayout>
                 <StackLayout VerticalOptions="Center" Spacing="0" Padding="20">
-                    <Label Text="Username" FontSize="12" Font="Gibson"  TextColor="#FFFFFF4D"/>
-                    <Entry Text="Aaron Smith" TextColor="White"/>
+                    <Label Text="Tên tài khoản" FontSize="12" Font="Gibson"  TextColor="#FFFFFF4D"/>
+                    <Entry Text="{Binding user.UserName}" TextColor="White"/>
                     <Label Text="Số điện thoại" FontSize="12" Font="Gibson" TextColor="#FFFFFF4D"/>
-                    <Entry Text="Aaron Smith" TextColor="White" />
+                    <Entry  Text="{Binding user.PhoneNumber}" TextColor="White" />
                     <Label Text="Email" FontSize="12" Font="Gibson"  TextColor="#FFFFFF4D"/>
-                    <Entry Text="Aaron Smith" TextColor="White"/>
+                    <Entry Text="{Binding user.Email}" TextColor="White"/>
                     <Label Text="Mật khẩu" FontSize="12" Font="Gibson" TextColor="#FFFFFF4D"/>
-                    <Entry Placeholder="Password" TextColor="White" IsPassword="True"/>
+                    <Entry Text="{Binding user.PassWord}" TextColor="White" IsPassword="True"/>
                     <Label Text="Xác nhận mật khẩu" FontSize="12" Font="Gibson" TextColor="#FFFFFF4D"/>
-                    <Entry Placeholder="Password" TextColor="White" IsPassword="True"/>
+                    <Entry Text="{Binding confirmpassword}" TextColor="White" IsPassword="True"/>
                     <StackLayout >
-                        <Button Text="ĐĂNG KÝ" ImageSource="./registericon.png"  Font="Gibson" HeightRequest="50" 
+                        <Button Text="ĐĂNG KÝ" Command="{Binding dangky}" ImageSource="./registericon.png"  Font="Gibson" HeightRequest="50" 
                             TextColor="#5887F9" BackgroundColor="White"
-                            Margin="0,35,0,0" HorizontalOptions="CenterAndExpand" CornerRadius="6"/>
+                            Margin="0,35,0,10" HorizontalOptions="CenterAndExpand" CornerRadius="6"/>
                         <Label LineBreakMode="WordWrap">
                             <Label.FormattedText>
                                 <FormattedString>

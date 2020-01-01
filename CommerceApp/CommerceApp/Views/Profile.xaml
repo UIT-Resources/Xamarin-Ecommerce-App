@@ -116,7 +116,8 @@
                     </StackLayout>
                 </Frame>
                 <Frame CornerRadius="6" BackgroundColor="#F5F6F8">
-                    <Button BackgroundColor="White" ImageSource="IconSignOut.png" Text="ĐĂNG XUẤT" FontFamily="Gibson" FontSize="12"
+                    <Button Command="{Binding dangxuat}" BackgroundColor="White" ImageSource="IconSignOut.png"
+                            Text="ĐĂNG XUẤT" FontFamily="Gibson" FontSize="12"
                             TextColor="Red" HorizontalOptions="Center" Padding="120,20"/>
                 </Frame>
             </StackLayout>

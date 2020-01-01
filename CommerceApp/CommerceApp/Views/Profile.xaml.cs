@@ -15,6 +15,7 @@ namespace CommerceApp.Views
         public Profile()
         {
             InitializeComponent();
+            BindingContext = new ViewModels.ProfileViewModel();
         }
     }
 }

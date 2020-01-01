@@ -15,6 +15,7 @@ namespace CommerceApp.Views
         public PopUpSigOut()
         {
             InitializeComponent();
+            BindingContext = new ViewModels.PopUpSigOutViewModel();
         }
     }
 }

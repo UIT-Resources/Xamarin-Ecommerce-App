@@ -6,6 +6,7 @@ using CommerceApp.Views;
 using CommerceApp.ViewModels.DataManager;
 using CommerceApp.ViewModels;
 using CommerceApp.Models;
+using System.Collections.Generic;
 
 namespace CommerceApp
 {
