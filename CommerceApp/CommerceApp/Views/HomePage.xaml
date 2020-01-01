@@ -108,7 +108,7 @@
                                                     <Grid.ColumnDefinitions>
                                                         <ColumnDefinition Width="60" />
                                                     </Grid.ColumnDefinitions>
-                                                    <ImageButton Grid.Row="0" Source="{Binding Url_images}" BackgroundColor="Transparent" HeightRequest="80" WidthRequest="76" Command="{Binding ProductClickedCommand}" CommandParameter="{Binding Id}"/>
+                                                    <ImageButton Grid.Row="0" Source="{Binding Url_images}" BackgroundColor="Transparent" HeightRequest="80" WidthRequest="76" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:HomeViewModel}},Path=ProductClickedCommand}" CommandParameter="{Binding Id}"/>
                                                     <Label Grid.Row="1" FontFamily="NeusaNextStd-Light.ttf#NeusaNextStd-Light" Text="{Binding Full_name}" FontSize="12"  TextColor="#515C6F" HorizontalOptions="Center"/>
                                                     <Label Grid.Row="2" FontFamily="NeusaNextStd-Bold.ttf#NeusaNextStd-Bold" Text="{Binding Cost, StringFormat='{0:f} VNĐ'}" FontSize="10" TextColor="#515C6F" FontAttributes="Bold" HorizontalOptions="Center"/>
                                                 </Grid>

@@ -41,7 +41,7 @@ namespace CommerceApp.ViewModels
                 { Full_name = "Category01" },
                 products = new ObservableCollection<Product>
                                                         {
-                                                            new Product { Id=1,Url_images="jacket.png",Full_name="Product",Cost=100} ,
+                                                            new Product { Id=10,Url_images="jacket.png",Full_name="Product",Cost=100} ,
                                                             new Product { Id=2,Url_images="jacket.png",Full_name="Product",Cost=100} ,
                                                             new Product { Id=3,Url_images="jacket.png",Full_name="Product",Cost=100}
                                                         }
@@ -79,7 +79,7 @@ namespace CommerceApp.ViewModels
             LoadMoreProductCommand = new Command<ObservableCollection<Product>>(Products =>
             {
                 var categoryid = Products[0].Root_id;
-                Products.Add(new Product { Root_id = categoryid, Url_images = "jacket.png", Full_name = "New ID" + categoryid.ToString(), Cost = 1500 });
+                Products.Add(new Product { Id=99,Root_id = categoryid, Url_images = "jacket.png", Full_name = "New ID" + categoryid.ToString(), Cost = 1500 });
             });
 
             LoadMoreEventCommand = new Command<ObservableCollection<Event>>(async (Events) =>
@@ -110,8 +110,8 @@ namespace CommerceApp.ViewModels
 
             ProductClickedCommand = new Command<int>( async (ProductId) =>
             {
-
-                //await App.Current.MainPage.Navigation.PushAsync(new DetailProduct(ProductId));
+                Console.WriteLine("Product Clicked Command's running");
+                await App.Current.MainPage.Navigation.PushAsync(new DetailProduct(ProductId));
             });
             CartClickedCommand = new Command(async () =>
             {
