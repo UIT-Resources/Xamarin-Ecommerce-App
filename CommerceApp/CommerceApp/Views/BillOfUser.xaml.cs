@@ -1,5 +1,4 @@
-﻿using CommerceApp.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,11 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace CommerceApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Success : ContentPage
+    public partial class BillOfUser : ContentPage
     {
-        AddressOfUser addressOfUser;
-
-        public Success(addressOfUser)
+        public BillOfUser()
         {
             InitializeComponent();
         }

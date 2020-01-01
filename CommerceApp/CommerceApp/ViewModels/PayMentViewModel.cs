@@ -16,6 +16,19 @@ namespace CommerceApp.ViewModels
             public int item_id { get; set; }
             public int amount { get; set; }
         }
+        class order
+        {
+            public string create_by { get; set; }
+            public List<orderOfUser> listorder { get; set; }
+            public Recever recever { get; set; }
+        }
+        class Recever
+        {
+            public string name_recever { get; set; }
+            public string phone_recever { get; set; }
+            public int id_address { get; set; }
+            public string note { get; set; }
+        }
         Api api = new Api();
         public Session session;
         public List<AddressOfUser> alladdressOfUser { get; set; }
@@ -66,15 +79,15 @@ namespace CommerceApp.ViewModels
             session = App.Database.GetSession(1);
             GetProductOfUser(productOfUsers);
             GetAddressUser();
-            OrderItem();
             thanhtoan = new Command(() =>
             {
-                App.Current.MainPage.Navigation.PushModalAsync(new Success());
+                OrderItem();
+                App.Current.MainPage.Navigation.PushModalAsync(new Success(AddressOfUser));
             });
         }
         public async void GetAddressUser()
         {
-            
+
             string data = await api.Get($"/user/address/{session.UserID}");
             alladdressOfUser = JsonConvert.DeserializeObject<List<AddressOfUser>>(data);
             AddressOfUser temp = alladdressOfUser[0];
@@ -109,41 +122,38 @@ namespace CommerceApp.ViewModels
             Total = tempo;
             ProductServers = lps;
         }
-        //string ConvertObjectToString(object obj)
-        //{
-        //    return obj?.ToString() ?? string.Empty;
-        //}
+        
         public async void OrderItem()
         {
-            //JArray ArrayorderOfUsers = new JArray();
-            //orderOfUser[] ArrayorderOfUsers = new orderOfUser[productOfUsers.Count];
             List<orderOfUser> ListorderOfUsers = new List<orderOfUser>();
-            for (int i=0;i<productOfUsers.Count;i++)
+            for (int i = 0; i < productOfUsers.Count; i++)
             {
                 orderOfUser OrDerOfUser = new orderOfUser();
                 OrDerOfUser.amount = productOfUsers[i].Amount;
                 OrDerOfUser.item_id = productOfUsers[i].Item_id;
                 OrDerOfUser.user_id = productOfUsers[i].User_id;
                 ListorderOfUsers.Add(OrDerOfUser);
-                //ArrayorderOfUsers.Add(OrDerOfUser);
             }
-            //JObject o = new JObject();
-            //o["MyArray"] = ArrayorderOfUsers;
-            //string json = o.ToString();
-            //Console.WriteLine($"ffffffffffffffffffffffffffffffffffffffffff{json}");
+         
 
+            if (note == null)
+            {
+                note = "";
+            };
+            order data = new order();
+            data.create_by = productOfUsers[0].User_id.ToString();
+            data.listorder = ListorderOfUsers;
+            Recever temp = new Recever();
+            temp.name_recever = AddressOfUser.Full_name;
+            temp.phone_recever = AddressOfUser.Phone;
+            temp.id_address = Convert.ToInt32(AddressOfUser.Id);
+            temp.note = note;
+            data.recever = temp;
+            Console.WriteLine($"id_address -------------------------------------  {AddressOfUser.Id}");
 
-
-            //string data = @"{
-            //    ""create_by"":""" + productOfUsers[0].User_id + @""",
-	           // ""listorder"":"+ ListorderOfUsers +@",
-	           // ""recever"":{
-		          //  ""name_recever"":"""+ AddressOfUser.Full_name+ @""",
-            //        ""phone_recever"":"""+ AddressOfUser.Phone+ @""",
-		          //  ""id_address"":1,
-		          //  ""note"":"""+ note + @"""}}";
-            //string result = await api.Post($"user/{session.UserID}/order", data);
-            //await App.Current.MainPage.DisplayAlert($"{result}", "", "Ok");
+            string json = JsonConvert.SerializeObject(data);
+            Console.WriteLine(json);
+            await api.Post($"/user/{session.UserID}/order", json);
         }
     }
 }
