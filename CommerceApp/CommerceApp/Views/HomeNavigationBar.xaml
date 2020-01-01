@@ -7,7 +7,7 @@
              x:Class="CommerceApp.Views.HomeNavigationBar">
   <ContentView.Content>
         <StackLayout Orientation="Horizontal">
-            <Image Source="logo.png" Aspect="AspectFit" Margin="0,0,0,0"/>
+            <ImageButton BackgroundColor="Transparent" Source="logo.png" Aspect="AspectFit" Margin="0,0,0,0"/>
             <Frame CornerRadius="14" BackgroundColor="#e7e9e8"  HorizontalOptions="CenterAndExpand" 
                     VerticalOptions="Center" Padding="0">
                 <StackLayout Orientation="Horizontal">
@@ -15,7 +15,7 @@
                     <Entry Margin="0,0,10,0"  Placeholder="Nhập từ khóa để tìm kiếm" HorizontalTextAlignment="Center" FontSize="10" TextColor="#FFFFFF" PlaceholderColor="#FFFFFF" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
             </Frame>
-            <Image Source="Cart.png" HorizontalOptions="End" Margin="0,0,20,0"/>
+            <ImageButton BackgroundColor="Transparent" Source="Cart.png" HorizontalOptions="End" Margin="0,0,20,0" Command="{Binding CartClickedCommand}"/>
         </StackLayout>
     </ContentView.Content>
 </ContentView>

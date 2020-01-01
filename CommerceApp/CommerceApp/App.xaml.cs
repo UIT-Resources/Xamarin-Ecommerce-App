@@ -82,7 +82,7 @@ namespace CommerceApp
         public App()
         {
             InitializeComponent();
-            MainPage = new ControlPage();
+            MainPage = new Cart();
         }
 
         protected override void OnStart()

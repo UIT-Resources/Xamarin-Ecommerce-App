@@ -8,6 +8,8 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Newtonsoft.Json;
 
+using CommerceApp.Views;
+
 namespace CommerceApp.ViewModels
 {
     public class HomeViewModel
@@ -23,6 +25,7 @@ namespace CommerceApp.ViewModels
         public Command LoadMoreEventCommand { get; }
         public Command AutoSliderCommand { get; }
         public Command ProductClickedCommand { get; }
+        public Command CartClickedCommand { get;  }
 
 
         //Constructor
@@ -108,7 +111,12 @@ namespace CommerceApp.ViewModels
             ProductClickedCommand = new Command<int>( async (ProductId) =>
             {
 
-                //App.Current.MainPage.Navigation.PushAsync(new DetailProduct(ProductId));
+                //await App.Current.MainPage.Navigation.PushAsync(new DetailProduct(ProductId));
+            });
+            CartClickedCommand = new Command(async () =>
+            {
+                Console.WriteLine("Cart Clicked Command's running");
+                await App.Current.MainPage.Navigation.PushModalAsync(new Cart());
             });
         }
         public class ProductSection
