@@ -24,7 +24,7 @@ namespace CommerceApp.Views
             if (App.Database.GetSession(1).State == false)
             {
                 Console.WriteLine("=>>IsLogged: " + App.Database.GetSession(1).State);
-                App.Current.MainPage.Navigation.PushModalAsync(new Loggin());
+                App.Current.MainPage.Navigation.PushAsync(new Loggin());
             }
 
         }

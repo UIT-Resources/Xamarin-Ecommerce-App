@@ -13,10 +13,15 @@ namespace CommerceApp.ViewModels
     class ProfileViewModel
     {
         public Command dangxuat { get; }
+        public Command NavigatedToUserProfileCommand { get; }
+
         public ProfileViewModel()
         {
-            
 
+            NavigatedToUserProfileCommand = new Command(() =>
+            {
+                App.Current.MainPage.Navigation.PushAsync(new UserProfile());
+            });
             dangxuat = new Command(() =>
             {
                 PopupNavigation.Instance.PushAsync(new PopUpSigOut());

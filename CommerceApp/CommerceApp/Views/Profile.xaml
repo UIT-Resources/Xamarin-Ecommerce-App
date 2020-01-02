@@ -14,7 +14,7 @@
                     <StackLayout>
                         <Label Text="Jane Doe" FontFamily="Neusa Next Std" FontAttributes="Bold" FontSize="30"/>
                         <Label Text="janedoe123@email.com" FontFamily="Neusa Next Std" FontSize="15"/>
-                        <Button Text="Sửa thông tin" CornerRadius="20" 
+                        <Button Text="Sửa thông tin" CornerRadius="20" Command="{Binding NavigatedToUserProfileCommand}"
                              HeightRequest="40" WidthRequest="1"
                             TextColor="#727C8E" FontSize="10" FontFamily="Neusa Next Std" BackgroundColor="#F5F6F8" BorderWidth="0.5" BorderColor="Black" Margin="20,0"/>
                     </StackLayout>
