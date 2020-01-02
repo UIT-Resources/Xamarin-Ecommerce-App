@@ -13,14 +13,14 @@ namespace CommerceApp.Models
 {
     public class RestServiceGeneric : IRestServiceGeneric
     {
-        HttpClient _client;
+        protected HttpClient _client;
 
         public RestServiceGeneric()
         {
             _client = new HttpClient();
         }
 
-        public async Task<ObservableCollection<T>> RefreshObjectAsync<T>(string ItemsUrl)
+        public virtual async Task<ObservableCollection<T>> RefreshObjectAsync<T>(string ItemsUrl)
         {
             ObservableCollection<T> Items = new ObservableCollection<T>();
 
@@ -43,7 +43,7 @@ namespace CommerceApp.Models
             return Items;
         }
 
-        public async Task<T> GetObjectAsync<T>(string ItemsUrl, string id)
+        public virtual async Task<T> GetObjectAsync<T>(string ItemsUrl, string id)
         {
             T Item = default(T);
             var uri = new Uri(string.Format(ItemsUrl, id));
@@ -63,7 +63,7 @@ namespace CommerceApp.Models
             return Item;
         }
 
-        public async Task SaveObjectAsync<T>(string ItemsUrl, T item, bool isNewItem)
+        public virtual async Task SaveObjectAsync<T>(string ItemsUrl, T item, bool isNewItem)
         {
             var uri = new Uri(string.Format(ItemsUrl, string.Empty));
 
@@ -94,7 +94,7 @@ namespace CommerceApp.Models
             }
         }
 
-        public async Task DeleteObjectAsync(string ItemsUrl, string id)
+        public virtual async Task DeleteObjectAsync(string ItemsUrl, string id)
         {
             var uri = new Uri(string.Format(ItemsUrl, id));
 

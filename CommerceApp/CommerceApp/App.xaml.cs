@@ -28,6 +28,7 @@ namespace CommerceApp
 
         // Begin Create WebAPI
         static RestServiceGeneric service;
+        static ProductSectionRestServiceGeneric product_section_service;
         public static RestServiceGeneric Service
         {
             get
@@ -37,6 +38,17 @@ namespace CommerceApp
                     service = new RestServiceGeneric();
                 }
                 return service;
+            }
+        }
+        public static ProductSectionRestServiceGeneric ProductSectionService
+        {
+            get
+            {
+                if (product_section_service == null)
+                {
+                    product_section_service = new ProductSectionRestServiceGeneric();
+                }
+                return product_section_service;
             }
         }
 
@@ -75,6 +87,19 @@ namespace CommerceApp
                     category_manager = new CategoryManager(Service);
                 }
                 return category_manager;
+            }
+        }
+
+        static ProductSectionManager productsection_manager;
+        public static ProductSectionManager ProductSectionManager
+        {
+            get
+            {
+                if (productsection_manager == null)
+                {
+                    productsection_manager = new ProductSectionManager(ProductSectionService);
+                }
+                return productsection_manager;
             }
         }
 

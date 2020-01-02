@@ -12,5 +12,6 @@ namespace CommerceApp.Config
         public static string CategoriesUrl = BaseAddress + "/product/select/all-category/{0}";
         public static string EventsUrl = BaseAddress + "/api/advertisement/select/{0}";
         public static string ProductsUrl = BaseAddress + "/product/select/{0}";
+        public static string ProductSectionsUrl = BaseAddress + "/api/home/{0}";
     }
 }
