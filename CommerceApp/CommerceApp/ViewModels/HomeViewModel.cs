@@ -23,6 +23,7 @@ namespace CommerceApp.ViewModels
         public Command LoadMoreEventCommand { get; }
         public Command AutoSliderCommand { get; }
         public Command ProductClickedCommand { get; }
+        public Command LoadMoreProductSection { get; }
 
 
         //Constructor
@@ -107,8 +108,12 @@ namespace CommerceApp.ViewModels
 
             ProductClickedCommand = new Command<int>( async (ProductId) =>
             {
-
                 //App.Current.MainPage.Navigation.PushAsync(new DetailProduct(ProductId));
+            });
+
+            LoadMoreProductSection = new Command<ObservableCollection<ProductSection>>(async (ProductSections) =>
+            {
+                
             });
         }
         public class ProductSection

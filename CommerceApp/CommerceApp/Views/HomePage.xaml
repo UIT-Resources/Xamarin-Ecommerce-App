@@ -120,7 +120,7 @@
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </StackLayout>
-
+                <Button Text="Xem thêm" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="White" TextColor="Blue" CornerRadius="15" Margin="5" Command="{Binding LoadMoreProductSection}" CommandParameter="{Binding ProductSections}"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
