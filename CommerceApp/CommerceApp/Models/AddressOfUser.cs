@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CommerceApp.Models
 {
-    class AddressOfUser : BindableBase
+    public class AddressOfUser : BindableBase
     {
         public long id { get; set; }
         public string create_date { get; set; }

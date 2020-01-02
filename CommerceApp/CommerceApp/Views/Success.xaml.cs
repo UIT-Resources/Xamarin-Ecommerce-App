@@ -13,11 +13,10 @@ namespace CommerceApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Success : ContentPage
     {
-        AddressOfUser addressOfUser;
-
         public Success()
         {
             InitializeComponent();
+            BindingContext = new ViewModels.SuccessViewModel();
         }
     }
 }

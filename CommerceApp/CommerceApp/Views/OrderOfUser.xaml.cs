@@ -10,11 +10,12 @@ using Xamarin.Forms.Xaml;
 namespace CommerceApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BillOfUser : ContentPage
+    public partial class OrderOfUser : ContentPage
     {
-        public BillOfUser()
+        public OrderOfUser()
         {
             InitializeComponent();
+            BindingContext = new ViewModels.OrderOfUserViewModel();
         }
     }
 }

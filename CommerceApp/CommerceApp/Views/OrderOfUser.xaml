@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CommerceApp.Views.OrderOfUser"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content >
+        <ScrollView >
+            <StackLayout>
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="0,10,0,0">
+                    <Label Text="Danh sách đơn hàng" TextColor="#25b3cc" FontSize="25" />
+                </StackLayout>
+            
+            <StackLayout BindableLayout.ItemsSource="{Binding Bills}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout >
+                            
+                            
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Margin="15">
+                                    <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0" >
+                                        <Label Text="Mã đơn hàng: " TextColor="Black" FontAttributes="Italic" FontSize="18"/>
+                                        <Label Text="{Binding Id}" TextColor="Black" FontAttributes="Italic" FontSize="18"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="0" >
+                                        <Label Text="Ngày đặt hàng: " />
+                                        <Label Text="{Binding Create_date}"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.Column="0" >
+                                        <Label Text="Số lượng: " />
+                                        <Label Text="{Binding Amount_item}"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Grid>
+                            <BoxView
+                        HeightRequest="0.4"
+                        BackgroundColor="#727C8E" 
+                        HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
