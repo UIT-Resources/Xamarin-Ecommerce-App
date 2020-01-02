@@ -45,7 +45,7 @@ namespace CommerceApp.ViewModels
         public Session session = new Session();
         public LogginViewModel(INavigation Navigation)
         {
-
+            
             user = new User();
 
             quenmatkhau = new Command(async () =>

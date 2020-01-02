@@ -17,5 +17,17 @@ namespace CommerceApp.Views
             InitializeComponent();
             BindingContext = new ViewModels.ProfileViewModel();
         }
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            //Check isLoggined If = false => Push LogginPage
+            if (App.Database.GetSession(1).State == false)
+            {
+                Console.WriteLine("=>>IsLogged: " + App.Database.GetSession(1).State);
+                App.Current.MainPage.Navigation.PushModalAsync(new Loggin());
+            }
+
+        }
     }
+    
 }

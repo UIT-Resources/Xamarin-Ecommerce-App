@@ -37,6 +37,7 @@ namespace CommerceApp
                 return database;
             }
         }
+
         // End Create Local Database (SQLite)
 
         // Begin Create WebAPI
@@ -120,6 +121,9 @@ namespace CommerceApp
         {
             InitializeComponent();
             MainPage = new NavigationPage(new ControlPage());
+
+            //Initilized Session
+            Database.SaveSession(new Session { UserID = 0, State = false });
         }
 
         protected override void OnStart()
