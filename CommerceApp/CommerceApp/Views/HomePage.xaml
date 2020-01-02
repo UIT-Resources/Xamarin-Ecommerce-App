@@ -36,7 +36,7 @@
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView Orientation="Vertical">
             <StackLayout>
                 <!--Events Section-->
                 <views:CategoryView CategoryTitle="Sự kiện" ControlTemplate="{StaticResource SectionCardView}" SectionHeight="200">
@@ -120,7 +120,8 @@
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </StackLayout>
-
+                <ActivityIndicator IsVisible="{Binding IsLoadingProductSection}" IsRunning="{Binding IsLoadingProductSection}" HorizontalOptions="Center" Color="Orange"/>
+                <Button Text="Tải thêm" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="White" TextColor="Blue" CornerRadius="15" Margin="5" Command="{Binding LoadMoreProductSection}" CommandParameter="{Binding ProductSections}"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
