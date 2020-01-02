@@ -72,7 +72,7 @@ namespace CommerceApp
         {
             InitializeComponent();
 
-            MainPage =new NavigationPage( new Success());
+            MainPage =new NavigationPage( new OrderOfUser());
         }
 
         protected override void OnStart()

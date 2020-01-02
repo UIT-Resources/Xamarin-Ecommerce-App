@@ -15,6 +15,7 @@ namespace CommerceApp.Views
         public OrderOfUser()
         {
             InitializeComponent();
+            BindingContext = new ViewModels.OrderOfUserViewModel();
         }
     }
 }
