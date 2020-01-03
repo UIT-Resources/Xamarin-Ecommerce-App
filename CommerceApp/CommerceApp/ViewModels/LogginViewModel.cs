@@ -63,7 +63,7 @@ namespace CommerceApp.ViewModels
                 tempUser tempuser = new tempUser();
                 tempuser = JsonConvert.DeserializeObject<tempUser>(dataUser);
 
-                user.ID = tempuser.id;
+                user.UserID = tempuser.id;
                 user.UserName = "";
                 user.PassWord = "";
                 user.BirthDay = Convert.ToDateTime(tempuser.birthday);
@@ -75,7 +75,9 @@ namespace CommerceApp.ViewModels
                 session.UserID = tempuser.id;
                 session.State = true;
 
+                App.Database.DeleteAllUsers();
                 App.Database.SaveUser(user);
+                Console.WriteLine($"JsonConvert.SerializeObject(App.Database.GetUsers()) ==> {JsonConvert.SerializeObject(App.Database.GetUsers())}");
                 App.Database.SaveSession(session);
                 Console.WriteLine(tempuser.create_date);
 

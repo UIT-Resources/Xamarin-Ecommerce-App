@@ -6,7 +6,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Newtonsoft.Json;
+using CommerceApp.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -25,20 +26,30 @@ namespace CommerceApp.Views
             public string Matkhaumoi { get { return matkhaumoi; } set { matkhaumoi = value; OnPropertyChanged("Matkhaumoi"); } }
             public string Xacnhanmatkhau { get { return xacnhanmatkhau; } set { xacnhanmatkhau = value; OnPropertyChanged("Xacnhanmatkhau"); } }
         }
-        //private User user = new User();
+        public User user { get; set; }
+        public User uSer { get { return user; } set { user = value;OnPropertyChanged("uSer"); } }
         public thaydoimatkahu thaydoi = new thaydoimatkahu();
         public UserProfile()
         {
+
             InitializeComponent();
+            uSer = new User();
             int userid = App.Database.GetSession(1).UserID;
-            //Console.WriteLine($"userid ----------> {userid}");
-            if (userid != 0)
-            {
-                //user = App.Database.GetUser(userid);
-            }
-            //frame.BindingContext = user;
-            matkhauthaydoi.BindingContext = thaydoi;
+            List<User> temp= (List<User>)App.Database.GetUsers();
+            uSer = temp[0];
             
+            
+            if (uSer.IconUrl != "")
+            {
+                image.Source = uSer.IconUrl;
+            }
+            if (Thaydoimatkhau.IsChecked)
+            {
+                uSer.PassWord = thaydoi.Matkhaumoi;
+            }
+            uSer.Sex = "";
+            frame.BindingContext = uSer;
+            matkhauthaydoi.BindingContext = thaydoi;
             BindingContext = new ViewModels.UserProfileViewModel();
             takePhoto.Clicked += async (sender, args) =>
             {
@@ -57,11 +68,11 @@ namespace CommerceApp.Views
                     
                 });
 
-                //user.IconUrl = file.Path;
+                uSer.IconUrl= file.Path;
                 if (file == null)
                     return;
 
-                await DisplayAlert("File Location", file.Path, "OK");
+                //await DisplayAlert("File Location", file.Path, "OK");
 
                 image.Source = ImageSource.FromStream(() =>
                 {
@@ -70,8 +81,7 @@ namespace CommerceApp.Views
                     return stream;
                 });
             };
-            //user.IconUrl = "";
-             pickPhoto.Clicked += async (sender, args) =>
+            pickPhoto.Clicked += async (sender, args) =>
             {
                 if (!CrossMedia.Current.IsPickPhotoSupported)
                 {
@@ -94,25 +104,19 @@ namespace CommerceApp.Views
                     return stream;
                 });
             };
-
             deletePhoto.Clicked += async (sender, args) =>
             {
                 image.Source = "userdefault.png";
             };
             luu.Clicked += async (sender, args) =>
             {
-                
-
                 if (!thaydoi.Matkhaumoi.Equals(thaydoi.Xacnhanmatkhau))
                 {
                     await DisplayAlert("Thông báo", "Mặt khẩu xác nhận không chính xác!", "OK");
                     return;
                 }
-                //user.PassWord = thaydoi.Matkhaumoi;
-                //user.Sex = "";
-                //App.Database.SaveUser(user);
-                //Console.WriteLine($"user.IconUrl ==> {user.IconUrl}");
-                Console.WriteLine("SaveUser Thành Công!!!");
+                App.Database.SaveUser(uSer);
+                await App.Current.MainPage.Navigation.PushAsync(new Profile());
             };
         }
     }
