@@ -36,7 +36,7 @@ namespace CommerceApp.ViewModels
 
         public NavigationBarModel()
         {
-            //LoadCardList();
+            LoadCardList();
             CartClickedCommand = new Command(async () =>
             {
                 Console.WriteLine("Cart Clicked Command's running");
@@ -57,12 +57,12 @@ namespace CommerceApp.ViewModels
             Console.WriteLine("LoadCardList's running");
             if ((App.Database.GetSession(1) is null) || (App.Database.GetSession(1).State == false))
             {
-                Console.WriteLine("*Error: Load Card Fail. User's not loggined");
+                Console.WriteLine("*Error: LoadCardList Fail. User's not loggined");
             }
             else
             {
                 Console.WriteLine("LoadCardList's excuting");
-                string result = await App.Api.Post($"/user/cart/list/{App.Database.GetSession(1).UserID}", null);
+                string result = await App.Api.Get($"/user/cart/list/{App.Database.GetSession(1).UserID}");
                 Console.WriteLine(result);
                 List<ProductOfUser> CardList = JsonConvert.DeserializeObject<List<ProductOfUser>>(result);
                 ProductAmount = 0;

@@ -80,7 +80,7 @@ namespace CommerceApp.ViewModels
                     {
                         Categories.Add(tempCategories[i]);
                     }
-                    Console.WriteLine("LoadMoreCategoriesCommand has runned");
+                    Console.WriteLine("LoadMoreCategoriesCommand excuted");
                 }
             });
 
@@ -103,14 +103,14 @@ namespace CommerceApp.ViewModels
                //Get more events from SERVER
                ObservableCollection<Event> tempEvents = new ObservableCollection<Event>();
                tempEvents = await App.EventManager.RefreshEventAsync();
-
+                
                //Add events into Events List. 
                //Notes : Wrong assign Events = events;
                for (int i = 0; i < tempEvents.Count; i++)
                {
                    Events.Add(tempEvents[i]);
                }
-               Console.WriteLine("LoadMoreEventCommand has runned");
+               Console.WriteLine("LoadMoreEventCommand excuted");
            });
 
             AutoSliderCommand = new Command<int>(Position =>
