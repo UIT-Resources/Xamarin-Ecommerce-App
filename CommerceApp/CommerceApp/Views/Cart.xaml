@@ -41,7 +41,7 @@
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </StackLayout>
-
+                <ActivityIndicator IsRunning="{Binding Isloading}" IsVisible="{Binding Isloading}"/>
                 <BoxView 
                         HeightRequest="0.4"
                         BackgroundColor="#727C8E" 
@@ -54,6 +54,7 @@
                     </StackLayout>
                     <ImageButton Command="{Binding thanhtoan}" Source="button.png" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand"/>
                 </StackLayout>
+                
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

@@ -43,6 +43,8 @@ namespace CommerceApp.ViewModels
         public Command dangky { get; }
         public Api api = new Api();
         public Session session = new Session();
+        public bool isloading { get; set; }
+        public bool Isloading { get { return isloading; } set { isloading = value;OnPropertyChanged("Isloading"); } }
         public LogginViewModel(INavigation Navigation)
         {
             
@@ -54,6 +56,7 @@ namespace CommerceApp.ViewModels
             });
             checkloggin = new Command(async () =>
             {
+                Isloading = true;
                 //get data user here
                 string dataLogin = @"{
                     ""username"":""" + user.UserName + @""",
@@ -86,6 +89,7 @@ namespace CommerceApp.ViewModels
                     user.UserName = "";
                     user.PassWord = "";
                     InvalidInput = "UserName hoặc PassWord sai.";
+                    Isloading = false;
                 }
                 else
                 {

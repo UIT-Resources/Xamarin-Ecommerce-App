@@ -35,11 +35,10 @@
                     <Label Text="Password" FontSize="16" Font="Gibson" TextColor="#FFFFFF4D"/>
                     <Entry Text="{Binding  user.PassWord}" Placeholder="Password" TextColor="White" IsPassword="True"/>
 
-
-                    <Button Text="ĐĂNG NHẬP" Command="{Binding checkloggin}" Font="Gibson" 
+                    <Button Text="ĐĂNG NHẬP" Command="{Binding checkloggin}"  Font="Gibson" 
                             HeightRequest="50" CornerRadius="6" TextColor="#5887F9" BackgroundColor="White" />
                     <Label Text="{Binding InvalidInput}" VerticalOptions="StartAndExpand" TextColor="Red"  FontSize="12"/>
-                    
+                    <ActivityIndicator IsRunning="{Binding Isloading}" IsVisible="{Binding Isloading}"/>
                     <Button Text="Quên mật khẩu?" TextColor="#faf9f7" BackgroundColor="Transparent" 
                             HorizontalOptions="StartAndExpand" FontSize="12"
                             Command="{Binding quenmatkhau}"/>
