@@ -10,7 +10,7 @@
         <ScrollView>
             <StackLayout BackgroundColor="#F5F6F8">
                 <StackLayout Orientation="Horizontal" Margin="39,17,0,0">
-                    <Image Source="Avatar.png" />
+                    <Image Source="{Binding Image}" />
                     <StackLayout>
                         <Label Text="Jane Doe" FontFamily="Neusa Next Std" FontAttributes="Bold" FontSize="30"/>
                         <Label Text="janedoe123@email.com" FontFamily="Neusa Next Std" FontSize="15"/>

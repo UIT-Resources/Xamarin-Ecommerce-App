@@ -53,7 +53,7 @@ namespace CommerceApp.Views
             BindingContext = new ViewModels.UserProfileViewModel();
             takePhoto.Clicked += async (sender, args) =>
             {
-
+                uSer.IconUrl = "userdefault.png";
                 if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
                 {
                     await DisplayAlert("No Camera", ":( No camera avaialble.", "OK");
@@ -83,6 +83,7 @@ namespace CommerceApp.Views
             };
             pickPhoto.Clicked += async (sender, args) =>
             {
+                uSer.IconUrl = "userdefault.png";
                 if (!CrossMedia.Current.IsPickPhotoSupported)
                 {
                     await DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
@@ -93,7 +94,7 @@ namespace CommerceApp.Views
                     PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium
                 });
 
-
+                uSer.IconUrl = file.Path;
                 if (file == null)
                     return;
 
@@ -107,6 +108,7 @@ namespace CommerceApp.Views
             deletePhoto.Clicked += async (sender, args) =>
             {
                 image.Source = "userdefault.png";
+                uSer.IconUrl = "userdefault.png";
             };
             luu.Clicked += async (sender, args) =>
             {
