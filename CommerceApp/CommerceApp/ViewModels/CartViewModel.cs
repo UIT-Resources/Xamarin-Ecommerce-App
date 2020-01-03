@@ -12,6 +12,8 @@ namespace CommerceApp.ViewModels
 {
     class CartViewModel : BindableBase
     {
+        public bool isloading { get; set; }
+        public bool Isloading { get { return isloading; } set { isloading = value; OnPropertyChanged("Isloading"); } }
         public List<ProductServer> productServers { get; set; }
         public List<ProductServer> ProductServers
         {
@@ -45,7 +47,7 @@ namespace CommerceApp.ViewModels
         public async void GetProductOfUser()
         {
 
-
+            Isloading = true;
             int useridcurrent = App.Database.GetSession(1).UserID;
             Console.WriteLine($"useridcurrent: {useridcurrent}");
             string data = "";
@@ -66,6 +68,7 @@ namespace CommerceApp.ViewModels
                 ob.Add(temp);
             }
             AccoutTotal(ob);
+            Isloading = false;
         }
         public void AccoutTotal(List<ProductServer> lps)
         {
@@ -79,8 +82,10 @@ namespace CommerceApp.ViewModels
         }
         public CartViewModel()
         {
+            
             // get data product of user here
             GetProductOfUser();
+            
             //behavior swicth payment page
             thanhtoan = new Command(() =>
              {
@@ -106,6 +111,13 @@ namespace CommerceApp.ViewModels
                             productOfUsers[j] = temp;
                             ProductServers[j].Amount = temp.Amount;
                             AccoutTotal(ProductServers);
+                            if (i == 0)
+                            {
+                                i = -1;
+                                data = @"{""amount"":" + i + "}";
+                                await api.Post($"/user/cart/{productOfUsers[j].Id}", data);
+                                GetProductOfUser();
+                            }
                         }
                     }
                 }));
@@ -128,6 +140,13 @@ namespace CommerceApp.ViewModels
                             productOfUsers[j] = temp;
                             ProductServers[j].Amount = temp.Amount;
                             AccoutTotal(ProductServers);
+                            if (i == 0)
+                            {
+                                i = -1;
+                                data = @"{""amount"":" + i + "}";
+                                await api.Post($"/user/cart/{productOfUsers[j].Id}", data);
+                                GetProductOfUser();
+                            }
                         }
                     }
                 }));

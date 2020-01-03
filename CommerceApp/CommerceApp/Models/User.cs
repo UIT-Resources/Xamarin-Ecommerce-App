@@ -10,6 +10,8 @@ namespace CommerceApp.Models
         [Ignore]
         int id { get; set; }
         [Ignore]
+        int userid { get; set; }
+        [Ignore]
         string username { get; set; }
         [Ignore]
         string password { get; set; }
@@ -26,6 +28,7 @@ namespace CommerceApp.Models
 
         [PrimaryKey, AutoIncrement]
         public int ID { get { return id; } set { id = value; OnPropertyChanged("ID"); } }
+        public int UserID { get { return userid; } set { userid = value; OnPropertyChanged("UserID"); } }
         [MaxLength(50)]
         public string UserName { get { return username; } set { username = value; OnPropertyChanged("UserName"); } }
         [MaxLength(50)]
@@ -37,5 +40,6 @@ namespace CommerceApp.Models
         [MaxLength(5)]
         public string Sex { get { return sex; } set { sex = value; OnPropertyChanged("Sex"); } }
         public string IconUrl { get { return iconurl; } set { iconurl = value; OnPropertyChanged("IconUrl"); } }
+         
     }
 }
