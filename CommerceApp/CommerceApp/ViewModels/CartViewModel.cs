@@ -106,6 +106,13 @@ namespace CommerceApp.ViewModels
                             productOfUsers[j] = temp;
                             ProductServers[j].Amount = temp.Amount;
                             AccoutTotal(ProductServers);
+                            if (i == 0)
+                            {
+                                i = -1;
+                                data = @"{""amount"":" + i + "}";
+                                await api.Post($"/user/cart/{productOfUsers[j].Id}", data);
+                                GetProductOfUser();
+                            }
                         }
                     }
                 }));
@@ -128,6 +135,13 @@ namespace CommerceApp.ViewModels
                             productOfUsers[j] = temp;
                             ProductServers[j].Amount = temp.Amount;
                             AccoutTotal(ProductServers);
+                            if (i == 0)
+                            {
+                                i = -1;
+                                data = @"{""amount"":" + i + "}";
+                                await api.Post($"/user/cart/{productOfUsers[j].Id}", data);
+                                GetProductOfUser();
+                            }
                         }
                     }
                 }));
