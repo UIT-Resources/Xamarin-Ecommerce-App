@@ -21,36 +21,40 @@ namespace CommerceApp.ViewModels
         private ObservableCollection<Description> descriptions;
         private Description description;
         private int id;
+
+
         //khoa
-        public ProductModel(Page page,int idp)
+        public ProductModel(Page page, int idp)
         {
             id = idp;
-            this.page =page;
+            this.page = page;
             images = new ObservableCollection<Images>();
             PushCart = new Command(PushCar);
             GetData();
-            // Create Data For Testing
-            //descriptions = new ObservableCollection<Description>();
             description = new Description();
-            //{
-            //    new Images { id = 1, url = "Banner.png" },
-            //    new Images { id = 2, url = "Banner.png" },
-            //    new Images { id = 3, url = "Banner.png" },
-            //    new Images { id = 4, url = "Banner.png" },
-            //    new Images { id = 5, url = "Banner.png" }
-            //};
         }
         private async void PushCar()
         {
-            string result = await App.Api.Post("/user/31/new-cart/" + id,null);
-            Console.WriteLine(result);
-            if(result=="true")
+            if ((App.Database.GetSession(1) is null) || (App.Database.GetSession(1).State == false))
             {
-                await page.DisplayAlert("Thong bao", "Ban da them vao gi hang thanh cong", "OK");
+                Console.WriteLine("*Loading CartPage Failed. User's not loggined");
+                await App.Current.MainPage.DisplayAlert("Lỗi", "Bạn chưa đăng nhập. Vui lòng đăng nhập để chọn mua sản phẩm!", "OK");
             }
             else
             {
-                await page.DisplayAlert("Thong bao", "Co loi xay ra! Ma loi:"+result, "OK");
+                string result = await App.Api.Post($"/user/{App.Database.GetSession(1).UserID}/new-cart/" + id, null);
+                Console.WriteLine(result);
+                if (result != null)
+                {
+                    ProductOfUser productOfUser = JsonConvert.DeserializeObject<ProductOfUser>(result);
+                    App.navigationBarModel.ProductAmount += 1;
+                    Console.WriteLine($"Sucessfully Add Product Id:{id} to Cart");
+
+                }
+                else
+                {
+                    await page.DisplayAlert("Thông báo", " Không thể kết nối đến Server! Vui lòng kiểm tra kết nối Internet", "OK");
+                }
             }
         }
 
@@ -81,12 +85,12 @@ namespace CommerceApp.ViewModels
                 OnPropertyChanged("Product");
             }
         }
-       
+
         public ObservableCollection<Images> Sourceimges
         {
             get { return images; }
             set
-            { 
+            {
                 images = value;
                 OnPropertyChanged("Sourceimges");
             }

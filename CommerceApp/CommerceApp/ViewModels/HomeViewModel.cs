@@ -81,8 +81,6 @@ namespace CommerceApp.ViewModels
                         Categories.Add(tempCategories[i]);
                     }
                     Console.WriteLine("LoadMoreCategoriesCommand has runned");
-                    Console.WriteLine(Categories.Count);
-                    Console.WriteLine(JsonConvert.SerializeObject(Categories[0]));
                 }
             });
 
@@ -113,8 +111,6 @@ namespace CommerceApp.ViewModels
                    Events.Add(tempEvents[i]);
                }
                Console.WriteLine("LoadMoreEventCommand has runned");
-               Console.WriteLine(JsonConvert.SerializeObject(Events[0]));
-               Console.WriteLine(Events.Count);
            });
 
             AutoSliderCommand = new Command<int>(Position =>
@@ -165,8 +161,6 @@ namespace CommerceApp.ViewModels
                     } while (temp[rInt].products.Count <= 0);
                     ProductSections.Add(temp[rInt]);
                     Console.WriteLine("LoadMoreProductSection successfully run");
-                    Console.WriteLine(ProductSections.Count);
-                    Console.WriteLine(JsonConvert.SerializeObject(ProductSections[0]));
                 }
                 //Set Activity Indicator
                 IsLoadingProductSection = false;

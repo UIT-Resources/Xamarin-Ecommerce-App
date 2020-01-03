@@ -34,6 +34,7 @@ namespace CommerceApp.ViewModels
                 return database.Table<T>().FirstOrDefault(x => x.ID == id);
             }
         }
+
         public int SaveObject<T>(T obj) where T : IObject, new()
         {
             lock (locker)

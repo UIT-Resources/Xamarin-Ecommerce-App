@@ -12,6 +12,8 @@ namespace CommerceApp
 {
     public partial class App : Application
     {
+        public static NavigationBarModel navigationBarModel { get; set; }
+
         // Begin Create Local Database (SQLite)
         static RestApi resApi;
         public static RestApi Api
@@ -119,11 +121,13 @@ namespace CommerceApp
 
         public App()
         {
+            navigationBarModel = new NavigationBarModel();
             InitializeComponent();
             MainPage = new NavigationPage(new ControlPage());
 
-            //Initilized Session
-            Database.SaveSession(new Session { UserID = 0, State = false });
+
+           
+
         }
 
         protected override void OnStart()

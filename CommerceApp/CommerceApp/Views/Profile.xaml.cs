@@ -21,10 +21,14 @@ namespace CommerceApp.Views
         {
             base.OnAppearing();
             //Check isLoggined If = false => Push LogginPage
-            if (App.Database.GetSession(1).State == false)
+            if ((App.Database.GetSession(1) is null) || App.Database.GetSession(1).State == false)
+            {
+                Console.WriteLine("*Loading Profile Failed. User's not loggined");
+                await App.Current.MainPage.Navigation.PushAsync(new Loggin());
+            }
+            else
             {
                 Console.WriteLine("=>>IsLogged: " + App.Database.GetSession(1).State);
-                App.Current.MainPage.Navigation.PushAsync(new Loggin());
             }
 
         }

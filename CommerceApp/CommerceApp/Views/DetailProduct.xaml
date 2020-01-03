@@ -1,12 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-
-
-             x:Class="CommerceApp.Views.DetailProduct">
-
+             xmlns:views="clr-namespace:CommerceApp.Views"
+             x:Class="CommerceApp.Views.DetailProduct"
+             xmlns:viewmodels="clr-namespace:CommerceApp.ViewModels"
+             Title="Sản phẩm">
+    <NavigationPage.TitleView>
+        <views:NavigationBar >
+            <x:Arguments>
+                <x:String>Sản phẩm</x:String>
+            </x:Arguments>
+        </views:NavigationBar>
+    </NavigationPage.TitleView>
 
     <ScrollView Padding="8,8,8,10">
 
@@ -44,15 +49,15 @@
 
             <StackLayout Padding="10,5,5,0" Orientation="Horizontal">
                 <Label FontSize="9" Text="Ma SP" />
-                <Label FontSize="9" Text="{Binding Product.id, Mode=TwoWay}" />
+                <Label FontSize="9" Text="{Binding Product.Id, Mode=TwoWay}" />
                 <Label FontSize="9" Text="Loai SP" />
-                <Label FontSize="9" Text="{Binding Product.root_id, Mode=TwoWay}" />
+                <Label FontSize="9" Text="{Binding Product.Root_id, Mode=TwoWay}" />
                 <Label FontSize="9" Text="Xuat xu" />
-                <Label FontSize="9" Text="{Binding Product.origin, Mode=TwoWay}" />
+                <Label FontSize="9" Text="{Binding Product.Origin, Mode=TwoWay}" />
             </StackLayout>
             <StackLayout Padding="5,-5,5,0" Orientation="Horizontal" >
 
-                <Label TextColor="Black"  FontSize="13" Text="{Binding Product.full_name, Mode=TwoWay}"/>
+                <Label TextColor="Black"  FontSize="13" Text="{Binding Product.Full_name, Mode=TwoWay}"/>
 
                 <ContentView  >
 
@@ -76,13 +81,13 @@
 
             </StackLayout>
             <StackLayout Orientation="Horizontal" Padding="20,0,0,0">
-                <Label TextColor="Red"  FontSize="18" Text="{Binding Product.cost, Mode=TwoWay}"/>
+                <Label TextColor="Red"  FontSize="18" Text="{Binding Product.Cost, StringFormat='{}{0:c}', Mode=TwoWay}"/>
                 <Label TextColor="Black" Padding="0,5,0,0" FontSize="13" Text="VND /"/>
-                <Label TextColor="Black" Padding="0,5,0,0"  FontSize="13" Text="{Binding Product.unit, Mode=TwoWay}"/>
+                <Label TextColor="Black" Padding="0,5,0,0"  FontSize="13" Text="{Binding Product.Unit, Mode=TwoWay}"/>
             </StackLayout>
             <StackLayout Padding="0,10,0,5" HorizontalOptions="Center" Orientation="Vertical">
 
-                <Button BackgroundColor="Red" Command="{Binding PushCart}" CornerRadius="10" TextColor="White" WidthRequest="300"  x:Name="mua" Text="Mua Ngay"/>
+                <Button BackgroundColor="Red" Command="{Binding PushCart}" CommandParameter="{Binding Product.Id}" CornerRadius="10" TextColor="White" WidthRequest="300"  x:Name="mua" Text="Mua Ngay"/>
 
                 <!--<Button BackgroundColor="#2897E6" CornerRadius="10" TextColor="White" WidthRequest="300"   Text="Them vao gio hang"/>-->
 
@@ -103,19 +108,6 @@
 
                                 </ContentView>
 
-                                <!--<ContentView Margin="10,-3,10,5">
-
-                                <Grid>
-
-                                    <Label Text="Thong so" Grid.Row="0" Grid.Column="0" />
-
-                                    <Label Text="Chi tiet" Grid.Row="0" Grid.Column="1" />
-
-                                    <Label Text="Cong nghe" Grid.Row="1" Grid.Column="0" />
-
-                                    <Label Text="4.0" Grid.Row="1" Grid.Column="1" />
-                                </Grid>
-                            </ContentView>-->
                             </StackLayout>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>

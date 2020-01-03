@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CommerceApp.Views.NavigationBar">
+  <ContentView.Content>
+        <StackLayout Orientation="Horizontal" Margin="0,0,20,0">
+            <Label x:Name="pageTitle" HorizontalOptions="Start" VerticalOptions="Center" FontSize="Title" TextColor="White"/>
+            <ImageButton BackgroundColor="Transparent" Source="Cart.png" HorizontalOptions="EndAndExpand"  Command="{Binding CartClickedCommand}"  />
+            <Label Text="{Binding ProductAmount}" IsVisible="{Binding IsAmountGreaterZero}" FontAttributes="Bold" FontSize="Small"  HorizontalOptions="Center"  TextColor="Red" VerticalOptions="Start"/>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
