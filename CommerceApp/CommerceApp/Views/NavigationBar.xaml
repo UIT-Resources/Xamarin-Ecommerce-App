@@ -15,14 +15,14 @@
         <StackLayout Orientation="Horizontal" VerticalOptions="Center" Margin="0,5,10,5">
             <Label x:Name="pageTitle" HorizontalOptions="StartAndExpand" VerticalOptions="Center" FontSize="Title" TextColor="White"/>
             <RelativeLayout HorizontalOptions="End" VerticalOptions="Center">
-                <ImageButton x:Name="CartIcon" HeightRequest="32" WidthRequest="32" BackgroundColor="Transparent" Source="Cart.png" HorizontalOptions="End"  Command="{Binding CartClickedCommand}" VerticalOptions="Center" />
-                <Image x:Name="CircleIcon"  BackgroundColor="Transparent" Source="circle.png" Scale="1.1" HeightRequest="28" WidthRequest="28"
+                <ImageButton x:Name="CartIcon" Scale="1.1" HeightRequest="32" WidthRequest="32" BackgroundColor="Transparent" Source="Cart.png" HorizontalOptions="End"  Command="{Binding CartClickedCommand}" VerticalOptions="Center" />
+                <Image x:Name="CircleIcon"  BackgroundColor="Transparent" Source="circle.png" Scale="1.1" HeightRequest="28" WidthRequest="28" IsVisible="{Binding IsAmountGreaterZero}"
                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CartIcon,Factor=1,Property=X,Constant=16}"
                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CartIcon,Factor=1,Property=Y,Constant=-13}"/>
                 <Label FontSize="Micro" Text="{Binding ProductAmount}" IsVisible="{Binding IsAmountGreaterZero}" HorizontalOptions="Center" VerticalOptions="Center"
                        FontAttributes="Bold" TextColor="White" 
-                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CircleIcon,Factor=1,Property=X,Constant=8}"
-                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CircleIcon,Factor=1,Property=Y,Constant=5}" />
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CircleIcon,Factor=1,Property=X,Constant=11}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CircleIcon,Factor=1,Property=Y,Constant=6}" />
             </RelativeLayout>
         </StackLayout>
     </ContentView.Content>

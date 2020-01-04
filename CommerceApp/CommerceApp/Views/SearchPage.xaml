@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:CommerceApp.Views"
+             mc:Ignorable="d"
+             x:Class="CommerceApp.Views.SearchPage">
+    <NavigationPage.TitleView>
+        <views:NavigationBar >
+            <x:Arguments>
+                <x:String>Tìm kiếm</x:String>
+            </x:Arguments>
+        </views:NavigationBar>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame CornerRadius="8" BackgroundColor="White"  HorizontalOptions="CenterAndExpand"  HasShadow="True" BorderColor="#5d5e5e" Padding="5" Margin="10"
+                    VerticalOptions="Center">
+                <SearchBar x:Name="searchBar"  Text="{Binding SearchText}" Placeholder="Tìm kiếm sản phẩm..." CancelButtonColor="Orange" PlaceholderColor="Orange" TextColor="Orange" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"
+                        FontSize="Small" FontAttributes="Italic" SearchCommand="{Binding GetProductSearchResult}" SearchCommandParameter="{Binding Source={RelativeSource Mode=Self},Path=Text}"/>
+            </Frame>
+            <ActivityIndicator IsRunning="{Binding IsFinding}" IsVisible="{Binding IsFinding}"/>
+            <StackLayout IsVisible="{Binding IsReady}">
+                <Label IsVisible="{Binding IsSearched}" Text="{Binding ProductFoundCount, StringFormat='Số kết quả tìm thấy: {0}'}" TextColor="Red" FontSize="Small" Margin="15,0,0,2"/>
+                <CollectionView  IsVisible="{Binding IsSearched}" ItemsSource="{Binding ListProductResultSearch}" HorizontalOptions="CenterAndExpand" ItemSizingStrategy="MeasureFirstItem" Margin="2" EmptyView="Result is Not Found">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="5"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="White" CornerRadius="10" BorderColor="Gray" >
+                                <Grid HeightRequest="70">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Grid.RowSpan="3" Source="{Binding Url_images}" Aspect="AspectFill"/>
+                                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding Full_name}"  FontFamily="NeusaNextStd-Light.ttf#NeusaNextStd-Light" FontSize="Medium" HorizontalOptions="Start"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding Cost,StringFormat='{0:c}VNĐ'}" FontFamily="NeusaNextStd-Bold.ttf#NeusaNextStd-Bold" FontSize="Subtitle" FontAttributes="Bold" HorizontalOptions="Start"/>
+                                    <Label Grid.Row="2" Grid.Column="1" Text="{Binding Trademark}" FontSize="Medium" FontFamily="NeusaNextStd-Light.ttf#NeusaNextStd-Light" FontAttributes="Italic" HorizontalOptions="Start"/>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    <CollectionView.EmptyViewTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Image Source="NotFound.png" Aspect="AspectFill" HorizontalOptions="CenterAndExpand"/>
+                                <Label Text="{Binding Source={x:Reference searchBar}, Path=Text, StringFormat='Không tìm thấy. Từ khóa {0} không khớp với bất kỳ tên sản phẩm nào.'}" Margin="10,25,10,10" FontAttributes="Bold" FontSize="18" HorizontalOptions="Fill" HorizontalTextAlignment="Center" />
+                                <Label Text="Hãy thử tìm lại với từ khóa khác! Lưu ý hiện tại hệ thống chỉ hỗ trợ tìm kiếm thông qua tên sản phẩm" FontAttributes="Italic" FontSize="12" HorizontalOptions="Fill" HorizontalTextAlignment="Center" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.EmptyViewTemplate>
+                </CollectionView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

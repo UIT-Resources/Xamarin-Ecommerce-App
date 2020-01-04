@@ -16,20 +16,18 @@
             <ImageButton BackgroundColor="Transparent" Source="logo.png" Aspect="AspectFit" VerticalOptions="Center"/>
             <Frame CornerRadius="8" BackgroundColor="White"  HorizontalOptions="CenterAndExpand"  HasShadow="True" BorderColor="#5d5e5e"
                     VerticalOptions="Center" Padding="0">
-                <StackLayout Orientation="Horizontal">
-                    <Image Source="IconSearch.png" Aspect="AspectFit" Margin="5" WidthRequest="20" HeightRequest="20"/>
-                    <Entry Margin="0,0,10,0"  Placeholder="Nhập từ khóa để tìm kiếm" HorizontalTextAlignment="Center" FontSize="10" TextColor="Black" PlaceholderColor="Black" HorizontalOptions="FillAndExpand"/>
-                </StackLayout>
+                <SearchBar Placeholder="Tìm kiếm sản phẩm..." CancelButtonColor="Orange" PlaceholderColor="Orange" TextColor="Orange" HorizontalTextAlignment="Center"
+                        FontSize="Small" FontAttributes="Italic" WidthRequest="200" HeightRequest="36" SearchCommand="{Binding GetProductSearchResult}" SearchCommandParameter="{Binding Source={RelativeSource Mode=Self},Path=Text}"/>
             </Frame>
             <RelativeLayout HorizontalOptions="End" VerticalOptions="Center" Margin="0">
-                <ImageButton x:Name="CartIcon" Scale="1.1" BackgroundColor="Transparent"  HeightRequest="32" WidthRequest="32"  Source="Cart.png" HorizontalOptions="End"  Command="{Binding CartClickedCommand}" VerticalOptions="Center" />
-                <Image x:Name="CircleIcon" BackgroundColor="Transparent" Source="circle.png" HeightRequest="28" WidthRequest="28"
+                <ImageButton x:Name="CartIcon" Scale="1.1" BackgroundColor="Transparent"  HeightRequest="32" WidthRequest="32"  Source="Cart.png" HorizontalOptions="End"  Command="{Binding CartClickedCommand}" VerticalOptions="CenterAndExpand" />
+                <Image x:Name="CircleIcon" BackgroundColor="Transparent" Source="circle.png" HeightRequest="28" WidthRequest="28" IsVisible="{Binding IsAmountGreaterZero}"
                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CartIcon,Factor=1,Property=X,Constant=16}"
                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CartIcon,Factor=1,Property=Y,Constant=-13}"/>
                 <Label FontSize="Micro" Text="{Binding ProductAmount}" IsVisible="{Binding IsAmountGreaterZero}" HorizontalOptions="Center" VerticalOptions="Center"
                        FontAttributes="Bold" TextColor="White"
-                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CircleIcon,Factor=1,Property=X,Constant=8}"
-                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CircleIcon,Factor=1,Property=Y,Constant=5}"/>
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CircleIcon,Factor=1,Property=X,Constant=11}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CircleIcon,Factor=1,Property=Y,Constant=6}"/>
             </RelativeLayout>
         </StackLayout>
     </ContentView.Content>

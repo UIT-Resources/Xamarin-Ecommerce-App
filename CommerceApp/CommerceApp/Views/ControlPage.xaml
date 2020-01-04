@@ -15,27 +15,27 @@
              HeightRequest="200"
              BarBackgroundColor="#FFFFFF">
     <TabbedPage.Children>
-        <NavigationPage Title="Home" IconImageSource="Home.png">
+        <NavigationPage Title="Home" IconImageSource="Home_1392.png">
             <x:Arguments>
                 <views:HomePage/>
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Category"  IconImageSource="Menu.png">
+        <NavigationPage Title="Category"  IconImageSource="CategoryRanking.png">
             <x:Arguments>
                 <views:HomePage/>
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Search" IconImageSource="Search.png" >
+        <NavigationPage Title="Search" IconImageSource="FindJobs.png" >
             <x:Arguments>
-                <views:HomePage/>
+                <views:SearchPage/>
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Notify" IconImageSource="Notification.png">
+        <NavigationPage Title="Notify" IconImageSource="JobNotification.png">
             <x:Arguments>
                 <views:Notification/>
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Profile" IconImageSource="Profile.png">
+        <NavigationPage Title="Profile" IconImageSource="User.png">
             <x:Arguments>
                 <views:Profile/>
             </x:Arguments>

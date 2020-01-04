@@ -7,6 +7,7 @@ using CommerceApp.Views;
 using CommerceApp.Models;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Collections.ObjectModel;
 
 namespace CommerceApp.ViewModels
 {
@@ -15,6 +16,9 @@ namespace CommerceApp.ViewModels
         bool isAmountGreaterZero;
         public bool IsAmountGreaterZero { get { return isAmountGreaterZero; } set { isAmountGreaterZero = value; OnPropertyChanged("IsAmountGreaterZero"); } }
         int productAmount;
+        ObservableCollection<Product> ListProductSearchResult { get; set; }
+        public Command GetProductSearchResult { get; }
+
         public int ProductAmount
         {
             get { return productAmount; }
@@ -50,6 +54,10 @@ namespace CommerceApp.ViewModels
                 {
                     await App.Current.MainPage.Navigation.PushModalAsync(new Cart());
                 }
+            });
+            GetProductSearchResult = new Command<string>(async (searchText) =>
+            {
+                await App.Current.MainPage.Navigation.PushAsync(new SearchPage(searchText));
             });
 
         }
