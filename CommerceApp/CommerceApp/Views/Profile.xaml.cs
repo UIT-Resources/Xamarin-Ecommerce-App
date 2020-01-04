@@ -30,7 +30,6 @@ namespace CommerceApp.Views
             {
                 Console.WriteLine("=>>IsLogged: " + App.Database.GetSession(1).State);
             }
-
         }
     }
     

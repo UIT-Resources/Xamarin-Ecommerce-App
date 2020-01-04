@@ -10,21 +10,34 @@
         <ScrollView>
             <StackLayout BackgroundColor="#F5F6F8">
                 <StackLayout Orientation="Horizontal" Margin="39,17,0,0">
-                    <Image Source="Avatar.png" />
-                    <StackLayout>
-                        <Label Text="Jane Doe" FontFamily="Neusa Next Std" FontAttributes="Bold" FontSize="30"/>
-                        <Label Text="janedoe123@email.com" FontFamily="Neusa Next Std" FontSize="15"/>
+                    <Frame CornerRadius="100" 
+                        HeightRequest="130"
+                        WidthRequest="130"
+                        HorizontalOptions="Center"
+                        Padding="0"
+                        IsClippedToBounds="True" Margin="0,12,0,2">
+                        <Image Source="{Binding Image}" 
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" Aspect="Fill" />
+                    </Frame>
+
+                    
+                    <StackLayout >
+                        <Label Text="{Binding UserName}" FontFamily="Neusa Next Std" FontAttributes="Bold" FontSize="30"/>
+                        <Label Text="{Binding Email}" FontFamily="Neusa Next Std" FontSize="15"/>
                         <Button Text="Sửa thông tin" CornerRadius="20" Command="{Binding NavigatedToUserProfileCommand}"
-                             HeightRequest="40" WidthRequest="1"
-                            TextColor="#727C8E" FontSize="10" FontFamily="Neusa Next Std" BackgroundColor="#F5F6F8" BorderWidth="0.5" BorderColor="Black" Margin="20,0"/>
+                             HeightRequest="40" 
+                            TextColor="#727C8E" FontSize="10" FontFamily="Neusa Next Std" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                BackgroundColor="#F5F6F8" BorderWidth="0.5" BorderColor="Black" Margin="20,0"/>
                     </StackLayout>
+                    
                 </StackLayout>
                 <Frame CornerRadius="10" Margin="12,24,12,0">
                     <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Spacing="10">
                         <StackLayout Orientation="Horizontal">
                             <Image Source="allorder.png" Margin="0,0,19,0" />
                             <Label Text="Tất cả đơn hàng của tôi" TextColor="#515C6F" FontSize="15"/>
-                            <Image Source="arrow.png" HorizontalOptions="EndAndExpand"/>
+                            <ImageButton Command="{Binding MyOrder}" Source="arrow.png" HorizontalOptions="EndAndExpand"/>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
                             <Image Source="pendingshipments.png" Margin="0,0,19,0" />
