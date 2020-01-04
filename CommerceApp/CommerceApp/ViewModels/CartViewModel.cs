@@ -115,6 +115,7 @@ namespace CommerceApp.ViewModels
                     {
                         if (id == productOfUsers[j].Item_id)
                         {
+                            App.navigationBarModel.ProductAmount -= productOfUsers[j].Amount;
                             int i = -1;
                             string data = @"{""amount"":" + i + "}";
                             await api.Post($"/user/cart/{productOfUsers[j].Id}", data);

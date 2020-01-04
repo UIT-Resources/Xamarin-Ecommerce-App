@@ -58,6 +58,10 @@ namespace CommerceApp.Views
             {
                 image.Source = uSer.IconUrl;
             }
+            else
+            {
+                uSer.IconUrl = "userdefault.png";
+            }
             if (Thaydoimatkhau.IsChecked)
             {
                 uSer.PassWord = thaydoi.Matkhaumoi;
@@ -68,7 +72,7 @@ namespace CommerceApp.Views
             BindingContext = new ViewModels.UserProfileViewModel();
             takePhoto.Clicked += async (sender, args) =>
             {
-                uSer.IconUrl = "userdefault.png";
+                
                 if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
                 {
                     await DisplayAlert("No Camera", ":( No camera avaialble.", "OK");
@@ -83,10 +87,10 @@ namespace CommerceApp.Views
                     
                 });
 
-                uSer.IconUrl= file.Path;
+                
                 if (file == null)
                     return;
-
+                uSer.IconUrl = file.Path;
                 //await DisplayAlert("File Location", file.Path, "OK");
 
                 image.Source = ImageSource.FromStream(() =>
@@ -98,7 +102,6 @@ namespace CommerceApp.Views
             };
             pickPhoto.Clicked += async (sender, args) =>
             {
-                uSer.IconUrl = "userdefault.png";
                 if (!CrossMedia.Current.IsPickPhotoSupported)
                 {
                     await DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
@@ -109,10 +112,10 @@ namespace CommerceApp.Views
                     PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium
                 });
 
-                uSer.IconUrl = file.Path;
+                
                 if (file == null)
                     return;
-
+                uSer.IconUrl = file.Path;
                 image.Source = ImageSource.FromStream(() =>
                 {
                     var stream = file.GetStream();
