@@ -74,8 +74,8 @@ namespace CommerceApp.ViewModels
                     App.Database.DeleteAllSessions();
 
                     user.UserID = tempuser.id;
-                    user.UserName = "UserName";
-                    user.PassWord = "";
+                    //user.UserName = "UserName";
+                    //user.PassWord = "";
                     user.BirthDay = Convert.ToDateTime(tempuser.birthday);
                     user.PhoneNumber = tempuser.phone_number;
                     user.Email = tempuser.email;
@@ -108,8 +108,8 @@ namespace CommerceApp.ViewModels
                         if(dauhieu == 0)
                         {
                             user.UserID = tempuser.id;
-                            user.UserName = "UserName";
-                            user.PassWord = "";
+                            //user.UserName = "UserName";
+                            //user.PassWord = "";
                             user.BirthDay = Convert.ToDateTime(tempuser.birthday);
                             user.PhoneNumber = tempuser.phone_number;
                             user.Email = tempuser.email;

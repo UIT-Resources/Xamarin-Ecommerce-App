@@ -14,11 +14,11 @@ using Xamarin.Forms.Xaml;
 namespace CommerceApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    
+
     [DesignTimeVisible(false)]
     public partial class UserProfile : ContentPage
     {
-        public class thaydoimatkahu :BindableBase {
+        public class thaydoimatkahu : BindableBase {
             public string matkhaucu { get; set; }
             public string matkhaumoi { get; set; }
             public string xacnhanmatkhau { get; set; }
@@ -27,8 +27,12 @@ namespace CommerceApp.Views
             public string Xacnhanmatkhau { get { return xacnhanmatkhau; } set { xacnhanmatkhau = value; OnPropertyChanged("Xacnhanmatkhau"); } }
         }
         public User user { get; set; }
-        public User uSer { get { return user; } set { user = value;OnPropertyChanged("uSer"); } }
+        public User uSer { get { return user; } set { user = value; OnPropertyChanged("uSer"); } }
         public thaydoimatkahu thaydoi = new thaydoimatkahu();
+        public string username { get; set; }
+        public string Username { get { return username; } set { username = value; OnPropertyChanged("Username"); } }
+        public string email { get; set; }
+        public string Email { get { return email; } set { email = value; OnPropertyChanged("Email"); } }
         public UserProfile()
         {
 
@@ -44,7 +48,11 @@ namespace CommerceApp.Views
                 }
 
             }
-            
+
+            if (uSer.UserName.Length > 10)
+            {
+                uSer.UserName=  String.Format("{0,9}...", uSer.UserName);
+            }
             
             if (uSer.IconUrl != "")
             {
