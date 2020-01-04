@@ -28,7 +28,7 @@
                 </StackLayout>
                 <StackLayout VerticalOptions="Center" Spacing="10" Padding="20">
                     <Label Text="Username" FontSize="16" Font="Gibson"  TextColor="#FFFFFF4D"/>
-                    <Entry Text="{Binding user.UserName}" Placeholder="Username/Email/Số điện thoại" TextColor="White"/>
+                    <Entry Text="{Binding user.UserName}" Placeholder="Username" TextColor="White"/>
 
                     
                     

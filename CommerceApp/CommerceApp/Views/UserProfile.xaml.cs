@@ -14,11 +14,11 @@ using Xamarin.Forms.Xaml;
 namespace CommerceApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    
+
     [DesignTimeVisible(false)]
     public partial class UserProfile : ContentPage
     {
-        public class thaydoimatkahu :BindableBase {
+        public class thaydoimatkahu : BindableBase {
             public string matkhaucu { get; set; }
             public string matkhaumoi { get; set; }
             public string xacnhanmatkhau { get; set; }
@@ -27,17 +27,32 @@ namespace CommerceApp.Views
             public string Xacnhanmatkhau { get { return xacnhanmatkhau; } set { xacnhanmatkhau = value; OnPropertyChanged("Xacnhanmatkhau"); } }
         }
         public User user { get; set; }
-        public User uSer { get { return user; } set { user = value;OnPropertyChanged("uSer"); } }
+        public User uSer { get { return user; } set { user = value; OnPropertyChanged("uSer"); } }
         public thaydoimatkahu thaydoi = new thaydoimatkahu();
+        public string username { get; set; }
+        public string Username { get { return username; } set { username = value; OnPropertyChanged("Username"); } }
+        public string email { get; set; }
+        public string Email { get { return email; } set { email = value; OnPropertyChanged("Email"); } }
         public UserProfile()
         {
 
             InitializeComponent();
             uSer = new User();
             int userid = App.Database.GetSession(1).UserID;
-            List<User> temp= (List<User>)App.Database.GetUsers();
-            uSer = temp[0];
-            
+            List<User> listuser = (List<User>)App.Database.GetUsers();
+            for (int i = 0; i < listuser.Count; i++)
+            {
+                if (userid == listuser[i].UserID)
+                {
+                    uSer = listuser[i];
+                }
+
+            }
+
+            if (uSer.UserName.Length > 10)
+            {
+                uSer.UserName=  String.Format("{0,9}...", uSer.UserName);
+            }
             
             if (uSer.IconUrl != "")
             {
@@ -53,7 +68,7 @@ namespace CommerceApp.Views
             BindingContext = new ViewModels.UserProfileViewModel();
             takePhoto.Clicked += async (sender, args) =>
             {
-
+                uSer.IconUrl = "userdefault.png";
                 if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
                 {
                     await DisplayAlert("No Camera", ":( No camera avaialble.", "OK");
@@ -83,6 +98,7 @@ namespace CommerceApp.Views
             };
             pickPhoto.Clicked += async (sender, args) =>
             {
+                uSer.IconUrl = "userdefault.png";
                 if (!CrossMedia.Current.IsPickPhotoSupported)
                 {
                     await DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
@@ -93,7 +109,7 @@ namespace CommerceApp.Views
                     PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium
                 });
 
-
+                uSer.IconUrl = file.Path;
                 if (file == null)
                     return;
 
@@ -107,10 +123,16 @@ namespace CommerceApp.Views
             deletePhoto.Clicked += async (sender, args) =>
             {
                 image.Source = "userdefault.png";
+                uSer.IconUrl = "userdefault.png";
             };
             luu.Clicked += async (sender, args) =>
             {
-                if (!thaydoi.Matkhaumoi.Equals(thaydoi.Xacnhanmatkhau))
+                if (thaydoi.Matkhaumoi is null || thaydoi.Xacnhanmatkhau is null)
+                {
+                    thaydoi.Matkhaumoi = "";
+                    thaydoi.Xacnhanmatkhau = "";
+                }
+                else if (!thaydoi.Matkhaumoi.Equals(thaydoi.Xacnhanmatkhau))
                 {
                     await DisplayAlert("Thông báo", "Mặt khẩu xác nhận không chính xác!", "OK");
                     return;

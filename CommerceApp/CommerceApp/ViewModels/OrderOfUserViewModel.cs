@@ -18,13 +18,13 @@ namespace CommerceApp.ViewModels
         public ObservableCollection<BillOfUser> Bills { get { return bills; } set { bills = value; } }
         public OrderOfUserViewModel()
         {
-            Isloading = true;
+            
             getDataBills();
-            Isloading = false;
+            
         }
         public async void getDataBills()
         {
-            
+            Isloading = true;
             int userIDcurrent = App.Database.GetSession(1).UserID;
             List<BillOfUser> bills = new List<BillOfUser>();
             string url = $"/user/{userIDcurrent}/bill";
@@ -43,6 +43,7 @@ namespace CommerceApp.ViewModels
                 }
                 Bills.Add(bills[i]);
             }
+            Isloading = false;
         }
     }
 }

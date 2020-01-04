@@ -25,7 +25,6 @@ namespace CommerceApp.ViewModels
         }
         public int SaveSession(Session session)
         {
-            this.DeleteAllSessions();
             return this.itemDatabase.SaveObject<Session>(session);
         }
         public int DeleteSession(int id)
