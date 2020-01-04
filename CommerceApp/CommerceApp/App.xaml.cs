@@ -122,8 +122,6 @@ namespace CommerceApp
             InitializeComponent();
             MainPage = new NavigationPage(new ControlPage());
 
-            //Initilized Session
-            Database.SaveSession(new Session { UserID = 0, State = false });
         }
 
         protected override void OnStart()

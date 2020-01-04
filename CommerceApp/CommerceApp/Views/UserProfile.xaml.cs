@@ -35,8 +35,15 @@ namespace CommerceApp.Views
             InitializeComponent();
             uSer = new User();
             int userid = App.Database.GetSession(1).UserID;
-            List<User> temp= (List<User>)App.Database.GetUsers();
-            uSer = temp[0];
+            List<User> listuser = (List<User>)App.Database.GetUsers();
+            for (int i = 0; i < listuser.Count; i++)
+            {
+                if (userid == listuser[i].UserID)
+                {
+                    uSer = listuser[i];
+                }
+
+            }
             
             
             if (uSer.IconUrl != "")

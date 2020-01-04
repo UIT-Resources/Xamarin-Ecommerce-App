@@ -44,10 +44,10 @@ namespace CommerceApp.ViewModels
         public Api api = new Api();
         public Session session = new Session();
         public bool isloading { get; set; }
-        public bool Isloading { get { return isloading; } set { isloading = value;OnPropertyChanged("Isloading"); } }
+        public bool Isloading { get { return isloading; } set { isloading = value; OnPropertyChanged("Isloading"); } }
         public LogginViewModel(INavigation Navigation)
         {
-            
+
             user = new User();
 
             quenmatkhau = new Command(async () =>
@@ -57,31 +57,87 @@ namespace CommerceApp.ViewModels
             checkloggin = new Command(async () =>
             {
                 Isloading = true;
-                //get data user here
+                Session sessioncurrent = App.Database.GetSession(1);
+                List<User> listuser = (List<User>)App.Database.GetUsers();
+                tempUser tempuser = new tempUser();
+
                 string dataLogin = @"{
                     ""username"":""" + user.UserName + @""",
                     ""password"":""" + user.PassWord + @"""
                     }";
                 string dataUser = await api.Post("/user/login", dataLogin);
-                tempUser tempuser = new tempUser();
+
                 tempuser = JsonConvert.DeserializeObject<tempUser>(dataUser);
 
-                user.UserID = tempuser.id;
-                user.UserName = "";
-                user.PassWord = "";
-                user.BirthDay = Convert.ToDateTime(tempuser.birthday);
-                user.PhoneNumber = tempuser.phone_number;
-                user.Email = "";
-                user.Sex = "";
-                user.IconUrl = "";
+                if (sessioncurrent is null && listuser is null|| sessioncurrent is null && listuser != null|| sessioncurrent != null && listuser is null)
+                {
+                    App.Database.DeleteAllSessions();
 
-                session.UserID = tempuser.id;
-                session.State = true;
+                    user.UserID = tempuser.id;
+                    user.UserName = "UserName";
+                    user.PassWord = "";
+                    user.BirthDay = Convert.ToDateTime(tempuser.birthday);
+                    user.PhoneNumber = tempuser.phone_number;
+                    user.Email = tempuser.email;
+                    user.Sex = "";
+                    user.IconUrl = "";
 
-                App.Database.DeleteAllUsers();
-                App.Database.SaveUser(user);
-                Console.WriteLine($"JsonConvert.SerializeObject(App.Database.GetUsers()) ==> {JsonConvert.SerializeObject(App.Database.GetUsers())}");
-                App.Database.SaveSession(session);
+                    session.UserID = tempuser.id;
+                    session.State = true;
+
+                    
+                    App.Database.SaveUser(user);
+                    App.Database.SaveSession(session);
+                }
+                else
+                {
+                    if (sessioncurrent.UserID != tempuser.id)
+                    {
+                        //tài khoản khác
+                        int dauhieu = 0;
+                        for (int i = 0; i < listuser.Count; i++)
+                        {
+                            if(tempuser.id == listuser[i].UserID)
+                            {
+                                dauhieu = 1;
+                                App.Database.DeleteAllSessions();
+                                App.Database.SaveSession(new Session() { State = true, UserID = listuser[i].UserID });
+                                user = listuser[i];
+                            }
+                        }
+                        if(dauhieu == 0)
+                        {
+                            user.UserID = tempuser.id;
+                            user.UserName = "UserName";
+                            user.PassWord = "";
+                            user.BirthDay = Convert.ToDateTime(tempuser.birthday);
+                            user.PhoneNumber = tempuser.phone_number;
+                            user.Email = tempuser.email;
+                            user.Sex = "";
+                            user.IconUrl = "";
+
+                            session.UserID = tempuser.id;
+                            session.State = true;
+
+                            App.Database.DeleteAllSessions();
+                            App.Database.SaveUser(user);
+                            App.Database.SaveSession(session);
+                        }
+                    }
+                    else
+                    {
+                        for (int i = 0; i < listuser.Count; i++)
+                        {
+                            if (sessioncurrent.UserID == listuser[i].UserID && sessioncurrent.State == false)
+                            {
+                                App.Database.DeleteAllSessions();
+                                App.Database.SaveSession(new Session() { State = true, UserID = listuser[i].UserID });
+                                user = listuser[i];
+                            }
+                        }
+                    }
+                }
+
                 Console.WriteLine(tempuser.create_date);
 
                 if (tempuser.create_date == null)
