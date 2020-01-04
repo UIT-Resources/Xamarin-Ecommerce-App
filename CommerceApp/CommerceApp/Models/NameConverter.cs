@@ -13,7 +13,7 @@ namespace CommerceApp.Models
             string data = (string)value;
             if (data.Length > 10)
             {
-                data = data.Substring(0, 5) + "...";
+                data = data.Substring(0, 8) + "...";
             }
             else
             {
