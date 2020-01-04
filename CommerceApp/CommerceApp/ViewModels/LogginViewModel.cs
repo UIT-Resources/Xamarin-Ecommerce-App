@@ -152,11 +152,11 @@ namespace CommerceApp.ViewModels
                     Application.Current.MainPage.Navigation.InsertPageBefore(new ControlPage(), Application.Current.MainPage.Navigation.NavigationStack.Last());
                     await Application.Current.MainPage.Navigation.PopAsync();
                 }
-
+                Isloading = false;
             });
             dangky = new Command(async () =>
             {
-                await App.Current.MainPage.Navigation.PushModalAsync(new SignUp());
+                await App.Current.MainPage.Navigation.PushAsync(new SignUp());
             });
         }
     }

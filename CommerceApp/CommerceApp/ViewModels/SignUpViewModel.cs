@@ -56,7 +56,7 @@ namespace CommerceApp.ViewModels
                 if (result.Equals("0"))
                 {
                     await Application.Current.MainPage.DisplayAlert("Thông báo", "Đăng ký thành công!", "OK");
-                    await Application.Current.MainPage.Navigation.PushModalAsync(new Loggin());
+                    await Application.Current.MainPage.Navigation.PushAsync(new Loggin());
                 }
                 else if(result.Equals("1"))
                 {
