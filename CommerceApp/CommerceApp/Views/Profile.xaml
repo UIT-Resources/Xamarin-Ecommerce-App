@@ -4,9 +4,16 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:local="clr-namespace:CommerceApp.Models"
              x:Class="CommerceApp.Views.Profile"
              Title="Cá nhân">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:NameConverter x:Key="nameConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
+        
         <ScrollView>
             <StackLayout BackgroundColor="#F5F6F8">
                 <StackLayout Orientation="Horizontal" Margin="39,17,0,0">
@@ -21,10 +28,12 @@
                         VerticalOptions="Center" Aspect="Fill" />
                     </Frame>
 
-                    
-                    <StackLayout >
-                        <Label Text="{Binding UserName}" FontFamily="Neusa Next Std" FontAttributes="Bold" FontSize="30"/>
-                        <Label Text="{Binding Email}" FontFamily="Neusa Next Std" FontSize="15"/>
+                    <StackLayout>
+                        <StackLayout >
+                            <Label Text="{Binding UserName, Converter={StaticResource nameConverter}}" FontFamily="Neusa Next Std" FontAttributes="Bold" FontSize="30"/>
+                            <Label Text="{Binding Email , Converter={StaticResource nameConverter}}" FontFamily="Neusa Next Std" FontSize="15"/>
+
+                        </StackLayout>
                         <Button Text="Sửa thông tin" CornerRadius="20" Command="{Binding NavigatedToUserProfileCommand}"
                              HeightRequest="40" 
                             TextColor="#727C8E" FontSize="10" FontFamily="Neusa Next Std" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
@@ -128,11 +137,15 @@
                         </StackLayout>
                     </StackLayout>
                 </Frame>
-                <Frame CornerRadius="6" BackgroundColor="#F5F6F8">
-                    <Button Command="{Binding dangxuat}" BackgroundColor="White" ImageSource="IconSignOut.png"
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,10">
+
+                    <Button CornerRadius="6" Command="{Binding xoabonho}" BackgroundColor="White"
+                            Text="XÓA BỘ NHỚ CACHE" FontFamily="Gibson" FontSize="12"
+                            TextColor="Red" Padding="35,20"/>
+                    <Button CornerRadius="6" Command="{Binding dangxuat}" BackgroundColor="White" ImageSource="IconSignOut.png"
                             Text="ĐĂNG XUẤT" FontFamily="Gibson" FontSize="12"
-                            TextColor="Red" HorizontalOptions="Center" Padding="120,20"/>
-                </Frame>
+                            TextColor="Red" HorizontalOptions="Center" Padding="35,20"/>
+                </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

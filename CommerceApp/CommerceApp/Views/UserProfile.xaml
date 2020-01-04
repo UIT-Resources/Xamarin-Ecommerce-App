@@ -32,14 +32,14 @@
                             <Image Source="UserProfile.png" Margin="0,0,19,0" />
                             <StackLayout Spacing="0">
                                 <Label Text="HỌ VÀ TÊN" TextColor="#515C6F" Opacity="0.5"/>
-                                <Entry HorizontalOptions="End" MaxLength="9" Text="{Binding UserName}" WidthRequest="250" TextColor="#515C6F" FontSize="15"/>
+                                <Entry HorizontalOptions="End"  Text="{Binding UserName}" WidthRequest="250" TextColor="#515C6F" FontSize="15"/>
                             </StackLayout>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" HeightRequest="59">
                             <Image Source="IconMail.png" Margin="0,0,19,0" />
                             <StackLayout Spacing="0">
                                 <Label Text="ĐỊA CHỈ EMAIL *" TextColor="#515C6F" Opacity="0.5"/>
-                                <Entry Text="{Binding Email}" MaxLength="20" WidthRequest="250" TextColor="#515C6F" FontSize="15"/>
+                                <Entry Text="{Binding Email}" WidthRequest="250" TextColor="#515C6F" FontSize="15"/>
                             </StackLayout>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" >

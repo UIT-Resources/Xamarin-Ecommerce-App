@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using CommerceApp.Views;
 using CommerceApp.Models;
 using Newtonsoft.Json;
+using System.Linq;
 
 namespace CommerceApp.ViewModels
 {
@@ -23,6 +24,7 @@ namespace CommerceApp.ViewModels
         public string email { get; set; }
         public string Email { get { return email; } set { email = value; OnPropertyChanged("Email"); } }
         public Command MyOrder { get; }
+        public Command xoabonho { get; }
         Session a = App.Database.GetSession(1);
         public ProfileViewModel()
         {
@@ -66,6 +68,13 @@ namespace CommerceApp.ViewModels
             dangxuat = new Command(() =>
             {
                 PopupNavigation.Instance.PushAsync(new PopUpSigOut());
+            });
+            xoabonho = new Command(async() =>
+            {
+                App.Database.DeleteAllUsers();
+                App.Database.DeleteAllSessions();
+                Application.Current.MainPage.Navigation.InsertPageBefore(new Loggin(), Application.Current.MainPage.Navigation.NavigationStack.Last());
+                await Application.Current.MainPage.Navigation.PopAsync();
             });
             MyOrder = new Command(() =>
             {
