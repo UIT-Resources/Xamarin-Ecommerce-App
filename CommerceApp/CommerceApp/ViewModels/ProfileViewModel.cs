@@ -51,7 +51,7 @@ namespace CommerceApp.ViewModels
             
 
 
-            if (uSer.IconUrl == "")
+            if (uSer.IconUrl == "" || uSer.IconUrl.Equals("userdefault.png"))
             {
                 Image = "userdefault.png";
             }

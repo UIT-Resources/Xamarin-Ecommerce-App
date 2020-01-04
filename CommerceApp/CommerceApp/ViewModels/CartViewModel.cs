@@ -52,6 +52,11 @@ namespace CommerceApp.ViewModels
             Console.WriteLine($"useridcurrent: {useridcurrent}");
             string data = "";
             data = await api.Get($"/user/cart/list/{useridcurrent}");
+            if (data.Equals("[]"))
+            {
+                IsVisiblePayment = false;
+                IsVisibleNotify = true;
+            }
             productOfUsers = JsonConvert.DeserializeObject<List<ProductOfUser>>(data);
             List<ProductServer> ob = new List<ProductServer>();
             for (int i = 0; i < productOfUsers.Count; i++)
@@ -80,20 +85,46 @@ namespace CommerceApp.ViewModels
             Total = tempo;
             ProductServers = lps;
         }
+        public bool isVisiblePayment { get; set; }
+        public bool IsVisiblePayment { get { return isVisiblePayment; } set { isVisiblePayment = value; OnPropertyChanged("IsVisiblePayment"); } }
+        public bool isVisibleNotify { get; set; }
+        public bool IsVisibleNotify { get { return isVisibleNotify; } set { isVisibleNotify = value; OnPropertyChanged("IsVisibleNotify"); } }
         public CartViewModel()
         {
-            
+            IsVisiblePayment = true;
             // get data product of user here
             GetProductOfUser();
-            
+
             //behavior swicth payment page
             thanhtoan = new Command(() =>
              {
-                 App.Current.MainPage.Navigation.PushModalAsync(new PayMent(productOfUsers)); 
+                 App.Current.MainPage.Navigation.PushModalAsync(new PayMent(productOfUsers));
              });
         }
         private Command<int> _selectSubstractCommand;
         private Command<int> _selectAddCommand;
+        private Command<int> _selectDeleteCommand;
+
+        public Command<int> Delete
+        {
+            get
+            {
+                return _selectDeleteCommand ?? (_selectDeleteCommand = new Command<int>(async (id) =>
+                {
+                    for (int j = 0; j < productOfUsers.Count; j++)
+                    {
+                        if (id == productOfUsers[j].Item_id)
+                        {
+                            int i = -1;
+                            string data = @"{""amount"":" + i + "}";
+                            await api.Post($"/user/cart/{productOfUsers[j].Id}", data);
+                            GetProductOfUser();
+                        }
+                    }
+                }));
+            }
+        }
+
         public Command<int> Tru
         {
             get
