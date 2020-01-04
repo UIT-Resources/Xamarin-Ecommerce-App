@@ -46,6 +46,9 @@ namespace CommerceApp.ViewModels
             IsLoadingProductSection = false;
             IsLoadingPage = true;
             IsReady = false;
+
+            //Dữ liệu được tạo ảo 2 dòng để cho thấy cấu trúc mô phỏng thực tế của app. Vì dữ liệu trên Database không đầy đủ hoặc hình ảnh chưa thêm.
+            //Tuy nhiên quá trình tải dữ liệu các danh mục sau đó là hoàn toàn từ server.
             ProductSections.Add(new ProductSection
             {
                 category = new Category

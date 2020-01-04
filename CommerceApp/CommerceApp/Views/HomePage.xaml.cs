@@ -19,12 +19,5 @@ namespace CommerceApp.Views
             this.BindingContext = new HomeViewModel();
         }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-        }
-
-
     }
 }

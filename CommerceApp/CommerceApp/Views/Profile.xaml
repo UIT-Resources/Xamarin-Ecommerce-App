@@ -5,12 +5,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:CommerceApp.Views"
              mc:Ignorable="d"
-             xmlns:local="clr-namespace:CommerceApp.Models"
+             xmlns:models="clr-namespace:CommerceApp.Models"
              x:Class="CommerceApp.Views.Profile"
              Title="Quản lý tài khoản">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local:NameConverter x:Key="nameConverter" />
+            <models:NameConverter x:Key="nameConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
   
