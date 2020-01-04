@@ -121,13 +121,9 @@ namespace CommerceApp
 
         public App()
         {
-            navigationBarModel = new NavigationBarModel();
             InitializeComponent();
+            navigationBarModel = new NavigationBarModel();
             MainPage = new NavigationPage(new ControlPage());
-
-
-           
-
         }
 
         protected override void OnStart()

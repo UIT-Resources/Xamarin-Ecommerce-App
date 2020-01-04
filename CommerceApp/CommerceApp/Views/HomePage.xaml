@@ -38,90 +38,93 @@
     <ContentPage.Content>
         <ScrollView Orientation="Vertical">
             <StackLayout>
-                <!--Events Section-->
-                <views:CategoryView CategoryTitle="Sự kiện" ControlTemplate="{StaticResource SectionCardView}" SectionHeight="200">
-                    <StackLayout>
-                        <CarouselView  x:Name="eventSection" ItemsSource="{Binding Events}" RemainingItemsThreshold="2" RemainingItemsThresholdReachedCommand="{Binding LoadMoreEventCommand}" 
+                <ActivityIndicator Color="Orange" IsRunning="{Binding IsLoadingPage}" IsVisible="{Binding IsLoadingPage}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+                <StackLayout IsVisible="{Binding IsReady}">
+                    <!--Events Section-->
+                    <views:CategoryView CategoryTitle="Sự kiện" ControlTemplate="{StaticResource SectionCardView}" SectionHeight="200">
+                        <StackLayout>
+                            <CarouselView  x:Name="eventSection" ItemsSource="{Binding Events}" RemainingItemsThreshold="2" RemainingItemsThresholdReachedCommand="{Binding LoadMoreEventCommand}" 
                                   EmptyView="Không có bất kỳ nội dung nào để hiển thị" RemainingItemsThresholdReachedCommandParameter="{Binding Events}">
-                            <CarouselView.ItemsLayout>
-                                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="0" SnapPointsType="MandatorySingle" SnapPointsAlignment="End"/>
-                            </CarouselView.ItemsLayout>
-                            <CarouselView.ItemTemplate>
-                                <DataTemplate>
-                                    <Image Source="{Binding Url_images}" BackgroundColor="Transparent" Aspect="AspectFill" HorizontalOptions="CenterAndExpand"/>
-                                </DataTemplate>
-                            </CarouselView.ItemTemplate>
-                        </CarouselView>
-                        <IndicatorView ItemsSourceBy="eventSection" IndicatorColor="LightGray" SelectedIndicatorColor="DarkGray" HorizontalOptions="Center" />
-                    </StackLayout>
-                </views:CategoryView>
+                                <CarouselView.ItemsLayout>
+                                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="0" SnapPointsType="MandatorySingle" SnapPointsAlignment="End"/>
+                                </CarouselView.ItemsLayout>
+                                <CarouselView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Image Source="{Binding Url_images}" BackgroundColor="Transparent" Aspect="AspectFill" HorizontalOptions="CenterAndExpand"/>
+                                    </DataTemplate>
+                                </CarouselView.ItemTemplate>
+                            </CarouselView>
+                            <IndicatorView ItemsSourceBy="eventSection" IndicatorColor="LightGray" SelectedIndicatorColor="DarkGray" HorizontalOptions="Center" />
+                        </StackLayout>
+                    </views:CategoryView>
 
 
-                <!--Category Section-->
+                    <!--Category Section-->
 
-                <views:CategoryView CategoryTitle="Danh mục" ControlTemplate="{StaticResource CategoryCardView}" SectionHeight="90">
-                    <CollectionView   ItemsSource="{Binding Categories}" ItemSizingStrategy="MeasureAllItems" 
+                    <views:CategoryView CategoryTitle="Danh mục" ControlTemplate="{StaticResource CategoryCardView}" SectionHeight="90">
+                        <CollectionView   ItemsSource="{Binding Categories}" ItemSizingStrategy="MeasureAllItems" 
                                  RemainingItemsThreshold="5" RemainingItemsThresholdReachedCommand="{Binding LoadMoreCategoryCommand}" EmptyView="Không có bất kỳ nội dung nào để hiển thị" 
                                       RemainingItemsThresholdReachedCommandParameter="{Binding Categories}">
-                        <CollectionView.ItemsLayout>
-                            <GridItemsLayout Orientation="Horizontal" HorizontalItemSpacing="0" SnapPointsType="Mandatory" SnapPointsAlignment="Start"/>
-                        </CollectionView.ItemsLayout>
-                        <CollectionView.ItemTemplate>
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Horizontal" HorizontalItemSpacing="0" SnapPointsType="Mandatory" SnapPointsAlignment="Start"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid RowSpacing="0" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="60" />
+                                            <RowDefinition Height="30" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="70" />
+                                        </Grid.ColumnDefinitions>
+                                        <ImageButton  Grid.Row="0" Source="{Binding Url_images}" BackgroundColor="Transparent"/>
+                                        <Label Grid.Row="1" Text="{Binding Full_name}" FontSize="12" FontFamily="Neusa Next Std" HorizontalOptions="Center"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </views:CategoryView>
+
+
+                    <!--Products Section-->
+                    <StackLayout Orientation="Vertical" BindableLayout.ItemsSource="{Binding ProductSections}" >
+                        <BindableLayout.ItemTemplate>
                             <DataTemplate>
-                                <Grid RowSpacing="0" >
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="60" />
-                                        <RowDefinition Height="30" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="70" />
-                                    </Grid.ColumnDefinitions>
-                                    <ImageButton  Grid.Row="0" Source="{Binding Url_images}" BackgroundColor="Transparent"/>
-                                    <Label Grid.Row="1" Text="{Binding Full_name}" FontSize="12" FontFamily="Neusa Next Std" HorizontalOptions="Center"/>
-                                </Grid>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                </views:CategoryView>
-
-
-                <!--Products Section-->
-                <StackLayout Orientation="Vertical" BindableLayout.ItemsSource="{Binding ProductSections}" >
-                    <BindableLayout.ItemTemplate>
-                        <DataTemplate>
-                            <views:CategoryView CategoryTitle="{Binding category.Full_name}" ControlTemplate="{StaticResource SectionCardView}" SectionHeight="150">
-                                <CollectionView ItemsSource="{Binding products}" ItemSizingStrategy="MeasureAllItems" EmptyView="Không có bất kỳ nội dung nào để hiển thị" 
+                                <views:CategoryView CategoryTitle="{Binding category.Full_name}" ControlTemplate="{StaticResource SectionCardView}" SectionHeight="150">
+                                    <CollectionView ItemsSource="{Binding products}" ItemSizingStrategy="MeasureAllItems" EmptyView="Không có bất kỳ nội dung nào để hiển thị" 
                                                 RemainingItemsThreshold="2" RemainingItemsThresholdReachedCommand="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:HomeViewModel}},Path=LoadMoreProductCommand}"  
                                                 RemainingItemsThresholdReachedCommandParameter="{Binding products}" >
-                                    <CollectionView.ItemsLayout>
-                                        <GridItemsLayout Orientation="Horizontal" Span="1" HorizontalItemSpacing="15" SnapPointsType="Mandatory" SnapPointsAlignment="Start" />
-                                    </CollectionView.ItemsLayout>
-                                    <CollectionView.ItemTemplate>
-                                        <DataTemplate>
-                                            <Frame  CornerRadius="15"  HeightRequest="150" WidthRequest="60">
-                                                <Grid RowSpacing="2" BackgroundColor="#FFFFFF">
-                                                    <Grid.RowDefinitions>
-                                                        <RowDefinition Height="60" />
-                                                        <RowDefinition Height="20" />
-                                                        <RowDefinition Height="20" />
-                                                    </Grid.RowDefinitions>
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="60" />
-                                                    </Grid.ColumnDefinitions>
-                                                    <ImageButton Grid.Row="0" Source="{Binding Url_images}" BackgroundColor="Transparent" HeightRequest="80" WidthRequest="76" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:HomeViewModel}},Path=ProductClickedCommand}" CommandParameter="{Binding Id}"/>
-                                                    <Label Grid.Row="1" FontFamily="NeusaNextStd-Light.ttf#NeusaNextStd-Light" Text="{Binding Full_name}" FontSize="12"  TextColor="#515C6F" HorizontalOptions="Center"/>
-                                                    <Label Grid.Row="2" FontFamily="NeusaNextStd-Bold.ttf#NeusaNextStd-Bold" Text="{Binding Cost, StringFormat='{0:f} VNĐ'}" FontSize="10" TextColor="#515C6F" FontAttributes="Bold" HorizontalOptions="Center"/>
-                                                </Grid>
-                                            </Frame>
-                                        </DataTemplate>
-                                    </CollectionView.ItemTemplate>
-                                </CollectionView>
-                            </views:CategoryView>
-                        </DataTemplate>
-                    </BindableLayout.ItemTemplate>
+                                        <CollectionView.ItemsLayout>
+                                            <GridItemsLayout Orientation="Horizontal" Span="1" HorizontalItemSpacing="15" SnapPointsType="Mandatory" SnapPointsAlignment="Start" />
+                                        </CollectionView.ItemsLayout>
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Frame  CornerRadius="15"  HeightRequest="150" WidthRequest="60">
+                                                    <Grid RowSpacing="2" BackgroundColor="#FFFFFF">
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="60" />
+                                                            <RowDefinition Height="20" />
+                                                            <RowDefinition Height="20" />
+                                                        </Grid.RowDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="60" />
+                                                        </Grid.ColumnDefinitions>
+                                                        <ImageButton Grid.Row="0" Source="{Binding Url_images}" BackgroundColor="Transparent" HeightRequest="80" WidthRequest="76" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:HomeViewModel}},Path=ProductClickedCommand}" CommandParameter="{Binding Id}"/>
+                                                        <Label Grid.Row="1" FontFamily="NeusaNextStd-Light.ttf#NeusaNextStd-Light" Text="{Binding Full_name}" FontSize="12"  TextColor="#515C6F" HorizontalOptions="Center"/>
+                                                        <Label Grid.Row="2" FontFamily="NeusaNextStd-Bold.ttf#NeusaNextStd-Bold" Text="{Binding Cost, StringFormat='{0:f} VNĐ'}" FontSize="10" TextColor="#515C6F" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                                    </Grid>
+                                                </Frame>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+                                </views:CategoryView>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                    <ActivityIndicator IsVisible="{Binding IsLoadingProductSection}" IsRunning="{Binding IsLoadingProductSection}" HorizontalOptions="Center" Color="Orange"/>
+                    <Button Text="Tải thêm" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="White" TextColor="Blue" CornerRadius="15" Margin="5" Command="{Binding LoadMoreProductSection}" CommandParameter="{Binding ProductSections}"/>
                 </StackLayout>
-                <ActivityIndicator IsVisible="{Binding IsLoadingProductSection}" IsRunning="{Binding IsLoadingProductSection}" HorizontalOptions="Center" Color="Orange"/>
-                <Button Text="Tải thêm" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="White" TextColor="Blue" CornerRadius="15" Margin="5" Command="{Binding LoadMoreProductSection}" CommandParameter="{Binding ProductSections}"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

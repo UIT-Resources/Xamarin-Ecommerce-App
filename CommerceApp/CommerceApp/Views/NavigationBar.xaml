@@ -3,13 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewmodels="clr-namespace:CommerceApp.ViewModels"
              mc:Ignorable="d"
              x:Class="CommerceApp.Views.NavigationBar">
-  <ContentView.Content>
-        <StackLayout Orientation="Horizontal" Margin="0,0,20,0">
-            <Label x:Name="pageTitle" HorizontalOptions="Start" VerticalOptions="Center" FontSize="Title" TextColor="White"/>
-            <ImageButton BackgroundColor="Transparent" Source="Cart.png" HorizontalOptions="EndAndExpand"  Command="{Binding CartClickedCommand}"  />
-            <Label Text="{Binding ProductAmount}" IsVisible="{Binding IsAmountGreaterZero}" FontAttributes="Bold" FontSize="Small"  HorizontalOptions="Center"  TextColor="Red" VerticalOptions="Start"/>
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <viewmodels:CartIconXConstraintConverter x:Key="XConstraintConverter"/>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" Margin="0,5,10,5">
+            <Label x:Name="pageTitle" HorizontalOptions="StartAndExpand" VerticalOptions="Center" FontSize="Title" TextColor="White"/>
+            <RelativeLayout HorizontalOptions="End" VerticalOptions="Center">
+                <ImageButton x:Name="CartIcon" HeightRequest="32" WidthRequest="32" BackgroundColor="Transparent" Source="Cart.png" HorizontalOptions="End"  Command="{Binding CartClickedCommand}" VerticalOptions="Center" />
+                <Image x:Name="CircleIcon"  BackgroundColor="Transparent" Source="circle.png" Scale="1.1" HeightRequest="28" WidthRequest="28"
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CartIcon,Factor=1,Property=X,Constant=16}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CartIcon,Factor=1,Property=Y,Constant=-13}"/>
+                <Label FontSize="Micro" Text="{Binding ProductAmount}" IsVisible="{Binding IsAmountGreaterZero}" HorizontalOptions="Center" VerticalOptions="Center"
+                       FontAttributes="Bold" TextColor="White" 
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CircleIcon,Factor=1,Property=X,Constant=8}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CircleIcon,Factor=1,Property=Y,Constant=5}" />
+            </RelativeLayout>
         </StackLayout>
     </ContentView.Content>
 </ContentView>

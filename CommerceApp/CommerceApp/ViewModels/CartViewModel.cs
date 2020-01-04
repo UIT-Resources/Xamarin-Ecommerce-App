@@ -105,6 +105,7 @@ namespace CommerceApp.ViewModels
                         if (id == productOfUsers[j].Item_id)
                         {
                             int i = productOfUsers[j].Amount - 1;
+                            App.navigationBarModel.ProductAmount -= 1; // Update Product Amount On CartIcon
                             string data = @"{""amount"":" + i + "}";
                             string product = await api.Post($"/user/cart/{productOfUsers[j].Id}", data);
                             ProductOfUser temp = JsonConvert.DeserializeObject<ProductOfUser>(product);
@@ -134,6 +135,7 @@ namespace CommerceApp.ViewModels
                         if (id == productOfUsers[j].Item_id)
                         {
                             int i = productOfUsers[j].Amount + 1;
+                            App.navigationBarModel.ProductAmount += 1; // Update Product Amount On CartIcon
                             string data = @"{""amount"":" + i + "}";
                             string product = await api.Post($"/user/cart/{productOfUsers[j].Id}", data);
                             ProductOfUser temp = JsonConvert.DeserializeObject<ProductOfUser>(product);

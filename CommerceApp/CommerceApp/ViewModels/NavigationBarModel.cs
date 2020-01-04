@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using CommerceApp.Views;
 using CommerceApp.Models;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace CommerceApp.ViewModels
 {
@@ -72,5 +73,6 @@ namespace CommerceApp.ViewModels
                 }
             }
         }
+        
     }
 }

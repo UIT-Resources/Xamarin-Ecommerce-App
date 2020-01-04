@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Text;
+using Xamarin.Forms;
+
+namespace CommerceApp.ViewModels
+{
+    public class CartIconXConstraintConverter:IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if ((int)value < 10)
+            {
+                return 8;
+            }
+            else
+            {
+                return 4;
+            }
+        }
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

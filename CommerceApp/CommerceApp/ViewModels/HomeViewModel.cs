@@ -18,8 +18,13 @@ namespace CommerceApp.ViewModels
         public ObservableCollection<Category> Categories { get; set; }
         public ObservableCollection<Event> Events { get; set; }
         public ObservableCollection<ProductSection> ProductSections { get; set; }
-        public bool isLoadingProductSection { get; set; }
+        bool isLoadingProductSection { get; set; }
         public bool IsLoadingProductSection { get { return isLoadingProductSection; } set{ isLoadingProductSection = value;OnPropertyChanged("IsLoadingProductSection"); } }
+        bool isloadingpage { get; set; }
+        public bool IsLoadingPage { get { return isloadingpage; } set { isloadingpage = value;OnPropertyChanged("IsLoadingPage"); } }
+        bool isready { get; set; }
+        public bool IsReady { get { return isready; } set { isready = value;OnPropertyChanged("IsReady"); } }
+        
 
         //---------------------- Process Section -------------------------------
         public Command LoadMoreCategoryCommand { get; }
@@ -39,6 +44,8 @@ namespace CommerceApp.ViewModels
             Categories = new ObservableCollection<Category>();
             ProductSections = new ObservableCollection<ProductSection>();
             IsLoadingProductSection = false;
+            IsLoadingPage = true;
+            IsReady = false;
             ProductSections.Add(new ProductSection
             {
                 category = new Category
@@ -165,6 +172,9 @@ namespace CommerceApp.ViewModels
                 //Set Activity Indicator
                 IsLoadingProductSection = false;
             });
+            //Set Activity Indicator
+            IsLoadingPage = false;
+            IsReady = true; ;
         }
 
     }
