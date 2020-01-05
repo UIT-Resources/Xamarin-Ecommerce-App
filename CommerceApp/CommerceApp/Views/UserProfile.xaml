@@ -6,7 +6,7 @@
              xmlns:views="clr-namespace:CommerceApp.Views"
              mc:Ignorable="d"
              x:Class="CommerceApp.Views.UserProfile"
-             Title="Thông tin cá nhân">
+             Title="Thông tin cá nhân" >
     <NavigationPage.TitleView>
         <views:NavigationBar >
             <x:Arguments>
@@ -15,7 +15,7 @@
         </views:NavigationBar>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView >
             <StackLayout Spacing="0" >
                 <Frame CornerRadius="100" 
                         HeightRequest="130"
@@ -28,13 +28,12 @@
                         VerticalOptions="Center" Aspect="Fill" />
                 </Frame>
 
-                <StackLayout Orientation="Horizontal"
-                         HorizontalOptions="Center" Spacing="15">
-                    <ImageButton Source="IconSetAvatarByCamera.png" x:Name="takePhoto"/>
-                    <ImageButton Source="IconSetAvatarByCollection.png" x:Name="pickPhoto" />
-                    <ImageButton Source="IconRemoveAvatar.png" x:Name="deletePhoto"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="15" Margin="0,5,0,0">
+                    <ImageButton  HorizontalOptions="Center" Source="IconSetAvatarByCamera.png" x:Name="takePhoto" BackgroundColor="Transparent" HeightRequest="32" WidthRequest="32"/>
+                    <ImageButton  HorizontalOptions="Center" Source="IconSetAvatarByCollection.png" x:Name="pickPhoto" BackgroundColor="Transparent" HeightRequest="32" WidthRequest="32" />
+                    <ImageButton  HorizontalOptions="Center" Source="IconRemoveAvatar.png" x:Name="deletePhoto" BackgroundColor="Transparent" HeightRequest="32" WidthRequest="32"/>
                 </StackLayout>
-                <Frame CornerRadius="10" Margin="12,24,12,0" x:Name="frame">
+                <Frame CornerRadius="10" Margin="12,10,12,0" x:Name="frame">
                     <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Spacing="10">
                         <StackLayout Orientation="Horizontal" HeightRequest="59">
                             <Image Source="UserProfile.png" Margin="0,0,19,0" />

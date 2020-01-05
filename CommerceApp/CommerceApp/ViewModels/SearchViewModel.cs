@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Text;
 using Xamarin.Forms;
 using Newtonsoft.Json;
+using CommerceApp.Views;
 
 namespace CommerceApp.ViewModels
 {
@@ -25,6 +26,7 @@ namespace CommerceApp.ViewModels
 
         //Commands
         public Command GetProductSearchResult { get; }
+        public Command SelectProductommand { get; }
 
         public SearchViewModel(string searchtext)
         {
@@ -45,6 +47,17 @@ namespace CommerceApp.ViewModels
                     ListProductResultSearch = JsonConvert.DeserializeObject<ObservableCollection<Product>>(result);
                 }
                 IsFinding = false;
+            });
+
+            SelectProductommand = new Command<Product>(async (SelectedProduct) =>
+            {
+                Console.WriteLine("SelectProductCommand is running");
+                if (SelectedProduct != null)
+                    await App.Current.MainPage.Navigation.PushAsync(new DetailProduct(SelectedProduct.Id));
+                else
+                    Console.WriteLine("Error: SelectedProduct is Null");
+                Console.WriteLine("SelectProductCommand has run");
+
             });
             if (SearchText != null && SearchText != "")
             {

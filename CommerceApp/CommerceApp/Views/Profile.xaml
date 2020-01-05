@@ -23,7 +23,7 @@
     </NavigationPage.TitleView>
     <ContentPage.Content>
         
-        <ScrollView>
+        <ScrollView >
             <StackLayout BackgroundColor="#F5F6F8">
                 <StackLayout Orientation="Horizontal" Margin="39,17,0,0">
                     <Frame CornerRadius="100" 

@@ -33,26 +33,11 @@ namespace CommerceApp.Views
         public string Username { get { return username; } set { username = value; OnPropertyChanged("Username"); } }
         public string email { get; set; }
         public string Email { get { return email; } set { email = value; OnPropertyChanged("Email"); } }
-        public UserProfile()
+        public UserProfile(User CurrentUser)
         {
 
             InitializeComponent();
-            uSer = new User();
-            int userid = App.Database.GetSession(1).UserID;
-            List<User> listuser = (List<User>)App.Database.GetUsers();
-            for (int i = 0; i < listuser.Count; i++)
-            {
-                if (userid == listuser[i].UserID)
-                {
-                    uSer = listuser[i];
-                }
-
-            }
-
-            if (uSer.UserName.Length > 10)
-            {
-                uSer.UserName=  String.Format("{0,9}...", uSer.UserName);
-            }
+            uSer = CurrentUser;
             
             if (uSer.IconUrl != "")
             {
@@ -141,7 +126,8 @@ namespace CommerceApp.Views
                     return;
                 }
                 App.Database.SaveUser(uSer);
-                await App.Current.MainPage.Navigation.PushAsync(new Profile());
+
+                await App.Current.MainPage.Navigation.PopAsync();
             };
         }
     }

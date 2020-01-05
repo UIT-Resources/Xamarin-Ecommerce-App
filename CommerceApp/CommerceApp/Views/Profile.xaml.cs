@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommerceApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,12 +15,13 @@ namespace CommerceApp.Views
     {
         public Profile()
         {
+            BindingContext = new ProfileViewModel();
             InitializeComponent();
-            BindingContext = new ViewModels.ProfileViewModel();
         }
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+            this.BindingContext= new ProfileViewModel();
             //Check isLoggined If = false => Push LogginPage
             if ((App.Database.GetSession(1) is null) || App.Database.GetSession(1).State == false)
             {
@@ -30,6 +32,7 @@ namespace CommerceApp.Views
             {
                 Console.WriteLine("=>>IsLogged: " + App.Database.GetSession(1).State);
             }
+            
         }
     }
     

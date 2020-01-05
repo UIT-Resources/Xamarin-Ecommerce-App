@@ -23,7 +23,8 @@
             <ActivityIndicator IsRunning="{Binding IsFinding}" IsVisible="{Binding IsFinding}"/>
             <StackLayout IsVisible="{Binding IsReady}">
                 <Label IsVisible="{Binding IsSearched}" Text="{Binding ProductFoundCount, StringFormat='Số kết quả tìm thấy: {0}'}" TextColor="Red" FontSize="Small" Margin="15,0,0,2"/>
-                <CollectionView  IsVisible="{Binding IsSearched}" ItemsSource="{Binding ListProductResultSearch}" HorizontalOptions="CenterAndExpand" ItemSizingStrategy="MeasureFirstItem" Margin="2" EmptyView="Result is Not Found">
+                <CollectionView  IsVisible="{Binding IsSearched}" ItemsSource="{Binding ListProductResultSearch}" HorizontalOptions="CenterAndExpand" ItemSizingStrategy="MeasureFirstItem" Margin="2" EmptyView="Result is Not Found"
+                                 SelectionMode="Single" SelectionChangedCommand="{Binding SelectProductommand}" SelectionChangedCommandParameter="{Binding Source={RelativeSource Mode=Self},Path=SelectedItem}">
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout Orientation="Vertical" ItemSpacing="5"/>
                     </CollectionView.ItemsLayout>
