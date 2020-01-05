@@ -67,7 +67,7 @@ namespace CommerceApp.ViewModels
                 ProductServer temp = JsonConvert.DeserializeObject<ProductServer>(data);
                 if (temp == null)
                 {
-                    break;
+                    continue;
                 }
                 temp.Amount = productOfUsers[i].Amount;
                 ob.Add(temp);
