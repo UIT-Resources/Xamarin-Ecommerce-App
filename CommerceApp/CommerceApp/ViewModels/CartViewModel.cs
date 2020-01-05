@@ -96,9 +96,9 @@ namespace CommerceApp.ViewModels
             GetProductOfUser();
 
             //behavior swicth payment page
-            thanhtoan = new Command(() =>
+            thanhtoan = new Command(async () =>
              {
-                 App.Current.MainPage.Navigation.PushModalAsync(new PayMent(productOfUsers));
+                 await App.Current.MainPage.Navigation.PushModalAsync(new PayMent(productOfUsers));
              });
         }
         private Command<int> _selectSubstractCommand;
