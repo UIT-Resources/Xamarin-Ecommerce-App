@@ -12,9 +12,9 @@ namespace CommerceApp.ViewModels
         public Command donhangcuatoi { get; }
         public SuccessViewModel()
         {
-            donhangcuatoi = new Command(() =>
+            donhangcuatoi = new Command(async () =>
             {
-                App.Current.MainPage.Navigation.PushModalAsync(new OrderOfUser());
+                await App.Current.MainPage.Navigation.PushModalAsync(new OrderOfUser());
             });
         }
     }

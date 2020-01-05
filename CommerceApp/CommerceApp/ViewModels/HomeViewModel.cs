@@ -37,7 +37,7 @@ namespace CommerceApp.ViewModels
 
 
         //Constructor
-        public HomeViewModel()
+        public HomeViewModel(ContentPage CurrentPage)
         {
             //Declare Variables
             Events = new ObservableCollection<Event>();

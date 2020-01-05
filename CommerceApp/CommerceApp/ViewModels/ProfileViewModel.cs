@@ -27,7 +27,7 @@ namespace CommerceApp.ViewModels
         public Command xoabonho { get; }
 
         Session a = App.Database.GetSession(1);
-        public ProfileViewModel()
+        public ProfileViewModel(ContentPage CurrentPage)
         {
             uSer = new User();
 
@@ -76,9 +76,9 @@ namespace CommerceApp.ViewModels
                 Application.Current.MainPage.Navigation.InsertPageBefore(new Loggin(), Application.Current.MainPage.Navigation.NavigationStack.Last());
                 await Application.Current.MainPage.Navigation.PopAsync();
             });
-            MyOrder = new Command(() =>
+            MyOrder = new Command(async () =>
             {
-                App.Current.MainPage.Navigation.PushAsync(new OrderOfUser());
+                await CurrentPage.Navigation.PushAsync(new OrderOfUser());
             });
         }
     }

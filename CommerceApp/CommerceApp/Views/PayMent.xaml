@@ -102,7 +102,7 @@
                        FontSize="15" Margin="13,0,0,0"/>
                     <ImageButton Source="arrow.png" HorizontalOptions="EndAndExpand" />
                 </StackLayout>
-                <StackLayout BackgroundColor="White" Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal">
                     <StackLayout Margin="0,14,0,20">
                         <Label Text="Thành tiền" FontSize="10" TextColor="#515C6F" />
                         <Label Text="{Binding Total ,StringFormat='{}{0:c}'}" TextColor="#515C6F" FontAttributes="Bold" FontSize="20"/>

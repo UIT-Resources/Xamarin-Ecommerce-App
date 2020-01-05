@@ -18,7 +18,7 @@ namespace CommerceApp.ViewModels
         public ObservableCollection<BillOfUser> Bills { get { return bills; } set { bills = value; } }
         public OrderOfUserViewModel()
         {
-            
+            deleteallproductCart();
             getDataBills();
             
         }
@@ -44,6 +44,27 @@ namespace CommerceApp.ViewModels
                 Bills.Add(bills[i]);
             }
             Isloading = false;
+        }
+        public List<ProductOfUser> productOfUsers { get; set; }
+        public async void deleteallproductCart()
+        {
+            int useridcurrent = App.Database.GetSession(1).UserID;
+            Console.WriteLine($"useridcurrent: {useridcurrent}");
+            string data = "";
+            data = await api.Get($"/user/cart/list/{useridcurrent}");
+            if (data.Equals("[]"))
+            {
+                return;
+            }
+            productOfUsers = JsonConvert.DeserializeObject<List<ProductOfUser>>(data);
+            for (int j = 0; j < productOfUsers.Count; j++)
+            {
+                data = "";
+                App.navigationBarModel.ProductAmount -= productOfUsers[j].Amount; // Update Product Amount On CartIcon
+                int i = -1;
+                data = @"{""amount"":" + i + "}";
+                await api.Post($"/user/cart/{productOfUsers[j].Id}", data);
+            }
         }
     }
 }

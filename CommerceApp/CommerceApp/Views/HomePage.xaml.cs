@@ -16,7 +16,7 @@ namespace CommerceApp.Views
         public HomePage()
         {
             InitializeComponent();
-            this.BindingContext = new HomeViewModel();
+            this.BindingContext = new HomeViewModel(this);
         }
 
     }

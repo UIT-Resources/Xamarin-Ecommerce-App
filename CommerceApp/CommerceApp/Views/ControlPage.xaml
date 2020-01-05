@@ -13,7 +13,9 @@
              android:TabbedPage.BarSelectedItemColor="Red"
              android:TabbedPage.IsSwipePagingEnabled="false"
              HeightRequest="200"
-             BarBackgroundColor="#FFFFFF">
+             BarBackgroundColor="#FFFFFF"
+             Title="ControlPage">
+
     <TabbedPage.Children>
         <NavigationPage Title="Home" IconImageSource="Home_1392.png">
             <x:Arguments>

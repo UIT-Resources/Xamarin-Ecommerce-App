@@ -33,6 +33,7 @@ namespace CommerceApp.ViewModels
                 {
                     productAmount = value;
                     if (value > 0) IsAmountGreaterZero = true;
+                    else IsAmountGreaterZero = false;
                     OnPropertyChanged("ProductAmount");
                 }
             }

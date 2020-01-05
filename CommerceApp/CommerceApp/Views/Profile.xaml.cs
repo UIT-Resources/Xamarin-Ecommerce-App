@@ -15,13 +15,13 @@ namespace CommerceApp.Views
     {
         public Profile()
         {
-            BindingContext = new ProfileViewModel();
+            BindingContext = new ProfileViewModel(this);
             InitializeComponent();
         }
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            this.BindingContext= new ProfileViewModel();
+            this.BindingContext= new ProfileViewModel(this);
             //Check isLoggined If = false => Push LogginPage
             if ((App.Database.GetSession(1) is null) || App.Database.GetSession(1).State == false)
             {
